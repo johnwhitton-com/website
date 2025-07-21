@@ -1,0 +1,270 @@
+# John Whitton
+
+> John Whitton's personal website
+
+![John Whitton Work History](/images/JohnWhittonWorkHistory.png "John Whitton Work History")
+
+Hello, I'm currently evaluating new opportunities, and I’d like to continue working with smart contracts similar to the work which I did on eco-routes but do more work at the protocol/infrastructure level in (go and rust). Also, potentially working on zk-circuits and their integration into cross-chain proving mechanisms are also of interest. I'm happy working as an individual contributor or leading engineering teams, as have done so for a large part of my career.Historically I've worked with Early Stage Startups 10-30 team members but am comfortable with both smaller and larger teams.
+
+I recently worked as a Senior Protocol Engineer, previously Engineering Manager at [Eco](https://eco.com) building a payment focused intent protocol on a dedicated L3 rollup. Read the docs [here](https://docs.eco.com/) and the code [here](https://github.com/eco/eco-routes).
+
+Previous work includes researching zero knowledge proofs, cryptographic primitives and consensus protocols. I also consult as a research engineer providing strategy, research, design and building out DeFi infrastructure including trustless bridging, web3 identity and wallets. Deployments have been on EVM compatible chains including [Ethereum](https://ethereum.org/en/) and [Harmony](https://www.harmony.one/).
+
+I prototyped the DEX [Kanga Finance](https://github.com/kangafinance) (inspired by [Sushi](https://github.com/sushiswap)) and a DeFi parachain [eave.network](https://github.com/eavenetwork) (inspired by [Acala](https://github.com/acalanetwork)). Deployments on [Harmony](https://www.harmony.one/) and [Polkadot](https://polkadot.network/). As founder for these projects, I was responsible for writing whitepapers, reviewing legal infrastructure, and fundraising. Although projects had investor interest and were awarded [hackathon prizes](https://docs.google.com/presentation/d/1ZGrbKSaAdtzvMzVh0EVFBfUvA4SqiAeYVXGhJN7Orbs/edit#slide=id.g48989ac23a_0_0) the projects did not move forward due to a combination of team commitment, market fit and crypto market conditions.
+
+Previously I was as an Ecosystem Architect at Harmony. Where I helped launch the Harmony Mainnet, grew the ecosystem and was also intimately involved with hiring decisions and business strategy. Prior to this I was CTO for Loyyal (BaaS company) where we built private permissioned blockchains on Ethereum and Hypersphere Fabric and I managed a team of seven engineers.
+
+I have worked extensively with decentralized financial protocols, bringing a unique perspective by combining my extensive corporate experience with IBM, SAP, Deloitte and KPMG with the disruptive financial models being developed on blockchain.
+
+My earlier career focused on enterprise applications, service oriented architectures and cross application business processes. Where I founded a consultancy firm which grew to $800k in revenues and ran from 2000-2009. One of my former clients, EFI ($1.6 billion market cap) brought me on as a Manager in Enterprise Systems Architecture where I remained for 6 years.
+
+I have been passionate about software and technology since high school. I graduated from the University of Queensland with a Bachelor of Science majoring in Computer Science before travelling globally leading the design and development of many Service Oriented Architectures and Blockchain implementations.
+
+### Opinionated Sample Architecture
+
+* Intent Creation: [eco-routes](https://github.com/eco/eco-routes), [ERC-7683](https://www.erc7683.org/), [RIP-7755](https://github.com/ethereum/RIPs/blob/master/RIPS/rip-7755.md) ([poc](https://github.com/base-org/RIP-7755-poc))
+* Solving: [eco-solver](https://github.com/eco/eco-solver), [uniswapx-artemis](https://github.com/Uniswap/uniswapx-artemis), [cowswap solver service](https://github.com/cowprotocol/services/blob/main/crates/solver/src/solver.rs)
+* Proving: [storage-proofs](https://github.com/eco/eco-routes/blob/main/contracts/Prover.sol), [event-proofs](https://github.com/PISAresearch/event-proofs), [bridged-proving](https://github.com/eco/eco-routes/blob/main/contracts/Inbox.sol#L89-L182)
+* Settlement/Crowd Liquidity: [ERC-6909](https://docs.uniswap.org/contracts/v4/concepts/erc6909), [the-compact](https://github.com/Uniswap/the-compact), [arbiters](https://github.com/Uniswap/arbiters)
+
+### Further Reading
+
+* [The State of InterOp 2025](https://blog.li.fi/the-state-of-interop-2025-4a75d82a9bb9)
+* [Intent Collective: a list of working projects in the Intents ecosystem](https://github.com/EnsoFinance/IntentCollective)
+* [Illuminating Ethereum's Order Flow Landscape](https://writings.flashbots.net/illuminate-the-order-flow)
+
+
+## Example
+
+This is an example page.
+
+
+## Get started
+
+Hello world!
+
+
+## John's Colleagues
+
+<span class="image main">
+  <img src="/images/pic03.jpg" alt="" />
+</span>
+
+I have been fortunate over my long career to have the opportunity to work with some of the most talented individuals and teams not only in Silicon Valley, but globally.
+
+In my role as a founder, cto, ecoystem architect and engineer. I have learned from great leaders,
+researchers, business strategists and engineers. I have built great teams and mentored many talented junior engineers. I have watched my teams apply their solid technical foundation to become invaluable contributors to the team and the organization. Watching individuals grow both personally and professionally is the most rewarding work I have done.
+
+Here is a video highlighting the strengths of the Harmony Team that I was fortunate enough to work with.
+
+{" "}
+
+<div class="video-responsive">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/easABjC4gIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+</div>
+
+<a href="/images/johnImpact.png" target="_blank" rel="noopener noreferrer" style={{ color: "blue", textDecoration: "underline" }}>
+  Here are some quotes from some of the greatest people you'll ever get to work
+  with
+</a>
+
+
+**One page resume can be downloaded [here](https://johnwhitton.com/images/john.pdf)**
+
+### Professional Summary
+
+Research/engineer, technical leader and entrepreneur currently working at the intersection of blockchain infrastructure (consensus, zero knowledge, cryptographic primitives, bridges) and Decentralized protocols (identity, DeFi, NFT's). Track record of driving projects from conception to completion, identifying research gaps and providing solutions. Proven leader of engineering teams with the ability to drive collaboration across the organization and the entire ecosystem.
+
+### Achievements
+
+##### Research and Engineering
+
+* Researching, designing and buiding a protocol for stablecoins on a dedicated L3 roll-up at [eco](https://eco.com) ([docs](https://docs.eco.com/), [Cross-L2-Actions codebase](https://github.com/ecoinc/Cross-L2-Actions))
+* Wrote multiple DeFi whitepapers.
+* Researched consensus, bridging, cryptographic primitives and zero knowledge proofs.
+* Built Layer 1 platforms, DeFi protocols, non-custodial wallets, web3 identity, wallet infrastructure and NFT contracts for gaming character token sales.
+
+##### Building Great Technical Teams
+
+* Lead a team of 8 Engineers at ECO, Grew Harmony from 6 to 20 Engineers, managed 7 engineers at LOYYAL and founded an enterprise consulting startup onboarding a team of 5.
+
+##### Successful Product Launches
+
+* 6 blockchain launches and multiple ecosystem releases, [eco](https://eco.com), Gama Space Station NFT Launch, dot-country web3 identity and web2 backend launch.
+
+##### Founder
+
+* Founded an enterprise consultancy firm which I grew to $800k in annual revenue and ran from 2000-2009.
+* Lead research, legal framework for incorporation, compliance and fundraising efforts for multiple blockchain protocols.
+
+### Projects
+
+Below are links to projects I have designed and built or contributed to.
+
+#### Founder / Research Engineer
+
+##### [Eco](https://eco.com): Aug 2023 - Present, Silicon Valley
+
+A protocol for stablecoins on a dedicated roll-up using intents and account abstraction
+
+* Lead a team of 8 engineers up until August 2024
+* Senior Protocol Engineer from April 2024 to present
+* L3 roll-up design and implementation of the ECO chain, read the [docs](https://docs.eco.com/)
+* Developing Intent Protocol and cross-chain proving mechanisms, see the open sourced version of the code at [Cross-L2-Actions](https://github.com/ecoinc/Cross-L2-Actions)
+* Manage development of [bend.eco](https://bend.eco) - fast cheap stable coin payments
+* Lead the [Eco Association](https://github.com/eco-association) - [Currency 1.5 upgrade](https://github.com/eco-association/currency-1.5)
+
+##### [johnwhitton](https://johnwhitton.com): July 2018 - Aug 2023, Silicon Valley
+
+* [isolab.gg](https://github.com/isolab-gg/isolab.gg): Trustless Bridge Research using Zero Knowledge Proofs including cryptographic primitives, consensus layer and zero knowledge implementations.
+* [hiddenstate.xyz](https://hiddenstate.xyz/): [1.country](https://github.com/harmony-one/1ns-docs) implementation inspired by [ENS](https://ens.domains/) and enhanced to integrate web2 DNS server and SMTP routing.
+* [modulo](https://modulo.so/): [1-wallet](https://github.com/polymorpher/one-wallet) and [sms-wallet](https://github.com/polymorpher/sms-wallet): non-custodial crypto wallet and lightweight crypto sms wallet.
+* [kanga.finance](https://kanga.finance/): Dex implementation inspired by Sushi and proof of concept integration with one-wallet. ([github](https://github.com/kangafinance)). [Winner](https://docs.google.com/presentation/d/1ZGrbKSaAdtzvMzVh0EVFBfUvA4SqiAeYVXGhJN7Orbs/edit#slide=id.g48989ac23a_0_0) of $30,000 in prizes from [Harmony Hackathon](https://bounties.gitcoin.co/hackathon/harmony-defi/onboard).
+* [eave.network](https://eave.network/): Polkadot DeFi Parachain ([github](https://github.com/EaveNetwork)) inspired by Acala and launched on the Rococo Network.
+* em∆sset ([github](https://github.com/emasset)):
+  * Designed StableCoin Payment Platform integrating with banking systems
+  * Defi Research: Uniswap, Polkadot, Curve, Balancer, Coinbase Rosettanet
+  * Built gRPC API Layer: proto, golang, grpc-gateway, openapi, MongoDB
+  * Mobile App: Flutter, Dart integrating with gRPC Services
+* WASDEX: designed a decentralized regulated platform for digital securities
+* [Shell protocol](https://shellprotocol.io/): developed initial prototype of the COWRI protocol, a stable coin, meta layer which leveraged the 0x Protocol and became [Shell Protocol](https://shellprotocol.io/).
+* Project X: wrote white paper for a layer 1 blockchain platform
+* Pocketh - wrote design document for a mobile payment platform for restaurants using stable coins and collateralization.
+* Jincubator: researched layer 1 platforms including polkadot, cosmos, stellar and ethereum
+
+#### Ecosystem Architect
+
+##### [Harmony](https://www.harmony.one/): August 2019 - May 2020, Silicon Valley
+
+Layer 1 Proof of Stake, Sharded Blockchain Protocol
+
+* Hired and Mentored over 10 Engineers growing the team from 6 to 20
+* Launched Mainnet ONE, Token Swap and Open Staking
+* Owned Developer Tooling including API, SDK, HRC and IDEs
+* Deployed Network Upgrades including over 50 rollouts of complete Harmony Protocol and Network
+* Presented Internationally at Technical Conferences
+* Responsible for Partner Success and Developer Advocacy
+
+#### Chief Technology Officer
+
+##### [loyyal](https://loyyal.com/): July 2016 - Jun 2018, New York
+
+Loyalty Platform leveraging tokenization of points using blockchain
+
+* Hired and mentored a team of 7 engineers
+* Launched LOYYAL program management suite on HYPERLEDGER
+* Built Dubai Points the first loyalty mobile application built on blockchain
+* Deployed and maintained a private ethereum network
+* Owned partner success with IBM, Deloitte, Emirates Airlines, CIBC Bank
+
+#### Founder, Engineering Manager, Architect, Developer
+
+##### Enterprise Software and Consulting: July 1986 - Jun 2016, Global
+
+Enterprise Software and Integration Platforms
+
+* Managed over 100 initiatives and 50 staff at EFI
+* Built EFI Business Integration Services an SOA platform integrating SAP, Salesforce, FLEXERA and external partners including CANON and Fedex
+* Founded Global Enterprise Solutions a niche SAP technical consultancy and hired and mentored a team of 5
+* Lead Autodesk Subscription Program integration - integrating SAP, TIBCO, SEEBEYOND, registration systems and CRM systems
+* Developed Enterprise Software for the Mining Industry
+
+### Whitepapers and Design Documents
+
+* [1ns (dot-country)](https://github.com/harmony-one/1ns-docs): dot-country design and deployment overview.
+* [Draft EAVE Whitepaper (2021)](https://johnwhitton.com/images/DraftEAVEWhitepaper.pdf): a multi-chain web3 engine (Trading, DeFi, Liquidity and NFTs)
+* [EAVE Parachain Design (2021)](https://johnwhitton.com/images/EAVEParachainDesign.pdf): A Dedicated DeFi Polkadot Parachain
+* [KANGA Whitepaper(2021)](https://johnwhitton.com/images/KANGAWhitepaper.pdf): a DeFi Trading and Yield Engine]
+* [projectX (2018)](https://johnwhitton.com/images/projectX.pdf): layer one blockchain protocol
+
+### Codebases
+
+* [dot-country](https://github.com/jw-1ns): implementation inspired by [ENS](https://ens.domains/) and enhanced to integrate web2 DNS server and SMTP routing.
+* [1wallet](https://github.com/polymorpher/one-wallet/tree/master/code/test): non-custodial crypto wallet
+* [NFT Contracts](https://github.com/gamaspacestation/contracts): Smart Contracts for [Gama Space Station](https://opensea.io/collection/gamaspacestation)
+* [Cross chain bridge](https://github.com/johnwhitton/horizon/tree/refactorV2/docs): Horizon trustless Bridge (not the one that got hacked)
+* [Core Protocol](https://github.com/EaveNetwork): EAVE Network (a polkadot parachain) Rust, Substrate, ORML, TypeScript,Flutter
+* [Decentralized Finance](https://github.com/kangafinance): Kanga Finance: Solidity, Javascript, React
+* [Solidity Development](https://github.com/johnwhitton/bc_template): Smart Contract Development Framework using hardhat and typescript.
+* [API Framework](https://github.com/emasset): emasset: golang, dart, protobuf
+* [Layer One Protocol Research](https://github.com/johnwhitton/blockchain-eval/blob/master/substrate.md): jincubator: layer one portocol comparison
+
+### Websites and Applications
+
+* [1.country](https://1.country/): Web3 Identity integrated with web 2 DNS services
+* [1wallet.crazy.one](https://1wallet.crazy.one/create): Non custodial crypto wallet
+* [Decentralized Finance](https://demo.kanga.finance): KANGA App on Harmony Testnet
+* [Website](https://kanga.finance): KANGA website
+* [Website](https://eave.network): EAVE website
+
+### Presentations and Videos
+
+* [Defi Presentation](https://deck.kanga.finance): KANGA Web3 Engine
+* [Defi Video](https://www.youtube.com/3wxAbe0GzA0): Kanga Demo for Harmony Hackathon
+* [Core Protocol Presentation](https://johnwhitton.com/images/EAVEOverview.pdf): EAVE DeFi Polkadot Parachain
+* [Defi Presentation](https://johnwhitton.com/images/WASDEXOverview.pd): WASDEX: Digital Exchange
+* [Defi Investor Fact Sheet](https://johnwhitton.com/images/wasdex.pdf): WASDEX: Investor Fact Sheet
+* [Ecosystem article](https://medium.com/harmony-one/devcon-4ee34426530c): Devcon5 lessons learned
+* [Defi Demo Video](https://youtube.kanga.finance): KANGA Demo
+* [Defi Demo Vido](https://youtu.be/vk0e6s_2H0w): EAVE Mobile Demo
+* [Core Protocol Video](https://youtu.be/HFo6c32qoyI): EAVE Overview
+* [Leadership Video](https://youtu.be/easABjC4gIY): Harmony Engineers on fire
+* [Defi Investor Video](https://youtu.be/iB1wWl5vWTk): WASDEX: World Asset and Securities Digital Exchange
+
+### Education
+
+Bachelor of Science, The University of Queensland (1984-1987)
+
+### Additional Information
+
+* [Gitcoin](https://gitcoin.co/johnwhitton): John on Gitcoin
+* [Hackathons](https://gitcoin.co/johnwhitton/hackathons): Kanga Harmony Hackathon Proposals
+  * [Awards](https://docs.google.com/presentation/d/1ZGrbKSaAdtzvMzVh0EVFBfUvA4SqiAeYVXGhJN7Orbs/edit?usp=sharing): Kanga winning multiple awards in Harmony Hackathon
+* [Proposal](https://talk.harmony.one/t/kanga-launch-proposal/8283): Kanga Launch Proposal
+
+
+#### [Andy](https://www.linkedin.com/in/andy-wu-4329664/)
+
+John is one of the most professional engineers I’ve ever worked with. He takes the ownership of many OPS works,
+and documents them down with meticulous details. Also, he is a fast learner, and eager to pick up new skills. He also has very good project management skills, and I believe he could be a very good leader either in biz or eng departments.
+
+
+#### [Ganesha](https://www.linkedin.com/in/gupadhyaya/)
+
+John is dedicated, hard-working, great work ethics, and brings lot of positive energy. no doubt that he is a great manager with good people skills. john led the whole hiring process and single handedly managed it well, without much chaos. no joke how much time and energy it takes. great job. while i believe it was not the best use of john's time, he embraced whatever this staking launch demanded from him. great work towards managing the release (deployment, documentation, etc) and taking some load of andy and daniel. after the staking release, john could refocus and quickly get back to speed on the ecosystem/tooling/partner tasks/goals for q4 and expedite some of the deliverables.
+
+
+#### [Janet](https://www.linkedin.com/in/janet-liang-754090135/)
+
+John is always willing to work on whatever the team needs even though you don't necessarily want to.
+thank you for listening and being a great mentor.
+
+
+#### [Li](https://www.linkedin.com/in/lijiang2087/)
+
+I want to thank John for having a detailed process and documentation of the OSTN network upgrades and resets and communicating to me and community.
+
+
+#### [Matt](https://www.linkedin.com/in/mattlockyer/)
+
+John is amazing at explaining and delegating. I’m always impressed with his knowledge base. I think more efforts could be made to capture his knowledge in “explainers”, that would go a long way to supporting the community. John can also run anything, like up and running in a matter of minutes. This means he can troubleshoot tons of deployment issues from the core protocol all the way up to the application layer
+
+
+#### [Nick](https://www.linkedin.com/in/nickwh8te/)
+
+John is always willing to jump on whatever needs to get done. he jumped SDK to hiring and then back into network ops. I think that John does a good job of recruiting and onboarding new interns and giving them appropriate difficulty tasks as they ramp up. I'm grateful that he stepped in to cover miami devcon for me at the last minute. team player
+
+
+#### [Olivier](https://www.linkedin.com/in/olivierveyrac/)
+
+John and I worked together at Autodesk during the implementation of the subscription program, John was a lead SAP developer working on the program. I frequently interacted with him as we rolled out the program. John has the rare gift of being able to understand complex business problems and map them to a technical solution. His drive and passion for the project, combined with his excellent communication skills and deep technical knowledge, were key factors in the successful rollout of the program. We've since become close friends. I'd recommend anyone looking for a technical lead with business acumen to consider John.
+
+
+#### [Yishuang](https://www.linkedin.com/in/chenyishuang/)
+
+John is a really good team player, among his good qualities, I admire three most.
+
+1. Helpful and warm-hearted whenever you ask for help, John will give you the best help.
+2. Avid learner, John likes to learn new things and will actively take new tasks. I see John actively in ops recently.
+3. Responsible, longer view, John focused a lot on knowledge transfer. He wants to make sure the knowledge can be shared with the whole team and future new employees, so he contributed a lot on internal wiki gitbooks, which I think it’s a good point.
+
