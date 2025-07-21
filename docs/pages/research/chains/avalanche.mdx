@@ -146,7 +146,7 @@ type Header struct {
 
 ```
 
-2. The block is then wrapped into an `innerBlock` by [snowman++](https://github.com/ava-labs/avalanchego/blob/master/vms/README.md) and has the following interfaces
+2. The block is then wrapped into an `innerBlock` by [snowman++](https://github.com/ava-labs/avalanchego/blob/master/vms/README.mdx) and has the following interfaces
 
 ```go
 type Block interface {
@@ -224,7 +224,7 @@ Signatures are verified using [Verify](https://github.com/ava-labs/avalanchego/b
 
 ## Code Review
 
-Folllowing is a review of . Avalanche also has a [coreth codebase](https://github.com/ava-labs/coreth) which was inspired by [geth](https://github.com/ethereum/go-ethereum). Please see [here](./ethereum-1-0.md) for a code review of geth. Following is an excerpt from [coreth README.md](https://github.com/ava-labs/coreth/blob/master/README.md).
+Folllowing is a review of . Avalanche also has a [coreth codebase](https://github.com/ava-labs/coreth) which was inspired by [geth](https://github.com/ethereum/go-ethereum). Please see [here](./ethereum-1-0.mdx) for a code review of geth. Following is an excerpt from [coreth README.md](https://github.com/ava-labs/coreth/blob/master/README.mdx).
 
 > Coreth (from core Ethereum) is the Virtual Machine (VM) that defines the Contract Chain (C-Chain). This chain implements the Ethereum Virtual Machine and supports Solidity smart contracts as well as most other Ethereum client functionality.
 
@@ -241,7 +241,7 @@ Folllowing is a review of . Avalanche also has a [coreth codebase](https://githu
 
 - [Avalanche ConsensusContext Codebase](https://github.com/ava-labs/avalanchego/blob/master/snow/context.go#L63): Context is information about the current executio including `NetworkID` is the ID of the network this context exists within. `ChainID` is the ID of the chain this context exists within. `NodeID` is the ID of this node. (go)
 - [Avalanche Consensus CodeBase](https://github.com/ava-labs/avalanchego/tree/master/snow/consensus): Contains consenus engines snowball, snowman, snowstorm and avalanche (go)
-  - [Avalanche snow README.md](https://github.com/ava-labs/avalanchego/blob/master/snow/README.md): Documentation of the folow of a Single Blockchain.
+  - [Avalanche snow README.md](https://github.com/ava-labs/avalanchego/blob/master/snow/README.mdx): Documentation of the folow of a Single Blockchain.
   - [consensus.go](https://github.com/ava-labs/avalanchego/blob/master/snow/consensus/avalanche/consensus.go): Consensus code (go). _Consensus represents a general avalanche instance that can be used directly to process a series of partially ordered elements._
   - [avalanche poll](https://github.com/ava-labs/avalanchego/tree/master/snow/consensus/avalanche/poll): Avalanches Polling (validator voting) mechanism (go).
   - [snowman consensus.go](https://github.com/ava-labs/avalanchego/blob/master/snow/consensus/snowman/consensus.go): Snowman consenus code (go). _represents a general snowman instance that can be used directly to process a series of dependent operations._
@@ -343,45 +343,64 @@ Folllowing is a review of . Avalanche also has a [coreth codebase](https://githu
 \* Overview \*/
 
 [^ov-1]: [Avalanche introductory documentation](https://docs.avax.network/overview/getting-started/avalanche-platform): Avalanche is a heterogeneous network of blockchains allowing separate chains to be created for different applications.
-[^ov-2]: [Snowman VM](https://github.com/ava-labs/avalanchego/blob/master/vms/README.md): To the consensus engine, the Snowman VM is a black box that handles all block building, parsing, and storage and provides a simple block interface for the consensus engine to call as it decides blocks.
+
+[^ov-2]: [Snowman VM](https://github.com/ava-labs/avalanchego/blob/master/vms/README.mdx): To the consensus engine, the Snowman VM is a black box that handles all block building, parsing, and storage and provides a simple block interface for the consensus engine to call as it decides blocks.
+
 [^ov-3]: [Avalanche explorer](https://subnets.avax.network/): Block Explorere showing subnets, totoal blockchains, total validators and totals stake amount.
-[^ov-4]: [Snowman++](https://github.com/ava-labs/avalanchego/blob/master/vms/proposervm/README.md): a congestion control mechanism available for snowman VMs.
+
+[^ov-4]: [Snowman++](https://github.com/ava-labs/avalanchego/blob/master/vms/proposervm/README.mdx): a congestion control mechanism available for snowman VMs.
+
 [^ov-5]: [block verify function](https://github.com/ava-labs/avalanchego/blob/master/vms/proposervm/block/block.go#L119): statelessBlock Verify function in proposervm.
+
 [^ov-6]: [block structure](https://github.com/ava-labs/avalanchego/blob/master/vms/proposervm/block/block.go#L51): statelessBlock structure in proposervm.
+
 [^ov-7]: [NewCertAndKeyBytes](https://github.com/ava-labs/avalanchego/blob/master/staking/tls.go#L120): Creates a new staking private key / staking certificate pair. Returns the PEM byte representations of both.
 
 \* Avalanche BLS Support Release Documentation \*/
 
 [^ov-8]: [release notes on GitHub](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.2) and [code commit search result](https://github.com/ava-labs/avalanchego/search?q=bls&type=commits)
+
 [^ov-9]: [Release v1.8.6: Apricot Phase 6](https://github.com/ava-labs/avalanchego/releases/tag/v1.8.6): Adds BLS key file and exposes blos proof of posession
+
 [^ov-10]: [Release v1.9.1: Banff.1](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.1): Added BLS signer to the snow.Context
+
 [^ov-11]: [Release v1.9.2: Banff.2 - Additional BLS Support](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.2): Added bls proof of possession to `platform.getCurrentValidators` and `platform.getPendingValidators`. Added bls public key to in-memory staker objects. Improved memory clearing of bls secret keys.
 
 \* \* Avalanch BLS Relevant Commits \*/
 
 [^ov-12]: [Add BLS key to AddPermissionlessValidatorTx for the Primary Network (#1987)](https://github.com/ava-labs/avalanchego/commit/fb6bb81f499b4b8c0f903c8745f5b7fbd8d97668)
+
 [^ov-13]: [Add BLS signer to snow.Context (#2069)](https://github.com/ava-labs/avalanchego/commit/5176495568e512b2ebbfb1102dfd59541ccaa578)
 
 \* Warp Messaging \*/
 
 [^ov-14]: [Avalanche Warp Messaging (AWM)](https://medium.com/avalancheavax/avalanche-warp-messaging-awm-launches-with-the-first-native-subnet-to-subnet-message-on-avalanche-c0ceec32144a): AWM enables Subnet Validators to collectively produce a BLS Multi-Signature that attests to the validity of an arbitrary message (e.g., transfer, contract data, etc.) that can be verified by any other Subnet.
+
 [^ov-15]: [avalanchego warp codebase](https://github.com/ava-labs/avalanchego/tree/master/vms/platformvm/warp): Codebase supporting bls signing of inter-subnet messages.
 
 \* RSA Support \*/
 
-[^ov-16]: [EIP-198](https://github.com/ethereum/EIPs/blob/f2db669da93ca4ce1605866e147bfa4f56303fc6/EIPS/eip-198.md): Big integer modular exponentiation. Pre-compile for Ethereum which allows for efficient RSA verification inside of the EVM, as well as other forms of number theory-based cryptography.
+[^ov-16]: [EIP-198](https://github.com/ethereum/EIPs/blob/f2db669da93ca4ce1605866e147bfa4f56303fc6/EIPS/eip-198.mdx): Big integer modular exponentiation. Pre-compile for Ethereum which allows for efficient RSA verification inside of the EVM, as well as other forms of number theory-based cryptography.
+
 [^ov-17]: [SolRsaVerify](https://github.com/adria0/SolRsaVerify): Solidity Library which allows verification of RSA Sha256 Pkcs1.5 Signatures
+
 [^ov-18]: [Cortina: X-Chain Linearization](https://medium.com/avalancheavax/cortina-x-chain-linearization-a1d9305553f6): This upgrade linearizes the X-chain, introduces delegation batching to the P-chain, and increases the maximum block size on the C-chain. (Release notes are [here](https://github.com/ava-labs/avalanchego/releases) and changelog is [here](https://github.com/ava-labs/avalanchego/compare/v1.9.16...v1.10.0))
 
 \* consensus \*/
 
 [^con-1]: [Avalanche Platform](https://docs.avax.network/overview/getting-started/avalanche-platform): Avalanche is a heterogeneous network of blockchains. The Primary Network is a special Subnet that contains all validators (including validators of any custom Subnets).
+
 [^con-2]: [Avalanche Consensus Whitepaper](https://assets.website-files.com/5d80307810123f5ffbb34d6e/6009805681b416f34dcae012_Avalanche%20Consensus%20Whitepaper.pdf): Scalable and Probabilistic Leaderless BFT Consensus through Metastability. This paper introduces a family of leaderless Byzantine fault tolerance protocols, built around a metastable mechanism via network subsampling.
+
 [^con-3]: [Avalanche Docs: Consensus](https://docs.avax.network/overview/getting-started/avalanche-consensus): a consensus protocol that is scalable, robust, and decentralized. It has low latency and high throughput. It is energy efficient and does not require special computer hardware.
-[^con-4]: [Snow README.md](https://github.com/ava-labs/avalanchego/blob/master/snow/README.md): Each blockchain on Avalanche has several components: the virtual machine, database, consensus engine, sender, and handler. These components help the chain run smoothly. Blockchains also interact with the P2P layer and the chain router to send and receive messages.
+
+[^con-4]: [Snow README.md](https://github.com/ava-labs/avalanchego/blob/master/snow/README.mdx): Each blockchain on Avalanche has several components: the virtual machine, database, consensus engine, sender, and handler. These components help the chain run smoothly. Blockchains also interact with the P2P layer and the chain router to send and receive messages.
+
 [^con-5]: [Coreth and the C-Chain](https://github.com/ava-labs/coreth/tree/master#readme): Coreth is a dependency of AvalancheGo which is used to implement the EVM based Virtual Machine for the Avalanche C-Chain.
-[^con-6]: [Snowman VM's](https://github.com/ava-labs/avalanchego/blob/master/vms/README.md): To the consensus engine, the Snowman VM is a black box that handles all block building, parsing, and storage and provides a simple block interface for the consensus engine to call as it decides blocks.
-[^con-7]: [Snowman++: congestion control for Snowman VMs](https://github.com/ava-labs/avalanchego/blob/master/vms/proposervm/README.md): Snowman++ introduces a soft proposer mechanism which attempts to select a single proposer with the power to issue a block, but opens up block production to every validator if sufficient time has passed without blocks being generated.
+
+[^con-6]: [Snowman VM's](https://github.com/ava-labs/avalanchego/blob/master/vms/README.mdx): To the consensus engine, the Snowman VM is a black box that handles all block building, parsing, and storage and provides a simple block interface for the consensus engine to call as it decides blocks.
+
+[^con-7]: [Snowman++: congestion control for Snowman VMs](https://github.com/ava-labs/avalanchego/blob/master/vms/proposervm/README.mdx): Snowman++ introduces a soft proposer mechanism which attempts to select a single proposer with the power to issue a block, but opens up block production to every validator if sufficient time has passed without blocks being generated.
 
 \* signing \*/
 

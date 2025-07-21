@@ -12,7 +12,6 @@ Cryptographic and Mathematic Primitives
 **general primitives**
 
 - [bloom filter](https://en.wikipedia.org/wiki/Bloom_filter)
-
   - [geth bloombits](https://github.com/ethereum/go-ethereum/tree/master/core/bloombits) (go): Package bloombits implements bloom filtering on batches of data.
 
 - [int_to_bytes](https://ethereum.github.io/execution-specs/autoapi/ethereum/base_types/index.html)
@@ -33,7 +32,7 @@ Cryptographic and Mathematic Primitives
   - [paritytech binary-merkle-trie](https://github.com/paritytech/substrate/tree/master/utils/binary-merkle-tree) (rust): implements a simple binary Merkle Tree utilities required for inter-op with Ethereum bridge & Solidity contract.
   - [snowbridge merkle.go](https://github.com/Snowfork/snowbridge/blob/main/relayer/crypto/merkle/merkle.go)
   - [snowbridge merkleization.rs](https://github.com/Snowfork/snowbridge/blob/main/parachain/pallets/ethereum-beacon-client/src/merkleization.rs)
-- [merkle_proof](https://github.com/ethereum/consensus-specs/blob/dev/ssz/merkle-proofs.md) [explainer](https://soliditydeveloper.com/merkle-tree)
+- [merkle_proof](https://github.com/ethereum/consensus-specs/blob/dev/ssz/merkle-proofs.mdx) [explainer](https://soliditydeveloper.com/merkle-tree)
   - [lighthouse merkle_proof](https://github.com/sigp/lighthouse/tree/stable/consensus/merkle_proof) (rust): efficiently represents a Merkle tree of fixed depth where only the first N indices are populated by non-zero leaves (perfect for the deposit contract tree).
   - [snowbridge simplified_mmr_proof.go](https://github.com/Snowfork/snowbridge/blob/main/relayer/crypto/merkle/simplified_mmr_proof.go)
   - [snowbridge merkle-proof rust](https://github.com/Snowfork/snowbridge/tree/main/parachain/pallets/basic-channel/merkle-proof)
@@ -111,7 +110,6 @@ Cryptographic and Mathematic Primitives
   - [ethereum rlp](https://github.com/ethereum/go-ethereum/tree/master/rlp)
   - [harmony rlp](https://github.com/harmony-one/harmony/blob/main/crypto/hash/rlp.go)
 - [Simple Serialize](https://ethereum.org/en/developers/docs/data-structures-and-encoding/ssz/)
-
   - [snowbridge ssz.rs](https://github.com/Snowfork/snowbridge/blob/main/parachain/pallets/ethereum-beacon-client/src/ssz.rs)
 
 - [Merkle Patricia Trie](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/)

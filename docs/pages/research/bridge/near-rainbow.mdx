@@ -251,7 +251,7 @@ _The following is an excerpt from a blog by near on [eth-near-rainbow-bridge](ht
 >
 > Another useful property of the NEAR light client is that it only accepts final blocks, and final blocks cannot leave the canonical chain in NEAR. This means that NearOnEthClient does not need to worry about forks.
 >
-> However, unfortunately, NEAR uses [Ed25519](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-665.md) to sign messages of the validators who approve the blocks, and this signature is not available as an EVM precompile. It makes verification of all signatures of a single NEAR header prohibitively expensive. So technically, we cannot verify one NEAR header within one contract call to NearOnEthClient. Therefore we adopt the [optimistic approach](https://medium.com/@deaneigenmann/optimistic-contracts-fb75efa7ca84) where NearOnEthClient verifies everything in the NEAR header except the signatures. Then anyone can challenge a signature in a submitted header within a 4-hour challenge window. The challenge requires verification of a single Ed25519 signature which would cost about 500k Ethereum gas (expensive, but possible). The user submitting the NEAR header would have to post a bond in Ethereum tokens, and a successful challenge would burn half of the bond and return the other half to the challenger. The bond should be large enough to pay for the gas even if the gas price increases exponentially during the 4 hours. For instance, a 20 ETH bond would cover gas price hikes up to 20000 Gwei. This optimistic approach requires having a watchdog service that monitors submitted NEAR headers and challenges any headers with invalid signatures. For added security, independent users can run several watchdog services.
+> However, unfortunately, NEAR uses [Ed25519](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-665.mdx) to sign messages of the validators who approve the blocks, and this signature is not available as an EVM precompile. It makes verification of all signatures of a single NEAR header prohibitively expensive. So technically, we cannot verify one NEAR header within one contract call to NearOnEthClient. Therefore we adopt the [optimistic approach](https://medium.com/@deaneigenmann/optimistic-contracts-fb75efa7ca84) where NearOnEthClient verifies everything in the NEAR header except the signatures. Then anyone can challenge a signature in a submitted header within a 4-hour challenge window. The challenge requires verification of a single Ed25519 signature which would cost about 500k Ethereum gas (expensive, but possible). The user submitting the NEAR header would have to post a bond in Ethereum tokens, and a successful challenge would burn half of the bond and return the other half to the challenger. The bond should be large enough to pay for the gas even if the gas price increases exponentially during the 4 hours. For instance, a 20 ETH bond would cover gas price hikes up to 20000 Gwei. This optimistic approach requires having a watchdog service that monitors submitted NEAR headers and challenges any headers with invalid signatures. For added security, independent users can run several watchdog services.
 >
 > Once EIP665 is accepted, Ethereum will have the Ed25519 signature available as an EVM precompile. This will make watchdog services and the 4-hour challenge window unnecessary.
 >
@@ -265,7 +265,7 @@ _The following information on sending assets from NEAR back to Ethereum is an ex
 
 ### Token Transfer Process Flow
 
-The [NEAR Rainbow Bridge](https://near.org/bridge/) uses ERC-20 connectors which are developed in [rainbow-token-connector](https://github.com/aurora-is-near/rainbow-token-connector) and [rainbow-bridge-client](https://github.com/aurora-is-near/rainbow-bridge-client). Also see [eth2near-fun-transfer.md](https://github.com/aurora-is-near/rainbow-bridge/blob/master/docs/workflows/eth2near-fun-transfer.md).
+The [NEAR Rainbow Bridge](https://near.org/bridge/) uses ERC-20 connectors which are developed in [rainbow-token-connector](https://github.com/aurora-is-near/rainbow-token-connector) and [rainbow-bridge-client](https://github.com/aurora-is-near/rainbow-bridge-client). Also see [eth2near-fun-transfer.md](https://github.com/aurora-is-near/rainbow-bridge/blob/master/docs/workflows/eth2near-fun-transfer.mdx).
 
 Following is an overview of timing and anticipated costs
 
@@ -276,7 +276,7 @@ Following is an overview of timing and anticipated costs
 
 _Note: This uses Ethreum [ERC20](https://eips.ethereum.org/EIPS/eip-20) and NEAR [NEP-141](https://nomicon.io/Standards/Tokens/FungibleToken/Core) initally developed for [NEP-21](https://github.com/near/NEPs/pull/21)_
 
-**[Generic ERC-20/NEP-141 connector for Rainbow Bridge](https://github.com/aurora-is-near/rainbow-token-connector/blob/master/README.md)**
+**[Generic ERC-20/NEP-141 connector for Rainbow Bridge](https://github.com/aurora-is-near/rainbow-token-connector/blob/master/README.mdx)**
 
 **Specification**
 
@@ -435,11 +435,11 @@ cargo test --all
 ## References
 
 - Ethereum 2.0 Specifications
-  - [Beacon Chain Specification](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/beacon-chain.md)
+  - [Beacon Chain Specification](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/beacon-chain.mdx)
   - [Extended light client protocol](https://notes.ethereum.org/@vbuterin/extended_light_client_protocol)
-  - [Altair Light Client -- Light Client](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/light-client.md)
-  - [Altair Light Client -- Sync Protocol](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md)
-  - [Beacon Chain Fork Choice](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/fork-choice.md)
+  - [Altair Light Client -- Light Client](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/light-client.mdx)
+  - [Altair Light Client -- Sync Protocol](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.mdx)
+  - [Beacon Chain Fork Choice](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/fork-choice.mdx)
 
 - Proving Mechanisms
   - [Lighthouse Documentation](https://lighthouse-book.sigmaprime.io/): ETH 2.0 Consensus Client Lighthouse documentation

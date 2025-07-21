@@ -69,7 +69,7 @@ Harmony uses BLS12_381 signatures for validators signing blocks. They began work
 
 Harmony is actively looking at light client support[^3].
 
-Some initial work has been done for the support of [Merkle Mountain Ranges](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.md) has been proposed by Harmony in the pull request [[WIP] MMR-HardFork: add go-merklemountainrange and modified merkle proof logic #3872](https://github.com/harmony-one/harmony/pull/3872).
+Some initial work has been done for the support of [Merkle Mountain Ranges](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.mdx) has been proposed by Harmony in the pull request [[WIP] MMR-HardFork: add go-merklemountainrange and modified merkle proof logic #3872](https://github.com/harmony-one/harmony/pull/3872).
 
 This introduces a new field into the block header populated by [mmr.go](https://github.com/gupadhyaya/harmony/blob/mmr-hard-fork/internal/mmr/mmr.go) which credits [zmitton/go-merklemountainrange](https://github.com/zmitton/go-merklemountainrange).
 
@@ -164,11 +164,11 @@ type headerFields struct {
 
 **Sample Light Client Implementation: Horizon Bridge Harmony Light Client Deployed on Ethereum**
 
-This enables the validation of previous blocks by implemented by [TokenLockerOnEthereum.sol](https://github.com/johnwhitton/horizon/blob/refactorV2/contracts/TokenLockerOnEthereum.sol) to use [MMRVerifier.sol](https://github.com/johnwhitton/horizon/blob/refactorV2/contracts/lib/MMRVerifier.sol) uses `./lib/MMRVerifier.sol` to validate the [Mountain Merkle Ranges](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.md)
+This enables the validation of previous blocks by implemented by [TokenLockerOnEthereum.sol](https://github.com/johnwhitton/horizon/blob/refactorV2/contracts/TokenLockerOnEthereum.sol) to use [MMRVerifier.sol](https://github.com/johnwhitton/horizon/blob/refactorV2/contracts/lib/MMRVerifier.sol) uses `./lib/MMRVerifier.sol` to validate the [Mountain Merkle Ranges](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.mdx)
 
 ## Code Review
 
-The [Harmony codebase](https://github.com/harmony-one/harmony) was originally cloned from [Ethereum 1.0](./ethereum-1-0.md) around 2019.Thus the majority of code incuding primitives, signing are similar as at that period. Since then Ethreum has worked siginficantly on Ethreum 2.0 and these modifications were selectively leveraged by Harmony.
+The [Harmony codebase](https://github.com/harmony-one/harmony) was originally cloned from [Ethereum 1.0](./ethereum-1-0.mdx) around 2019.Thus the majority of code incuding primitives, signing are similar as at that period. Since then Ethreum has worked siginficantly on Ethreum 2.0 and these modifications were selectively leveraged by Harmony.
 
 [Harmony has significant differences](https://medium.com/harmony-one/2022-harmony-technical-review-88462efba368) from Ethereum 1.0 including sharding, Effective Proof of Stake Consensus Mechanism, [Rosetta support](https://www.rosetta-api.org/docs/welcome.html) and verifiable delay functions and verifiaable random functions.
 
@@ -239,5 +239,7 @@ The [Harmony codebase](https://github.com/harmony-one/harmony) was originally cl
 ## Footnotes
 
 [^1]: [Harmony consensus documentation](https://docs.harmony.one/home/general/technology/consensus). As an implementation detail, note that custom [generator points are used](https://github.com/herumi/bls/issues/74)
+
 [^2]: [Harmony Slot Bidding and Election](https://docs.harmony.one/home/network/validators/definitions/slots-bidding-and-election)
+
 [^3]: [Scaling the Harmony Protocol with Light Clients](https://medium.com/harmony-one/scaling-the-harmony-protocol-with-light-clients-66d1eab26bf): a step-by-step guide on how to develop and run a light client on the Harmony Protocol using code examples.

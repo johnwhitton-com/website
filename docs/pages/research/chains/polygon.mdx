@@ -13,7 +13,7 @@ The consensus protocol is based on Peppermint<sup>[8](#f8)</sup>, a modified ver
 
 Polygon uses Peppermint (a modified version of tendermint) Consensus.
 
-Following is an excerpt from [Polygon Architecture](https://github.com/maticnetwork/matic-docs/blob/master/docs/pos/polygon-architecture.md).
+Following is an excerpt from [Polygon Architecture](https://github.com/maticnetwork/matic-docs/blob/master/docs/pos/polygon-architecture.mdx).
 
 **Polygon Architecture**
 
@@ -30,12 +30,12 @@ Following is an excerpt from [Polygon Architecture](https://github.com/maticnetw
 >
 > An overview of the process:
 >
-> - A subset of active validators from the pool is selected to act as [block producers](/docs/maintain/glossary#block-producer) for a [span](/docs/maintain/glossary#span). These block producers are responsible for creating blocks and broadcasting the created blocks on the network.
+> - A subset of active validators from the pool is selected to act as block producers for a span. These block producers are responsible for creating blocks and broadcasting the created blocks on the network.
 > - A checkpoint includes the Merkle root hash of all blocks created during any given interval. All nodes validate the Merkle root hash and attach their signature to it.
-> - A selected [proposer](/docs/maintain/glossary#proposer) from the validator set is responsible for collecting all signatures for a particular checkpoint and committing the checkpoint on the Ethereum mainnet.
+> - A selected proposer from the validator set is responsible for collecting all signatures for a particular checkpoint and committing the checkpoint on the Ethereum mainnet.
 > - The responsibility of creating blocks and proposing checkpoints is variably dependent on a validator’s stake ratio in the overall pool.
 >
-> More details on Heimdall are available on the [Heimdall architecture](/docs/pos/heimdall/overview) guide.
+> More details on Heimdall are available on the Heimdall architecture guide.
 
 This image from [Bor Architecture](https://wiki.polygon.technology/docs/pos/bor/) helps give a better understanding of how Ethereum, Heimdall and Bor work together.
 
@@ -43,7 +43,7 @@ This image from [Bor Architecture](https://wiki.polygon.technology/docs/pos/bor/
 
 ## Signing Mechanism
 
-Following is an excerpt from and [Peppermint.md](https://github.com/maticnetwork/matic-docs/blob/master/docs/pos/peppermint.md).
+Following is an excerpt from and [Peppermint.md](https://github.com/maticnetwork/matic-docs/blob/master/docs/pos/peppermint.mdx).
 
 > Peppermint is a modified Tendermint. It is changed to make it compatible with Ethereum addresses and verifiable on Ethereum chain.
 >

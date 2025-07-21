@@ -40,7 +40,7 @@
 
 This document reviews the [horizon](https://github.com/johnwhitton/horizon/tree/refactorV2) current implementation, development tasks that need to be done to support POW and offers some thoughts on next steps to support Ethereum 2.0 and other chains.
 
-Further thoughs on ETH 2.0 support, removing the ETHHASH logic and SPV client and potentially replacing with MMR trees per epoch and checkpoints similar to Harmony Light Client on Ethereum, can find inspiration in [near-rainbow](./near-rainbow.md).
+Further thoughs on ETH 2.0 support, removing the ETHHASH logic and SPV client and potentially replacing with MMR trees per epoch and checkpoints similar to Harmony Light Client on Ethereum, can find inspiration in [near-rainbow](./near-rainbow.mdx).
 
 ## Approach
 
@@ -50,7 +50,7 @@ Horizon 2.0 approach is to use validity proofs implemented by on-chain smart con
 
 ### Ethereum Light Client
 
-1. ETH 2.0 support see [here](./ETH2_0.md)
+1. ETH 2.0 support see [here](/research/chains/ethereum.mdx)
 2. Queuing mechanism should be implemented to queue bridge transactions. The queue can be polled as part of the block relay functionality to process bridge transactions once the blocks have been relayed.
 3. Consider whether we can use p2p messaging to receive published blocks rather than looping and polling via an RPC.
 
@@ -80,7 +80,7 @@ Sequencing of Transactions: Needs to be implemented and `TokenMap` in `bridge.js
 
 ### Ethereum Light Client
 
-1. ETH 2.0 support see [here](./ETH2_0.md)
+1. ETH 2.0 support see [here](/research/chains/ethereum.mdx)
 2. Queuing mechanism should be implemented to queue bridge transactions. The queue can be polled as part of the block relay functionality to process bridge transactions once the blocks have been relayed.
 3. Consider whether we can use p2p messaging to receive published blocks rather than looping and polling via an RPC.
 
@@ -93,7 +93,7 @@ Sequencing of Transactions: Needs to be implemented and `TokenMap` in `bridge.js
 
 ## Token Lockers
 
-_Note: The key difference between `TokenLockerOnEthereum.sol` and `TokenLockerOnHarmony.sol` is the proof validation. `TokenLockerOnEthereum.sol` uses `./lib/MMRVerifier.sol` to validate the [Mountain Merkle Ranges](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.md) on Harmony and `HarmonyProver.sol`. `TokenLockerOnHarmony.sol` imports `./lib/MPTValidatorV2.sol` to validate [Merkle Patrica Trie](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/#merkle-patricia-trees) and `./EthereumLightClient.sol`._
+_Note: The key difference between `TokenLockerOnEthereum.sol` and `TokenLockerOnHarmony.sol` is the proof validation. `TokenLockerOnEthereum.sol` uses `./lib/MMRVerifier.sol` to validate the [Mountain Merkle Ranges](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.mdx) on Harmony and `HarmonyProver.sol`. `TokenLockerOnHarmony.sol` imports `./lib/MPTValidatorV2.sol` to validate [Merkle Patrica Trie](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/#merkle-patricia-trees) and `./EthereumLightClient.sol`._
 
 ### MultiChain Support
 
@@ -205,7 +205,7 @@ _Note these contracts were planned to be implemented with Harmony Light Client s
 
 ### Ethereum Light Client
 
-- [elc](https://github.com/johnwhitton/horizon/blob/refactorV2/src/elc/README.md): Ethereum Light Client (ELC) is a SPV-based light client implemented as a smart contract that receives and stores Ethereum block header information.
+- [elc](https://github.com/johnwhitton/horizon/blob/refactorV2/src/elc/README.mdx): Ethereum Light Client (ELC) is a SPV-based light client implemented as a smart contract that receives and stores Ethereum block header information.
   - [MerkleRoot.json](https://github.com/johnwhitton/horizon/blob/refactorV2/src/elc/MerkelRoot.json): Holds starting epoch and Merkle root information.
   - [MerkleRootSol.js](https://github.com/johnwhitton/horizon/blob/refactorV2/src/elc/MerkelRootSol.js): Deploys a MerkleRoot.sol contract on Harmony for the given Ethereum epoch and merkle root information.
   - [client.js](https://github.com/johnwhitton/horizon/blob/refactorV2/src/elc/client.js): Interaction with the Client.sol (the Ethereum Light Client deployed on Harmony).
@@ -316,7 +316,7 @@ Existing Design
    - Ethereum: Map the Harmony ERC20 token to the existing Ethereum Token
    - Harmony: Validate the Ethereum mapping Transaction
 
-_Note: The key difference between `TokenLockerOnEthereum.sol` and `TokenLockerOnHarmony.sol` is the proof validation. `TokenLockerOnEthereum.sol` uses `./lib/MMRVerifier.sol` to validate the [Mountain Merkle Ranges](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.md) on Harmony and `HarmonyProver.sol`. `TokenLockerOnHarmony.sol` imports `./lib/MPTValidatorV2.sol` to validate [Merkle Patrica Trie](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/#merkle-patricia-trees) and `./EthereumLightClient.sol`._
+_Note: The key difference between `TokenLockerOnEthereum.sol` and `TokenLockerOnHarmony.sol` is the proof validation. `TokenLockerOnEthereum.sol` uses `./lib/MMRVerifier.sol` to validate the [Mountain Merkle Ranges](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.mdx) on Harmony and `HarmonyProver.sol`. `TokenLockerOnHarmony.sol` imports `./lib/MPTValidatorV2.sol` to validate [Merkle Patrica Trie](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/#merkle-patricia-trees) and `./EthereumLightClient.sol`._
 
 _Note: `validateAndExecuteProof` is responsible for creation of the BridgeTokens on the destination chain it does this by calling `execute` call in `TokenLockerLocker.sol` which then calls the function `onTokenMapReqEvent` in `TokenRegistry.sol` which creates a new Bridge Token `BridgedToken mintAddress = new BridgedToken{salt: salt}();` and then initializes it. This uses [(RLP) Serialization](https://ethereum.org/en/developers/docs/data-structures-and-encoding/rlp/)_
 
@@ -395,7 +395,7 @@ yarn cli Bridge map http://localhost:8645 0x017f8C7d1Cb04dE974B8aC1a6B8d3d74bC74
         - `getBlockRlpData` creates a list `bytes[] memory list = new bytes[](15);` and uses statements like `list[0] = RLPEncode.encodeBytes(abi.encodePacked(header.parentHash));` to perform [Recursive-Length Prefix (RLP) Serialization](https://ethereum.org/en/developers/docs/data-structures-and-encoding/rlp/) implemented by `RLPEncode.sol`
       - `HarmonyProver.verifyHeader(header, mmrProof);` verifys the header implemented by `HarmonyProver.sol`
         - `bytes32 blockHash = HarmonyParser.getBlockHash(header);` gets the blockHash implemented by `HarmonyParser.sol` as above
-        - `valid = MMRVerifier.inclusionProof(proof.root, proof.width, proof.index, blockHash, proof.peaks, proof.siblings);` verifys the proff using the [Merkle Mountain Range Proof](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.md) passed `MMRVerifier.MMRProof memory proof` and the `blockHash`.
+        - `valid = MMRVerifier.inclusionProof(proof.root, proof.width, proof.index, blockHash, proof.peaks, proof.siblings);` verifys the proff using the [Merkle Mountain Range Proof](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.mdx) passed `MMRVerifier.MMRProof memory proof` and the `blockHash`.
         - **NOTE: This means that a `submitCheckpoint` in `HarmonyLightClient.sol` needs to have called either for the next epoch or for a checkpoint, after the block the harmony mapping transaction was in.**
         - **NOTE: Automatic submission of checkpoints to the Harmony Light Client has not been developed as yet. (It is not part of the `ethRelay.js`). And so the checkpoint would need to be manually submitted before the Ethereum Mapping could take place.**
       - `require(spentReceipt[receiptHash] == false, "double spent!");` ensure that we haven't already processed this mapping request`
