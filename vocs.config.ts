@@ -22,7 +22,7 @@ export default defineConfig({
     },
     {
       text: "References",
-      link: "/references",
+      link: "/references/intro",
     },
     {
       text: "Writing",
@@ -37,77 +37,35 @@ export default defineConfig({
     "/references": [
       {
         text: "John's Colleagues",
-        link: "/references",
+        link: "/references/intro",
       },
       {
         text: "Andy",
-        link: "/colleagues/andy",
+        link: "/references/andy",
       },
       {
         text: "Ganesha",
-        link: "/colleagues/ganesha",
+        link: "/references/ganesha",
       },
       {
         text: "Janet",
-        link: "/colleagues/janet",
+        link: "/references/janet",
       },
       {
         text: "Li",
-        link: "/colleagues/li",
+        link: "/references/li",
       },
       {
         text: "Nick",
-        link: "/colleagues/nick",
+        link: "/references/nick",
       },
       {
         text: "Olivier",
-        link: "/colleagues/olivier",
+        link: "/references/olivier",
       },
       {
         text: "Yishuang",
-        link: "/colleagues/yishuang",
-      },
-    ],
-    "/colleagues/andy": [
-      {
-        text: "John's Colleagues",
-        link: "/references",
-      },
-    ],
-    "/colleagues/ganesha": [
-      {
-        text: "John's Colleagues",
-        link: "/references",
-      },
-    ],
-    "/colleagues/janet": [
-      {
-        text: "John's Colleagues",
-        link: "/references",
-      },
-    ],
-    "/colleagues/li": [
-      {
-        text: "John's Colleagues",
-        link: "/references",
-      },
-    ],
-    "/colleagues/nick": [
-      {
-        text: "John's Colleagues",
-        link: "/references",
-      },
-    ],
-    "/colleagues/olivier": [
-      {
-        text: "John's Colleagues",
-        link: "/references",
-      },
-    ],
-    "/colleagues/yishuang": [
-      {
-        text: "John's Colleagues",
-        link: "/references",
+        link: "/references/yishuang",
       },
     ],
     "/writing": [

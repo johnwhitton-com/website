@@ -14,10 +14,6 @@
 - [Draft EAVE Whitepaper](/writing/2021-12-01-eave-defi): EAVE: a multi-chain web3 engine to support the growing adoption of emerging assets on blockchain
 - [Ethereum Bridging using Light Clients - Rainbow Costing](/writing/2023-02-23-rainbow-costs): A review of how Bridging costs can be reduced using light clients. Taking the near Rainbow Bridge as an example.
 - [Ethereum Bridging using Light Clients - Rainbow Costing](/writing/2023-02-23-rainbow-costs): date: 2022-02-23
-- [Horizon Bridge](/research/code/Horizon): date: 2023-02-04
-- [Ethereum Near Bridging](/research/code/ethereum-near): date: 2023-02-04
-- [Ethereum Code](/research/code/ethereum): date: 2023-02-04
-- [Code bases and reviews](/research/code/intro): date: 2023-02-04
 - [Avalanche](/research/chains/avalanche): date: 2023-02-04
 - [Binance Smart Chain](/research/chains/binance): date: 2023-02-04
 - [Cosmos](/research/chains/cosmos): -date: 2023-02-04
@@ -29,7 +25,6 @@ last-updated: 2023-02-04
 - [NEAR](/research/chains/near): date: 2023-02-04
 - [Polkadot](/research/chains/polkadot): date: 2023-02-04
 - [Polygon](/research/chains/polygon): date: 2023-02-04
-- [Celestia](/research/dataAvailabilty/celestia): date: 2023-06-19
 - [Cosmos IBC](/research/bridge/cosmos-ibc): date: 2023-02-24
 - [Harmony Horizon](/research/bridge/harmony-horizon): date: 2023-02-24
 - [Crosschain Bridge Analysis - An Introduction](/research/bridge/intro): date: 2023-02-04
@@ -38,6 +33,11 @@ last-updated: 2023-02-04
 - [Polymer Labs](/research/bridge/polymerlabs): date: 2023-02-24
 - [Snowbridge](/research/bridge/snowbridge): date: 2023-02-24
 - [Succinct Labs](/research/bridge/succinct): date: 2023-02-24
+- [Celestia](/research/dataAvailabilty/celestia): date: 2023-06-19
+- [Horizon Bridge](/research/code/Horizon): date: 2023-02-04
+- [Ethereum Near Bridging](/research/code/ethereum-near): date: 2023-02-04
+- [Ethereum Code](/research/code/ethereum): date: 2023-02-04
+- [Code bases and reviews](/research/code/intro): date: 2023-02-04
 - [Axiom](/research/zk/axiom): date: 2023-06-28
 - [Zero Knowledge Research](/research/zk/intro): date: 2023-02-04
 - [ZK Proof of Stake](/research/zk/zkpos): date: 2023-02-04
