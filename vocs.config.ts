@@ -248,6 +248,10 @@ export default defineConfig({
             link: "/research/chains/ethereum",
           },
           {
+            text: "NEAR",
+            link: "/research/chains/NEAR",
+          },
+          {
             text: "Harmony",
             link: "/research/chains/harmony",
           },

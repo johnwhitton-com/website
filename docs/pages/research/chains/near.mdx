@@ -9,25 +9,11 @@ Near supports We both secp256k1 and ed25519 for account keys and ed25519 for sig
 
 ## Consensus Mechanism
 
-The following is an excerpt from [NEAR Chainspec for Consensus](https://github.com/near/NEPs/blob/master/specs/ChainSpec/Consensus.md)
-
-For the purpose of maintaining consensus, transactions are grouped into _blocks_. There is a single preconfigured block $G$ called _genesis block_. Every block except $G$ has a link pointing to the _previous block_ $\operatorname{prev}(B)$, where $B$ is the block, and $G$ is reachable from every block by following those links (that is, there are no cycles).
-
-The links between blocks give rise to a partial order: for blocks $A$ and $B$, $A < B$ means that $A \ne B$ and $A$ is reachable from $B$ by following links to previous blocks, and $A \le B$ means that $A < B$ or $A = B$. The relations $>$ and $\ge$ are defined as the reflected versions of $\lt$ and $\le$, respectively. Finally, $A \sim B$ means that either $A < B$, $A = B$ or $A > B$, and $A \nsim B$ means the opposite.
-
-A _chain_ $\operatorname{chain}(T)$ is a set of blocks reachable from block $T$, which is called its _tip_. That is, $\operatorname{chain}(T) = \{B \mid B \le T\}$. For any blocks $A$ and $B$, there is a chain that both $A$ and $B$ belong to iff $A \sim B$. In this case, $A$ and $B$ are said to be _on the same chain_.
-
-Each block has an integer _height_ $\operatorname{h}(B)$. It is guaranteed that block heights are monotonic (that is, for any block $B \ne G$, $\operatorname{h}(B) > \operatorname{h}(\operatorname{prev}(B))$), but they need not be consecutive. Also, $\operatorname{h}(G)$ may not be zero. Each node keeps track of a valid block with the largest height it knows about, which is called its _head_.
-
-Blocks are grouped into _epochs_. In a chain, the set of blocks that belongs to some epoch forms a contiguous range: if blocks $A$ and $B$ such that $A < B$ belong to the same epoch, then every block $X$ such that $A < X < B$ also belongs to that epoch. Epochs can be identified by sequential indices: $G$ belongs to an epoch with index $0$, and for every other block $B$, the index of its epoch is either the same as that of $\operatorname{prev}(B)$, or one greater.
-
-Each epoch is associated with a set of block producers that are validating blocks in that epoch, as well as an assignment of block heights to block producers that are responsible for producing a block at that height. A block producer responsible for producing a block at height $h$ is called _block proposer at $h$_. This information (the set and the assignment) for an epoch with index $i \ge 2$ is determined by the last block of the epoch with index $i-2$. For epochs with indices $0$ and $1$, this information is preconfigured. Therefore, if two chains share the last block of some epoch, they will have the same set and the same assignment for the next two epochs, but not necessarily for any epoch after that.
-
-The consensus protocol defines a notion of _finality_. Informally, if a block $B$ is final, any future final blocks may only be built on top of $B$. Therefore, transactions in $B$ and preceding blocks are never going to be reversed. Finality is not a function of a block itself, rather, a block may be final or not final in some chain it is a member of. Specifically, $\operatorname{final}(B, T)$, where $B \le T$, means that $B$ is final in $\operatorname{chain}(T)$. A block that is final in a chain is final in all of its extensions: specifically, if $\operatorname{final}(B, T)$ is true, then $\operatorname{final}(B, T')$ is also true for all $T' \ge T$.
+Please review [NEAR Chainspec for Consensus](https://github.com/near/NEPs/blob/master/specs/ChainSpec/Consensus.md)
 
 ## Light Client Support
 
-[NEAR Light Client Documentation](https://nomicon.io/ChainSpec/LightClient) gives an overview of how light clients work. At a high level the light client needs to fetch at least one block per [epoch](https://docs.near.org/concepts/basics/epoch) i.e. every 42,200 blocks or approxmiately 12 hours. Also Having the LightClientBlockView for block B is sufficient to be able to verify any statement about state or outcomes in any block in the ancestry of B (including B itself).
+[NEAR Light Client Documentation](https://nomicon.io/ChainSpec/LightClient) gives an overview of how light clients work. At a high level the light client needs to fetch at least one block per [epoch](https://docs.near.org/concepts/basics/epoch) i.e. every 42,200 blocks or approxmiately 12 hours. Also Having the LightClientBlockView for block $B$ is sufficient to be able to verify any statement about state or outcomes in any block in the ancestry of $B$ (including $B$ itself).
 
 > The RPC returns the LightClientBlock for the block as far into the future from the last known hash as possible for the light client to still accept it. Specifically, it either returns the last final block of the next epoch, or the last final known block. If there's no newer final block than the one the light client knows about, the RPC returns an empty result.
 >
@@ -79,5 +65,3 @@ _The following is an excerpt from a blog by near on [eth-near-rainbow-bridge](ht
 **Light Client**
 
 - [Near Light Client](https://nomicon.io/ChainSpec/LightClient): Near Lithg Client Specification document.
-
-**Additional**
