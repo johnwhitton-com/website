@@ -340,7 +340,7 @@ Folllowing is a review of . Avalanche also has a [coreth codebase](https://githu
 
 ## Footnotes
 
-\* Overview \*/
+Overview
 
 [^ov-1]: [Avalanche introductory documentation](https://docs.avax.network/overview/getting-started/avalanche-platform): Avalanche is a heterogeneous network of blockchains allowing separate chains to be created for different applications.
 
@@ -356,7 +356,7 @@ Folllowing is a review of . Avalanche also has a [coreth codebase](https://githu
 
 [^ov-7]: [NewCertAndKeyBytes](https://github.com/ava-labs/avalanchego/blob/master/staking/tls.go#L120): Creates a new staking private key / staking certificate pair. Returns the PEM byte representations of both.
 
-\* Avalanche BLS Support Release Documentation \*/
+Avalanche BLS Support Release Documentation
 
 [^ov-8]: [release notes on GitHub](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.2) and [code commit search result](https://github.com/ava-labs/avalanchego/search?q=bls&type=commits)
 
@@ -366,19 +366,19 @@ Folllowing is a review of . Avalanche also has a [coreth codebase](https://githu
 
 [^ov-11]: [Release v1.9.2: Banff.2 - Additional BLS Support](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.2): Added bls proof of possession to `platform.getCurrentValidators` and `platform.getPendingValidators`. Added bls public key to in-memory staker objects. Improved memory clearing of bls secret keys.
 
-\* \* Avalanch BLS Relevant Commits \*/
+Avalanche BLS Relevant Commits
 
 [^ov-12]: [Add BLS key to AddPermissionlessValidatorTx for the Primary Network (#1987)](https://github.com/ava-labs/avalanchego/commit/fb6bb81f499b4b8c0f903c8745f5b7fbd8d97668)
 
 [^ov-13]: [Add BLS signer to snow.Context (#2069)](https://github.com/ava-labs/avalanchego/commit/5176495568e512b2ebbfb1102dfd59541ccaa578)
 
-\* Warp Messaging \*/
+Warp Messaging
 
 [^ov-14]: [Avalanche Warp Messaging (AWM)](https://medium.com/avalancheavax/avalanche-warp-messaging-awm-launches-with-the-first-native-subnet-to-subnet-message-on-avalanche-c0ceec32144a): AWM enables Subnet Validators to collectively produce a BLS Multi-Signature that attests to the validity of an arbitrary message (e.g., transfer, contract data, etc.) that can be verified by any other Subnet.
 
 [^ov-15]: [avalanchego warp codebase](https://github.com/ava-labs/avalanchego/tree/master/vms/platformvm/warp): Codebase supporting bls signing of inter-subnet messages.
 
-\* RSA Support \*/
+RSA Support
 
 [^ov-16]: [EIP-198](https://github.com/ethereum/EIPs/blob/f2db669da93ca4ce1605866e147bfa4f56303fc6/EIPS/eip-198.mdx): Big integer modular exponentiation. Pre-compile for Ethereum which allows for efficient RSA verification inside of the EVM, as well as other forms of number theory-based cryptography.
 
@@ -386,7 +386,7 @@ Folllowing is a review of . Avalanche also has a [coreth codebase](https://githu
 
 [^ov-18]: [Cortina: X-Chain Linearization](https://medium.com/avalancheavax/cortina-x-chain-linearization-a1d9305553f6): This upgrade linearizes the X-chain, introduces delegation batching to the P-chain, and increases the maximum block size on the C-chain. (Release notes are [here](https://github.com/ava-labs/avalanchego/releases) and changelog is [here](https://github.com/ava-labs/avalanchego/compare/v1.9.16...v1.10.0))
 
-\* consensus \*/
+consensus
 
 [^con-1]: [Avalanche Platform](https://docs.avax.network/overview/getting-started/avalanche-platform): Avalanche is a heterogeneous network of blockchains. The Primary Network is a special Subnet that contains all validators (including validators of any custom Subnets).
 
@@ -402,10 +402,6 @@ Folllowing is a review of . Avalanche also has a [coreth codebase](https://githu
 
 [^con-7]: [Snowman++: congestion control for Snowman VMs](https://github.com/ava-labs/avalanchego/blob/master/vms/proposervm/README.mdx): Snowman++ introduces a soft proposer mechanism which attempts to select a single proposer with the power to issue a block, but opens up block production to every validator if sufficient time has passed without blocks being generated.
 
-\* signing \*/
+signing
 
 [^sig-1]: [Avalanche Cryptographic Primitive Documentation](https://docs.avax.network/specs/cryptographic-primitives): Overview of Avalanches cryptographic primitives focusing on it's use of TLS AND Secp256k1.
-
-\* verification \*/
-
-\* code \*/

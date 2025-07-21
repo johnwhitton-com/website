@@ -19,25 +19,25 @@ Following is an excerpt from _Analysis on Weak Subjectivity in Ethereum 2.0_ [^1
 
 ## References
 
-\* Articles and guides \*/
+Articles and guides
 
 - [Weak Subjectivity in Eth2.0](https://notes.ethereum.org/@adiasg/weak-subjectvity-eth2): This document is aimed for Eth2.0 client teams to understand weak subjectivity periods and their implication.
 
 - [Phase 0 -- Weak Subjectivity Guide](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/weak-subjectivity.mdx): This document is a guide for implementing the Weak Subjectivity protections in Phase 0.
 
-\* Documentation \*/
+Documentation
 
 - [Ethereum Docs: WEAK SUBJECTIVITY](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/weak-subjectivity/): This refers to a chain that can progress objectively after some initial seed of information is retrieved socially.
 
 - [Teku Docs: Weak Subjectivity](https://docs.teku.consensys.net/Concepts/Weak-Subjectivity/): The weak subjectivity period refers to how far behind the chain head a node can be before 1/3 of validators may have exited since the node was last in sync.
 
-\* Implementations \*/
+Implementations
 
 - [Prysm: weak_subjectivity_checks.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/weak_subjectivity_checks.go)
   - [NewWeakSubjectivityVerifier](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/weak_subjectivity_checks.go#L31) validates a checkpoint, and if valid, uses it to initialize a weak subjectivity verifier.
   - [VerifyWeakSubjectivity](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/weak_subjectivity_checks.go#L52) verifies the weak subjectivity root in the service struct.
 
-\* Footnotes \*/
+Footnotes
 [^1]: [Analysis on Weak Subjectivity in Ethereum 2.0](https://github.com/runtimeverification/beacon-chain-verification/blob/master/weak-subjectivity/weak-subjectivity-analysis.pdf):
 
 [^2]: [Proof of Stake: How I Learned to Love Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity):

@@ -14,74 +14,6 @@ a sync committee of 512 current validators is elected every 255 epochs, approxim
 
 As at December 11th, 2022 Ethereum has 487,920 validators<sup>[8](#bp8)</sup> with a sample epoch ([166581](https://beaconcha.in/epoch/166581)) and slot ([5,330,592](https://beaconcha.in/slot/5330592)) having [139 transactions](https://beaconcha.in/slot/5330592#transactions) with [19,227 votes](https://beaconcha.in/slot/5330592#votes) from 63 committees and [126 aggregated committe attestations](https://beaconcha.in/slot/5330592#attestations).
 
-- [Ethereum Code](#ethereum-code)
-  - [Overview](#overview)
-  - [Abstract](#abstract)
-  - [Trustless Bridge Design](#trustless-bridge-design)
-    - [High level Approach](#high-level-approach)
-    - [Logic Flow](#logic-flow)
-    - [Key Data Points and Storage](#key-data-points-and-storage)
-    - [Proving Logic and Costs](#proving-logic-and-costs)
-    - [ZKP Proving and Verification Costs ZKP Comparison](#zkp-proving-and-verification-costs-zkp-comparison)
-    - [Relayer and Prover Infrastructure](#relayer-and-prover-infrastructure)
-    - [Bridging Assets](#bridging-assets)
-  - [Ethereum 2.0 Technical Overview](#ethereum-20-technical-overview)
-    - [Block Production](#block-production)
-    - [Slots and Epochs 6](#slots-and-epochs-6)
-    - [Block Proposals](#block-proposals)
-    - [Committees](#committees)
-    - [Attestations](#attestations)
-    - [Checkpoints and Finality6b](#checkpoints-and-finality6b)
-    - [Sync Committee 10](#sync-committee-10)
-    - [Validator Lifecycle](#validator-lifecycle)
-  - [Ethreum 2.0 Technical Deep Dive](#ethreum-20-technical-deep-dive)
-    - [Block Production](#block-production-1)
-    - [Consensus and Finality](#consensus-and-finality)
-    - [Light Client Support](#light-client-support)
-    - [Signature Schemes Review](#signature-schemes-review)
-  - [Ethereum 2.0 Light Client](#ethereum-20-light-client)
-    - [Key Concepts](#key-concepts)
-    - [Altair Light Client -- Sync Protocol](#altair-light-client----sync-protocol)
-    - [The Portal Network](#the-portal-network)
-    - [Transaction Proofs](#transaction-proofs)
-    - [Further Information](#further-information)
-  - [References](#references)
-  - [Appendices](#appendices)
-    - [Appendix A: Signing Libraries](#appendix-a-signing-libraries)
-    - [Appendix B: Proving and Verification Mechanisms](#appendix-b-proving-and-verification-mechanisms)
-      - [eth-proof-of-consensus: Proof of Consensus for Ethereum by succinctlabs](#eth-proof-of-consensus-proof-of-consensus-for-ethereum-by-succinctlabs)
-    - [Appendix C: Topics](#appendix-c-topics)
-    - [Appendix D: gRPC and API's](#appendix-d-grpc-and-apis)
-    - [Appendix E: Data Structures](#appendix-e-data-structures)
-      - [Beacon State Data Structures from Prysm](#beacon-state-data-structures-from-prysm)
-      - [web3signer_types from prysm](#web3signer_types-from-prysm)
-    - [Appendix F: Sample Data](#appendix-f-sample-data)
-      - [Epoch Data for 167040](#epoch-data-for-167040)
-      - [Block Data for Slot 5,330,592](#block-data-for-slot-5330592)
-      - [Execution Block for 16163905](#execution-block-for-16163905)
-      - [Sync Committee (latest)](#sync-committee-latest)
-    - [Appendix G: Storing minimal information](#appendix-g-storing-minimal-information)
-      - [Minimal footprint](#minimal-footprint)
-      - [Header Checkpoints](#header-checkpoints)
-        - [Inclusion Proof](#inclusion-proof)
-        - [ZKP for Checkpoints](#zkp-for-checkpoints)
-      - [Proving](#proving)
-      - [Verification](#verification)
-    - [Appendix H: Validating Header](#appendix-h-validating-header)
-      - [Tracking Validators](#tracking-validators)
-        - [ZKP for validator change](#zkp-for-validator-change)
-      - [Verifying Signatures](#verifying-signatures)
-        - [ECDSA](#ecdsa)
-        - [RSA](#rsa)
-        - [EdDSA](#eddsa)
-      - [Pure on-chain implementation and costs](#pure-on-chain-implementation-and-costs)
-        - [ZKP for EdDSA](#zkp-for-eddsa)
-        - [BLS12-381 and variants](#bls12-381-and-variants)
-          - [Pure on-chain implementation and costs](#pure-on-chain-implementation-and-costs-1)
-          - [ZKP for BLS12-381](#zkp-for-bls12-381)
-    - [Appendix I: Cost analysis and benchmark](#appendix-i-cost-analysis-and-benchmark)
-    - [Appendix J: Sync Committe Creation and Retrieval](#appendix-j-sync-committe-creation-and-retrieval)
-
 ## Abstract
 
 This research follows on from What to build next in Zero Knowledge<sup>[1](#ov1)</sup>, Crosschain Future<sup>[2](#ov2)</sup> and Technical Problems Overview<sup>[3](#ov3)</sup>.
@@ -1133,7 +1065,7 @@ Slot string `json:"slot"`
 type AggregateAndProof struct {
 AggregatorIndex string `json:"aggregator_index"` /_ uint64 _/
 Aggregate _Attestation `json:"aggregate"`
-SelectionProof hexutil.Bytes `json:"selection_proof"` /_ 96 bytes \*/
+SelectionProof hexutil.Bytes `json:"selection_proof"` /_ 96 bytes _/
 }
 
 // Attestation a sub property of AggregateAndProofSignRequest.

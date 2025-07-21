@@ -3,39 +3,6 @@
 - date: 2023-02-24
 - last updated: 2023-02-24
 
-- [Harmony Horizon](#harmony-horizon)
-  - [Overview](#overview)
-  - [Approach](#approach)
-  - [Proving Mechanisms](#proving-mechanisms)
-    - [Ethereum Light Client](#ethereum-light-client)
-    - [Harmony Light Client](#harmony-light-client)
-  - [Relayer Mechanisms](#relayer-mechanisms)
-  - [Light Client Functionality](#light-client-functionality)
-    - [Ethereum Light Client](#ethereum-light-client-1)
-    - [Harmony Light Client](#harmony-light-client-1)
-  - [Token Lockers](#token-lockers)
-    - [MultiChain Support](#multichain-support)
-  - [Code Review](#code-review)
-  - [On-chain (Solidity) Code Review](#on-chain-solidity-code-review)
-    - [OpenZeppelin Utilities](#openzeppelin-utilities)
-    - [Cryptographic Primitives](#cryptographic-primitives)
-    - [Proving Mechanisms](#proving-mechanisms-1)
-    - [Token Lockers](#token-lockers-1)
-  - [Off-chain (Javascript) Code Review](#off-chain-javascript-code-review)
-    - [On-chain interaction](#on-chain-interaction)
-    - [Command Line Interface](#command-line-interface)
-    - [Ethereum Light Client](#ethereum-light-client-2)
-    - [Proving Mechanisms](#proving-mechanisms-2)
-    - [Relayer Mechanisms](#relayer-mechanisms-1)
-    - [Cryptographic Primitives](#cryptographic-primitives-1)
-    - [Light Client Functionality](#light-client-functionality-1)
-    - [Token Lockers](#token-lockers-2)
-  - [References](#references)
-  - [Appendices](#appendices)
-    - [Appendix A: Current Implementation Walkthough](#appendix-a-current-implementation-walkthough)
-      - [Ethereum Light Client (on Harmony)](#ethereum-light-client-on-harmony)
-    - [Mapping Tokens (Ethereum to Harmony)](#mapping-tokens-ethereum-to-harmony)
-
 ## Overview
 
 This document reviews the [horizon](https://github.com/johnwhitton/horizon/tree/refactorV2) current implementation, development tasks that need to be done to support POW and offers some thoughts on next steps to support Ethereum 2.0 and other chains.

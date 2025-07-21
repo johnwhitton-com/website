@@ -71,10 +71,6 @@ Here, we present a reference table for these signature schemes and how they are 
 
 - [A survey of elliptic curves for proof systems](https://eprint.iacr.org/2022/586.pdf)
 
-\*Too many links below. Need conslidation and simplify\*/
-
-\*
-
 ### Signing Implementations
 
 The [Standard Curve Database](https://neuromancer.sk/std/) is a good starting point for existing signing algorithms. Base implementations such as [golang crypto](https://pkg.go.dev/golang.org/x/crypto) and [rust crypto](https://docs.rs/rust-crypto/latest/crypto/) provide good reference codebases.
@@ -127,4 +123,3 @@ The [Standard Curve Database](https://neuromancer.sk/std/) is a good starting po
   - [paritytech sr25519](https://github.com/paritytech/substrate/blob/master/primitives/application-crypto/src/sr25519.rs) rust
   - [tendermint sr25519](https://github.com/tendermint/tendermint/tree/main/crypto/sr25519) (go): GenPrivKeyFromSecret hashes the secret with SHA2, and uses that 32 byte output to create the private key.
   - [snowbridge sr25519](https://github.com/Snowfork/snowbridge/tree/main/relayer/crypto/secp256k1)
-    \*/

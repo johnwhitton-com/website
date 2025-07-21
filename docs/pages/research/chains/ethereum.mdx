@@ -3,42 +3,6 @@
 - date: 2023-02-04
 - last updated: 2023-02-04
 
-- [Overview](#overview)
-- [Consensus Mechanism](#consensus-mechanism)
-  - [Block Production](#block-production)
-  - [Slots and Epochs 6](#slots-and-epochs-6)
-  - [Block Proposals](#block-proposals)
-  - [Committees](#committees)
-  - [Attestations](#attestations)
-  - [Checkpoints and Finality6](#checkpoints-and-finality6)
-  - [Sync Committee 10](#sync-committee-10)
-  - [Validator Lifecycle](#validator-lifecycle)
-- [Light Client Support](#light-client-support)
-- [References](#references)
-- [Appendices](#appendices)
-  - [Appendix A: Ethreum 2.0 Technical Deep Dive](#appendix-a-ethreum-20-technical-deep-dive)
-    - [Block Production](#block-production-1)
-    - [Consensus and Finality](#consensus-and-finality)
-  - [Appendix B: Additional Light Client Support Documentation](#appendix-b-additional-light-client-support-documentation)
-    - [Key Concepts](#key-concepts)
-    - [Altair Light Client -- Sync Protocol](#altair-light-client----sync-protocol)
-    - [The Portal Network](#the-portal-network)
-    - [Transaction Proofs](#transaction-proofs)
-    - [Further Information](#further-information)
-  - [Appendix C: Proving and Verification Mechanisms](#appendix-c-proving-and-verification-mechanisms)
-    - [eth-proof-of-consensus: Proof of Consensus for Ethereum by succinctlabs](#eth-proof-of-consensus-proof-of-consensus-for-ethereum-by-succinctlabs)
-  - [Appendix D: Topics](#appendix-d-topics)
-  - [Appendix E: gRPC and API's](#appendix-e-grpc-and-apis)
-  - [Appendix F: Data Structures](#appendix-f-data-structures)
-    - [Beacon State Data Structures from Prysm](#beacon-state-data-structures-from-prysm)
-    - [web3signer_types from prysm](#web3signer_types-from-prysm)
-  - [Appendix G: Sample Data](#appendix-g-sample-data)
-    - [Epoch Data for 167040](#epoch-data-for-167040)
-    - [Block Data for Slot 5,330,592](#block-data-for-slot-5330592)
-    - [Execution Block for 16163905](#execution-block-for-16163905)
-    - [Sync Committee (latest)](#sync-committee-latest)
-  - [Appendix H: Sync Committe Creation and Retrieval](#appendix-h-sync-committe-creation-and-retrieval)
-
 ## Overview
 
 With the Introduction of Ethereum 2.0<sup>[1](#bp1)</sup> <sup>[2](#bp2)</sup> <sup>[3](#bp3)</sup> block production and consensus were separated<sup>[4](#bp4)</sup> into execution clients<sup>[5](#bp5)</sup> and consensus clients<sup>[6](#ts6)</sup> <sup>[7](#bp7)</sup>.
@@ -1166,7 +1130,7 @@ Slot string `json:"slot"`
 type AggregateAndProof struct {
 AggregatorIndex string `json:"aggregator_index"` /_ uint64 _/
 Aggregate _Attestation `json:"aggregate"`
-SelectionProof hexutil.Bytes `json:"selection_proof"` /_ 96 bytes \*/
+SelectionProof hexutil.Bytes `json:"selection_proof"` /_ 96 bytes _/
 }
 
 // Attestation a sub property of AggregateAndProofSignRequest.

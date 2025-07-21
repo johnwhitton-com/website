@@ -9,39 +9,6 @@ This document reviews the Ethereum 2.0 specifications including Light Client spe
 
 Key differences in supporting Ethereum 2.0 (Proof of Stake) vs Proof of Work involves removing the ETHHASH logic and SPV client and potentially replacing with MMR trees per epoch and checkpoints similar to Harmony Light Client on Ethereum.
 
-## Table of Contents
-
-- [Ethereum Near Bridging](#ethereum-near-bridging)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
-  - [Ethereum 2.0 Specifications](#ethereum-20-specifications)
-  - [Ethereum 2.0 Light Client Support](#ethereum-20-light-client-support)
-    - [Light Client Specification](#light-client-specification)
-      - [Altair Light Client -- Sync Protocol](#altair-light-client----sync-protocol)
-      - [The Portal Network](#the-portal-network)
-      - [Transaction Proofs](#transaction-proofs)
-      - [References](#references)
-    - [Near Rainbow Bridge Ethereum Light Client Walkthrough](#near-rainbow-bridge-ethereum-light-client-walkthrough)
-      - [Ethereum to NEAR block propagation flow](#ethereum-to-near-block-propagation-flow)
-      - [Ethereum to NEAR block propagation components](#ethereum-to-near-block-propagation-components)
-      - [Ethereum Light Client Finality Update Verify Components](#ethereum-light-client-finality-update-verify-components)
-      - [Cryptographic Primitives](#cryptographic-primitives)
-    - [Near Rainbow Bridge Near Light Client Walkthrough](#near-rainbow-bridge-near-light-client-walkthrough)
-      - [NEAR to Ethereum block propagation costing](#near-to-ethereum-block-propagation-costing)
-      - [NEAR to Ethereum block propagation flow](#near-to-ethereum-block-propagation-flow)
-      - [NEAR to Ethereum watchdog](#near-to-ethereum-watchdog)
-      - [NEAR to Ethereum block propagation components](#near-to-ethereum-block-propagation-components)
-      - [NEAR Rainbow Bridge Utils](#near-rainbow-bridge-utils)
-      - [nearbridge Cryptographic Primitives](#nearbridge-cryptographic-primitives)
-    - [Token Transfer Process Flow](#token-transfer-process-flow)
-      - [Token Transfer Components](#token-transfer-components)
-      - [References](#references-1)
-    - [Prysm Light Client](#prysm-light-client)
-      - [References](#references-2)
-  - [Harmony Merkle Mount Range](#harmony-merkle-mount-range)
-  - [Near Rainbow Bridge Review](#near-rainbow-bridge-review)
-    - [NEAR Rainbow Bridge: Component Overview](#near-rainbow-bridge-component-overview)
-
 ## Ethereum 2.0 Specifications
 
 - [Beacon Chain Specification](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/beacon-chain.mdx)

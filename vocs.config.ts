@@ -26,11 +26,11 @@ export default defineConfig({
     },
     {
       text: "Writing",
-      link: "/writing/writing",
+      link: "/writing/intro",
     },
     {
       text: "Research",
-      link: "/research/research",
+      link: "/research/intro",
     },
   ],
   sidebar: {
@@ -131,7 +131,158 @@ export default defineConfig({
         link: "/writing/2018-07-17-projectx",
       },
     ],
-    "/research": [{ text: "John's Research", link: "/research/intro" }],
+    "/research": [
+      { text: "John's Research", link: "/research/intro" },
+      {
+        text: "Primitives",
+        items: [
+          {
+            text: "Primitives Intro",
+            link: "/research/primitives/intro",
+          },
+          {
+            text: "Fraud Proofs",
+            link: "/research/primitives/fraud-proofs",
+          },
+          {
+            text: "Light Clients",
+            link: "/research/primitives/light-clients",
+          },
+          {
+            text: "Cryptogaphic Primitives",
+            link: "/research/primitives/primitives",
+          },
+          {
+            text: "Weak Subjectivity",
+            link: "/research/primitives/weak-subjectivity",
+          },
+          {
+            text: "Signature Schemes",
+            link: "/research/primitives/signatures",
+          },
+        ],
+      },
+      {
+        text: "Zero Knowledge",
+        items: [
+          {
+            text: "Zero Knowledge Intro",
+            link: "/research/zk/intro",
+          },
+          {
+            text: "ZK Proof of Stake",
+            link: "/research/zk/zkpos",
+          },
+          {
+            text: "zk-Snarks",
+            link: "/research/zk/zksnarks",
+          },
+          {
+            text: "Axiom",
+            link: "/research/zk/axiom",
+          },
+        ],
+      },
+      {
+        text: "Cross Chain Bridges",
+        items: [
+          {
+            text: "Bridging Intro",
+            link: "/research/bridge/intro",
+          },
+          {
+            text: "Cosmos IBC",
+            link: "/research/bridge/cosmos-ibc",
+          },
+          {
+            text: "Harmony Horizon",
+            link: "/research/bridge/harmony-horizon",
+          },
+          {
+            text: "Isomorph",
+            link: "/research/bridge/isomorph",
+          },
+          {
+            text: "Near Rainbow Bridge",
+            link: "/research/bridge/near-rainbow",
+          },
+          {
+            text: "Polymer Labs",
+            link: "/research/bridge/polymerlabs",
+          },
+          {
+            text: "Snowbridge",
+            link: "/research/bridge/snowbridge",
+          },
+          {
+            text: "Succint",
+            link: "/research/bridge/succinct",
+          },
+        ],
+      },
+      {
+        text: "Layer 1 Platforms",
+        items: [
+          {
+            text: "Layer 1 Intro",
+            link: "/research/chains/intro",
+          },
+          {
+            text: "Avalanche",
+            link: "/research/chains/avalanche",
+          },
+          {
+            text: "Binance Smart Chain",
+            link: "/research/chains/binance",
+          },
+          {
+            text: "Cosmos",
+            link: "/research/chains/cosmos",
+          },
+          {
+            text: "Ethereum 1.0",
+            link: "/research/chains/ethereum-1-0",
+          },
+          {
+            text: "Ethereum",
+            link: "/research/chains/ethereum",
+          },
+          {
+            text: "Harmony",
+            link: "/research/chains/harmony",
+          },
+          {
+            text: "Polkadot",
+            link: "/research/chains/polkadot",
+          },
+          {
+            text: "Polygon",
+            link: "/research/chains/polygon",
+          },
+        ],
+      },
+      {
+        text: "Code Reviews",
+        items: [
+          {
+            text: "Code Review Intro",
+            link: "/research/code/intro",
+          },
+          {
+            text: "Horizon Bridge",
+            link: "/research/code/horizon",
+          },
+          {
+            text: "Ethereum Near Bridge",
+            link: "/research/code/ethereum-near",
+          },
+          {
+            text: "Ethereum",
+            link: "/research/code/ethereum",
+          },
+        ],
+      },
+    ],
   },
   socials: [
     {
