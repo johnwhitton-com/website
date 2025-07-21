@@ -1,4 +1,4 @@
-# Ethereum
+# Ethereum Code
 
 - date: 2023-02-04
 - last updated: 2023-02-04
@@ -14,7 +14,7 @@ a sync committee of 512 current validators is elected every 255 epochs, approxim
 
 As at December 11th, 2022 Ethereum has 487,920 validators<sup>[8](#bp8)</sup> with a sample epoch ([166581](https://beaconcha.in/epoch/166581)) and slot ([5,330,592](https://beaconcha.in/slot/5330592)) having [139 transactions](https://beaconcha.in/slot/5330592#transactions) with [19,227 votes](https://beaconcha.in/slot/5330592#votes) from 63 committees and [126 aggregated committe attestations](https://beaconcha.in/slot/5330592#attestations).
 
-- [Ethereum](#ethereum)
+- [Ethereum Code](#ethereum-code)
   - [Overview](#overview)
   - [Abstract](#abstract)
   - [Trustless Bridge Design](#trustless-bridge-design)
@@ -31,7 +31,7 @@ As at December 11th, 2022 Ethereum has 487,920 validators<sup>[8](#bp8)</sup> wi
     - [Block Proposals](#block-proposals)
     - [Committees](#committees)
     - [Attestations](#attestations)
-    - [Checkpoints and Finality6](#checkpoints-and-finality6)
+    - [Checkpoints and Finality6b](#checkpoints-and-finality6b)
     - [Sync Committee 10](#sync-committee-10)
     - [Validator Lifecycle](#validator-lifecycle)
   - [Ethreum 2.0 Technical Deep Dive](#ethreum-20-technical-deep-dive)
@@ -60,7 +60,7 @@ As at December 11th, 2022 Ethereum has 487,920 validators<sup>[8](#bp8)</sup> wi
       - [Block Data for Slot 5,330,592](#block-data-for-slot-5330592)
       - [Execution Block for 16163905](#execution-block-for-16163905)
       - [Sync Committee (latest)](#sync-committee-latest)
-    - [Appendix G: Storing minimal information](#appendix-g--storing-minimal-information)
+    - [Appendix G: Storing minimal information](#appendix-g-storing-minimal-information)
       - [Minimal footprint](#minimal-footprint)
       - [Header Checkpoints](#header-checkpoints)
         - [Inclusion Proof](#inclusion-proof)
@@ -212,7 +212,7 @@ The attestation lifecyle<sup>[9](#ts9)</sup> involves
 
 ![Attestation Life Cycle](/assets/research/AttestationLifeCycle.png "Attestation Life Cycle")
 
-### Checkpoints and Finality<sup>[6](#ts6)</sup>
+### Checkpoints and Finality<sup>[6b](#ts6b)</sup>
 
 > When an epoch ends, if its checkpoint has garnered a ⅔ supermajority, the checkpoint gets justified.
 
@@ -318,7 +318,7 @@ mix: [159 134 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
 
 The shuffle functions consist of
 
-- [func ShuffleList](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ShuffleList): returns list of shuffled indexes in a pseudorandom permutation `p` of `0...list_size - 1` with “seed“ as entropy. We utilize 'swap or not' shuffling in this implementation; we are allocating the memory with the seed that stays constant between iterations instead of reallocating it each iteration as in the spec. This implementation is based on the original implementation from protolambda, <https://github.com/protolambda/eth2-shuffle>
+- [func ShuffleList](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ShuffleList): returns list of shuffled indexes in a pseudorandom permutation `p` of `0...list_size - 1` with “seed“ as entropy. We utilize 'swap or not' shuffling in this implementation; we are allocating the memory with the seed that stays constant between iterations instead of reallocating it each iteration as in the spec. This implementation is based on the original implementation from protolambda, https://github.com/protolambda/eth2-shuffle
 
   Following is an example of a shuffled list generated from [TestShuffleList_OK](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/helpers/shuffle_test.go#L25)
 
@@ -328,7 +328,7 @@ The shuffle functions consist of
   shuffledList1: [0 7 8 6 3 9 4 5 2 1]
   ```
 
-- [func ShuffleIndex](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ShuffledIndex): returns `p(index)` in a pseudorandom permutation `p` of `0...list_size - 1` with “seed“ as entropy. We utilize 'swap or not' shuffling in this implementation; we are allocating the memory with the seed that stays constant between iterations instead of reallocating it each iteration as in the spec. This implementation is based on the original implementation from protolambda, <https://github.com/protolambda/eth2-shuffle>
+- [func ShuffleIndex](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ShuffledIndex): returns `p(index)` in a pseudorandom permutation `p` of `0...list_size - 1` with “seed“ as entropy. We utilize 'swap or not' shuffling in this implementation; we are allocating the memory with the seed that stays constant between iterations instead of reallocating it each iteration as in the spec. This implementation is based on the original implementation from protolambda, https://github.com/protolambda/eth2-shuffle
 
 - [func ShuffleIndices](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ShuffledIndices): ShuffledIndices uses input beacon state and returns the shuffled indices of the input epoch, the shuffled indices then can be used to break up into committees.
 
@@ -338,34 +338,29 @@ Committes are formed using functions from [beacon_comittee.go](https://github.co
 
   Following is an example of a `beaconComittee` generated by adding the following lines to [TestBeaconCommitteeFromState_UpdateCacheForPreviousEpoch](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/helpers/beacon_committee_test.go#L574):
 
-  ```
-
-  ```
-
+```
 var beaconCommittee []types.ValidatorIndex
 beaconCommittee, err = BeaconCommitteeFromState(context.Background(), state, 1 /_previous epoch_/, 0)
 fmt.Printf("beaconComittee: %+v\n", beaconCommittee)
 ```
 
-    Result
+Result
 
-    ```
-    beaconComittee: [160 338 313 307 320 324 45 469 196 303 23 14 97 312 126 488]
-    ```
+```
+beaconComittee: [160 338 313 307 320 324 45 469 196 303 23 14 97 312 126 488]
+```
 
 - [func CommitteeAssignments](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#CommitteeAssignments): is a map of validator indices pointing to the appropriate committee assignment for the given epoch.
 
-  1. Determine the proposer validator index for each slot.
-  2. Compute all committees.
-  3. Determine the attesting slot for each committee.
-  4. Construct a map of validator indices pointing to the respective committees.
+1. Determine the proposer validator index for each slot.
+2. Compute all committees.
+3. Determine the attesting slot for each committee.
+4. Construct a map of validator indices pointing to the respective committees.
 
-  Following is an example of `commitees` generated by adding the following lines to [TestComputeCommittee_WithoutCache](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/helpers/beacon_committee_test.go#L23)
+Following is an example of `commitees` generated by adding the following lines to [TestComputeCommittee_WithoutCache](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/helpers/beacon_committee_test.go#L23)
 
-  ```
-  committees, err := computeCommittee(indices, seed, 0, 1 /* Total committee*/)
-  ```
-
+```
+committees, err := computeCommittee(indices, seed, 0, 1 /_ Total committee_/)
 fmt.Printf("committees: %+v\n", committees)
 ```
 
@@ -387,79 +382,82 @@ Attestations are managed using functions from [attestation.go](https://github.co
 
   Spec pseudocode definition:
 
-  ```
-  def get_aggregate_signature(attestations: Sequence[Attestation]) -> BLSSignature:
-  signatures = [attestation.signature for attestation in attestations]
-  return bls.Aggregate(signatures)
-  ```
-
-  Following is an example aggregrated signature by adding the following lines to [TestAttestation_AggregateSignature](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/helpers/attestation_test.go#L48)
-
-  ```
-  aggSig, err := helpers.AggregateSignature(atts)
-  ```
-
-fmt.Printf("aggSig: %+v\n", aggSig)
+```
+def get_aggregate_signature(attestations: Sequence[Attestation]) -> BLSSignature:
+signatures = [attestation.signature for attestation in attestations]
+return bls.Aggregate(signatures)
 ```
 
-    Result
+Following is an example aggregrated signature by adding the following lines to [TestAttestation_AggregateSignature](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/helpers/attestation_test.go#L48)
 
-    ```
-        aggSig: &{s:0xc0003fe000}
-    ```
+```
+aggSig, err := helpers.AggregateSignature(atts)
+```
+
+fmt.Printf("aggSig: %+v\n", aggSig)
+
+Result
+
+```
+    aggSig: &{s:0xc0003fe000}
+```
 
 - [func IsAggregated](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#IsAggregated): IsAggregated returns true if the attestation is an aggregated attestation, false otherwise.
 
 - [func ComputeSubnetForAttestation](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ComputeSubnetForAttestation): returns the subnet for which the provided attestation will be broadcasted to.This differs from the spec definition by instead passing in the active validators indices in the attestation's given epoch.
 
-  Spec pseudocode definition:
+Spec pseudocode definition:
 
-  ```
-  def compute_subnet_for_attestation(committees_per_slot: uint64, slot: Slot, committee_index: CommitteeIndex) -> uint64:
+```
+def compute_subnet_for_attestation(committees_per_slot: uint64, slot: Slot, committee_index: CommitteeIndex) -> uint64:
 
-  """
-  Compute the correct subnet for an attestation for Phase 0.
-  Note, this mimics expected future behavior where attestations will be mapped to their shard subnet.
-  """
-  slots_since_epoch_start = uint64(slot % SLOTS_PER_EPOCH)
-  committees_since_epoch_start = committees_per_slot * slots_since_epoch_start
+"""
+Compute the correct subnet for an attestation for Phase 0.
+Note, this mimics expected future behavior where attestations will be mapped to their shard subnet.
+"""
+slots_since_epoch_start = uint64(slot % SLOTS_PER_EPOCH)
+committees_since_epoch_start = committees_per_slot \* slots_since_epoch_start
 
-  return uint64((committees_since_epoch_start + committee_index) % ATTESTATION_SUBNET_COUNT)
-  ```
+return uint64((committees_since_epoch_start + committee_index) % ATTESTATION_SUBNET_COUNT)
+```
 
 - [func ComputeSubnetFromCommitteeAndSlot](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ComputeSubnetFromCommitteeAndSlot): is a flattened version of ComputeSubnetForAttestation where we only pass in the relevant fields from the attestation as function arguments.
 
-  Spec pseudocode definition:
+Spec pseudocode definition:
 
-  ```
-  def compute_subnet_for_attestation(committees_per_slot: uint64, slot: Slot, committee_index: CommitteeIndex) -> uint64:
+```
 
-  """
-  Compute the correct subnet for an attestation for Phase 0.
-  Note, this mimics expected future behavior where attestations will be mapped to their shard subnet.
-  """
-  slots_since_epoch_start = uint64(slot % SLOTS_PER_EPOCH)
-  committees_since_epoch_start = committees_per_slot * slots_since_epoch_start
+def compute_subnet_for_attestation(committees_per_slot: uint64, slot: Slot, committee_index: CommitteeIndex) -> uint64:
 
-  return uint64((committees_since_epoch_start + committee_index) % ATTESTATION_SUBNET_COUNT)
-  ```
+"""
+Compute the correct subnet for an attestation for Phase 0.
+Note, this mimics expected future behavior where attestations will be mapped to their shard subnet.
+"""
+slots_since_epoch_start = uint64(slot % SLOTS_PER_EPOCH)
+committees_since_epoch_start = committees_per_slot \* slots_since_epoch_start
+
+return uint64((committees_since_epoch_start + committee_index) % ATTESTATION_SUBNET_COUNT)
+
+```
 
 - [func ValidateAttestationTime](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ValidateAttestationTime): Validates that the incoming attestation is in the desired time range.
   An attestation is valid only if received within the last ATTESTATION_PROPAGATION_SLOT_RANGE slots.
 
-  Example:
+Example:
 
-  ```
-  ATTESTATION_PROPAGATION_SLOT_RANGE = 5
-  clockDisparity = 24 seconds
-  current_slot = 100
-  invalid_attestation_slot = 92
-  invalid_attestation_slot = 103
-  valid_attestation_slot = 98
-  valid_attestation_slot = 101
-  ```
+```
 
-  In the attestation must be within the range of 95 to 102 in the example above.
+ATTESTATION_PROPAGATION_SLOT_RANGE = 5
+clockDisparity = 24 seconds
+current_slot = 100
+invalid_attestation_slot = 92
+invalid_attestation_slot = 103
+valid_attestation_slot = 98
+valid_attestation_slot = 101
+
+```
+
+In the attestation must be within the range of 95 to 102 in the example above.
 
 - [func VerifyCheckpointEpoch](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#VerifyCheckpointEpoch): VerifyCheckpointEpoch is within current epoch and previous epoch with respect to current time. Returns true if it's within, false if it's not.
 
@@ -468,8 +466,8 @@ _Note: Sample command for running tests in Prysm: `bazel test //beacon-chain/cor
 **Consensus Committee Selection**
 
 - [func ProcessRandoa](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/blocks#ProcessRandao): checks the block proposer's randao commitment and generates a new randao mix to update in the beacon state's latest randao mixes slice.
-  - [func randaoSigningData](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/blocks/signature.go#L157): retrieves the randao related signing data from the state.
-    - [func (b \*BeaconState) PubkeyAtIndex(idx types.ValidatorIndex) [fieldparams.BLSPubkeyLength]byte ](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/state/state-native/getters_validator.go#L135): returns the pubkey at the given validator index.
+- [func randaoSigningData](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/blocks/signature.go#L157): retrieves the randao related signing data from the state.
+  - [func (b \*BeaconState) PubkeyAtIndex(idx types.ValidatorIndex) [fieldparams.BLSPubkeyLength]byte ](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/state/state-native/getters_validator.go#L135): returns the pubkey at the given validator index.
 
 ### Light Client Support
 
@@ -489,10 +487,10 @@ _Note: Sample command for running tests in Prysm: `bazel test //beacon-chain/cor
 
 - Advancing Blocks
 - Communication can be either via
-  - RPC to the [Eth BEACON Node API](https://ethereum.github.io/beacon-APIs/#/Beacon)
-  - [Networking Gossip Topics](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/p2p-interface.md#global-topics)
-    - [light_client_finality_update](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/p2p-interface.md#light_client_finality_update): This topic is used to propagate the latest `LightClientFinalityUpdate` to light clients, allowing them to keep track of the latest `finalized_header`.
-    - [light_client_optimistic_update](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/p2p-interface.md#light_client_optimistic_update): This topic is used to propagate the latest`LightClientOptimisticUpdate` to light clients, allowing them to keep track of the latest `optimistic_header`.
+- RPC to the [Eth BEACON Node API](https://ethereum.github.io/beacon-APIs/#/Beacon)
+- [Networking Gossip Topics](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/p2p-interface.md#global-topics)
+  - [light_client_finality_update](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/p2p-interface.md#light_client_finality_update): This topic is used to propagate the latest `LightClientFinalityUpdate` to light clients, allowing them to keep track of the latest `finalized_header`.
+  - [light_client_optimistic_update](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/p2p-interface.md#light_client_optimistic_update): This topic is used to propagate the latest`LightClientOptimisticUpdate` to light clients, allowing them to keep track of the latest `optimistic_header`.
 
 _Note: Time on Ethereum 2.0 Proof of Stake is divided into slots and epochs. One slot is 12 seconds. One epoch is 6.4 minutes, consisting of 32 slots. One block can be created for each slot._
 
@@ -500,65 +498,64 @@ _Note: Time on Ethereum 2.0 Proof of Stake is divided into slots and epochs. One
 
 - [Altair Light Client -- Sync Protocol](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md): The beacon chain is designed to be light client friendly for constrained environments to access Ethereum with reasonable safety and liveness.
 
-  Such environments include resource-constrained devices (e.g. phones for trust-minimized wallets)and metered VMs (e.g. blockchain VMs for cross-chain bridges).
+Such environments include resource-constrained devices (e.g. phones for trust-minimized wallets)and metered VMs (e.g. blockchain VMs for cross-chain bridges).
 
-  This document suggests a minimal light client design for the beacon chain thatuses sync committees introduced in [this beacon chain extension](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/beacon-chain.md).
+This document suggests a minimal light client design for the beacon chain thatuses sync committees introduced in [this beacon chain extension](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/beacon-chain.md).
 
-  Additional documents describe how the light client sync protocol can be used:
+Additional documents describe how the light client sync protocol can be used:
 
-  - [Full node](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/full-node.md)
-  - [Light client](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/light-client.md)
-  - [Networking](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/p2p-interface.md)
+- [Full node](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/full-node.md)
+- [Light client](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/light-client.md)
+- [Networking](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/p2p-interface.md)
 
 - [Light client sync process](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/light-client.md): explains how light clients MAY obtain light client data to sync with the network.
 
-  1. The light client MUST be configured out-of-band with a spec/preset (including fork schedule), with `genesis_state` (including `genesis_time` and `genesis_validators_root`), and with a trusted block root. The trusted block SHOULD be within the weak subjectivity period, and its root SHOULD be from a finalized `Checkpoint`.
-  2. The local clock is initialized based on the configured `genesis_time`, and the current fork digest is determined to browse for and connect to relevant light client data providers.
-  3. The light client fetches a [`LightClientBootstrap`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/light-client.md) object for the configured trusted block root. The `bootstrap` object is passed to [`initialize_light_client_store`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#initialize_light_client_store) to obtain a local [`LightClientStore`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#lightclientstore).
-  4. The light client tracks the sync committee periods `finalized_period` from `store.finalized_header.slot`, `optimistic_period` from `store.optimistic_header.slot`, and `current_period` from `current_slot` based on the local clock.
-     1. When `finalized_period == optimistic_period` and [`is_next_sync_committee_known`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#is_next_sync_committee_known) indicates `False`, the light client fetches a [`LightClientUpdate`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#lightclientupdate) for `finalized_period`. If `finalized_period == current_period`, this fetch SHOULD be scheduled at a random time before `current_period` advances.
-     2. When `finalized_period + 1 < current_period`, the light client fetches a `LightClientUpdate` for each sync committee period in range `[finalized_period + 1, current_period)` (current period excluded)
-     3. When `finalized_period + 1 >= current_period`, the light client keeps observing [`LightClientFinalityUpdate`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#lightclientfinalityupdate) and [`LightClientOptimisticUpdate`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#lightclientoptimisticupdate). Received objects are passed to [`process_light_client_finality_update`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#process_light_client_finality_update) and [`process_light_client_optimistic_update`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#process_light_client_optimistic_update). This ensures that `finalized_header` and `optimistic_header` reflect the latest blocks.
-  5. [`process_light_client_store_force_update`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#process_light_client_store_force_update) MAY be called based on use case dependent heuristics if light client sync appears stuck. If available, falling back to an alternative syncing mechanism to cover the affected sync committee period is preferred.
+1. The light client MUST be configured out-of-band with a spec/preset (including fork schedule), with `genesis_state` (including `genesis_time` and `genesis_validators_root`), and with a trusted block root. The trusted block SHOULD be within the weak subjectivity period, and its root SHOULD be from a finalized `Checkpoint`.
+2. The local clock is initialized based on the configured `genesis_time`, and the current fork digest is determined to browse for and connect to relevant light client data providers.
+3. The light client fetches a [`LightClientBootstrap`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/light-client.md) object for the configured trusted block root. The `bootstrap` object is passed to [`initialize_light_client_store`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#initialize_light_client_store) to obtain a local [`LightClientStore`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#lightclientstore).
+4. The light client tracks the sync committee periods `finalized_period` from `store.finalized_header.slot`, `optimistic_period` from `store.optimistic_header.slot`, and `current_period` from `current_slot` based on the local clock.
+   1. When `finalized_period == optimistic_period` and [`is_next_sync_committee_known`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#is_next_sync_committee_known) indicates `False`, the light client fetches a [`LightClientUpdate`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#lightclientupdate) for `finalized_period`. If `finalized_period == current_period`, this fetch SHOULD be scheduled at a random time before `current_period` advances.
+   2. When `finalized_period + 1 < current_period`, the light client fetches a `LightClientUpdate` for each sync committee period in range `[finalized_period + 1, current_period)` (current period excluded)
+   3. When `finalized_period + 1 >= current_period`, the light client keeps observing [`LightClientFinalityUpdate`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#lightclientfinalityupdate) and [`LightClientOptimisticUpdate`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#lightclientoptimisticupdate). Received objects are passed to [`process_light_client_finality_update`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#process_light_client_finality_update) and [`process_light_client_optimistic_update`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#process_light_client_optimistic_update). This ensures that `finalized_header` and `optimistic_header` reflect the latest blocks.
+5. [`process_light_client_store_force_update`](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md#process_light_client_store_force_update) MAY be called based on use case dependent heuristics if light client sync appears stuck. If available, falling back to an alternative syncing mechanism to cover the affected sync committee period is preferred.
 
 ### The Portal Network
 
 - [The Portal Network](https://github.com/ethereum/portal-network-specs): The Portal Network is an in progess effort to enable lightweight protocol access by resource constrained devices. The term _"portal"_ is used to indicate that these networks provide a _view_ into the protocol but are not critical to the operation of the core Ethereum protocol.
 
-  The Portal Network is comprised of multiple peer-to-peer networks which together provide the data and functionality necessary to expose the standard [JSON-RPC API](https://eth.wiki/json-rpc/API). These networks are specially designed to ensure that clients participating in these networks can do so with minimal expenditure of networking bandwidth, CPU, RAM, and HDD resources.
+The Portal Network is comprised of multiple peer-to-peer networks which together provide the data and functionality necessary to expose the standard [JSON-RPC API](https://eth.wiki/json-rpc/API). These networks are specially designed to ensure that clients participating in these networks can do so with minimal expenditure of networking bandwidth, CPU, RAM, and HDD resources.
 
-  The term 'Portal Client' describes a piece of software which participates in these networks. Portal Clients typically expose the standard JSON-RPC API.
+The term 'Portal Client' describes a piece of software which participates in these networks. Portal Clients typically expose the standard JSON-RPC API.
 
-  - Motivation: The Portal Network is focused on delivering reliable, lightweight, and decentralized access to the Ethereum protocol.
+- Motivation: The Portal Network is focused on delivering reliable, lightweight, and decentralized access to the Ethereum protocol.
 
-  - Prior Work on the "Light Ethereum Subprotocol" (LES): The term "light client" has historically refered to a client of the existing [DevP2P](https://github.com/ethereum/devp2p/blob/master/rlpx.md) based [LES](https://github.com/ethereum/devp2p/blob/master/caps/les.md) network. This network is designed using a client/server architecture. The LES network has a total capacity dictated by the number of "servers" on the network. In order for this network to scale, the "server" capacity has to increase. This also means that at any point in time the network has some total capacity which if exceeded will cause service degradation across the network. Because of this the LES network is unreliable when operating near capacity.
+- Prior Work on the "Light Ethereum Subprotocol" (LES): The term "light client" has historically refered to a client of the existing [DevP2P](https://github.com/ethereum/devp2p/blob/master/rlpx.md) based [LES](https://github.com/ethereum/devp2p/blob/master/caps/les.md) network. This network is designed using a client/server architecture. The LES network has a total capacity dictated by the number of "servers" on the network. In order for this network to scale, the "server" capacity has to increase. This also means that at any point in time the network has some total capacity which if exceeded will cause service degradation across the network. Because of this the LES network is unreliable when operating near capacity.
 
 - Block Relay
 
-  - [Beacon State](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/beacon-state-network.md#dht-overview): A client has a trusted beacon state root, and it wants to access some parts of the state. Each of the access request corresponds to some leave nodes of the beacon state. The request is a content lookup on a DHT. The response is a Merkle proof.
+- [Beacon State](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/beacon-state-network.md#dht-overview): A client has a trusted beacon state root, and it wants to access some parts of the state. Each of the access request corresponds to some leave nodes of the beacon state. The request is a content lookup on a DHT. The response is a Merkle proof.
 
-        A Distributed Hash Table (DHT) allows network participants to have retrieve data on-demand based on a content
+      A Distributed Hash Table (DHT) allows network participants to have retrieve data on-demand based on a content
 
-  - [Syncing Block Headers](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/sync-gossip.md): A beacon chain client could sync committee to perform state updates. The data object LightClientSkipSyncUpdate allows a client to quickly sync to a recent header with the appropriate sync committee. Once the client establishes a recent header, it could sync to other headers by processing LightClientUpdates. These two data types allow a client to stay up-to-date with the beacon chain.
+- [Syncing Block Headers](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/sync-gossip.md): A beacon chain client could sync committee to perform state updates. The data object LightClientSkipSyncUpdate allows a client to quickly sync to a recent header with the appropriate sync committee. Once the client establishes a recent header, it could sync to other headers by processing LightClientUpdates. These two data types allow a client to stay up-to-date with the beacon chain.
+  - [Sync State](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/skip-sync-network.md): A client uses SkipSyncUpdate to skip sync from a known header to a recent header. A client with a trusted but outdated header cannot use the messages in the gossip channel bc-light-client-update to update. The client's sync-committee in the stored snapshot is too old and not connected to any update messages. The client look for the appropriate SkipSyncUpdate to skip sync its header.
+  - [Advance Block Headers](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/sync-gossip.md): A beacon chain client could sync committee to perform [state updates](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/sync-protocol.md). The data object [LightClientSkipSyncUpdate](skip-sync-network) allows a client to quickly sync to a recent header with the appropriate sync committee. Once the client establishes a recent header, it could sync to other headers by processing [LightClientUpdates](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/sync-protocol.md#lightclientupdate). These two data types allow a client to stay up-to-date with the beacon chain.
 
-    - [Sync State](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/skip-sync-network.md): A client uses SkipSyncUpdate to skip sync from a known header to a recent header. A client with a trusted but outdated header cannot use the messages in the gossip channel bc-light-client-update to update. The client's sync-committee in the stored snapshot is too old and not connected to any update messages. The client look for the appropriate SkipSyncUpdate to skip sync its header.
-    - [Advance Block Headers](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/sync-gossip.md): A beacon chain client could sync committee to perform [state updates](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/sync-protocol.md). The data object [LightClientSkipSyncUpdate](skip-sync-network) allows a client to quickly sync to a recent header with the appropriate sync committee. Once the client establishes a recent header, it could sync to other headers by processing [LightClientUpdates](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/sync-protocol.md#lightclientupdate). These two data types allow a client to stay up-to-date with the beacon chain.
+          These two data types are placed into separate sub-networks. A light client make find-content requests on `skip-sync-network` at start of the sync to get a header with the same `SyncCommittee` object as in the current sync period. The client uses messages in the gossip topic `bc-light-client-update` to advance its header.
 
-            These two data types are placed into separate sub-networks. A light client make find-content requests on `skip-sync-network` at start of the sync to get a header with the same `SyncCommittee` object as in the current sync period. The client uses messages in the gossip topic `bc-light-client-update` to advance its header.
-
-            The gossip topics described in this document is part of a [proposal](https://ethresear.ch/t/a-beacon-chain-light-client-proposal/11064) for a beacon chain light client.
+          The gossip topics described in this document is part of a [proposal](https://ethresear.ch/t/a-beacon-chain-light-client-proposal/11064) for a beacon chain light client.
 
 ### Transaction Proofs
 
 - [Retrieving Beacon State](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/beacon-state-network.md): A client has a trusted beacon state root, and it wants to access some parts of the state. Each of the access request corresponds to some leave nodes of the beacon state. The request is a content lookup on a DHT. The response is a Merkle proof.
 
-  A Distributed Hash Table (DHT) allows network participants to have retrieve data on-demand based on a content key. A portal-network DHT is different than a traditional one in that each participant could selectively limit its workload by choosing a small interest radius r. A participants only process messages that are within its chosen radius boundary.
+A Distributed Hash Table (DHT) allows network participants to have retrieve data on-demand based on a content key. A portal-network DHT is different than a traditional one in that each participant could selectively limit its workload by choosing a small interest radius r. A participants only process messages that are within its chosen radius boundary.
 
-  - [Wire Protocol](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/beacon-state-network.md#wire-protocol): For a subprotocol, we need to further define the following to be able to instantiate the wire format of each message type. 1. `content_key` 2. `content_id` 3. `payload`
+- [Wire Protocol](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/beacon-state-network.md#wire-protocol): For a subprotocol, we need to further define the following to be able to instantiate the wire format of each message type. 1. `content_key` 2. `content_id` 3. `payload`
 
-        The content of the message is a Merkle proof contains multiple leave nodes for a [BeaconState](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/beacon-chain.md#beaconstate).
+      The content of the message is a Merkle proof contains multiple leave nodes for a [BeaconState](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/beacon-chain.md#beaconstate).
 
-        Finally, we define the necessary encodings. A light client only knows the root of the beacon state. The client wants to know the details of some leave nodes. The client has to be able to construct the `content_key` only knowing the root and which leave nodes it wants see. The `content_key` is the ssz serialization of the paths. The paths represent the part of the beacon state that one wants to know about. The paths are represented by generalized indices. Note that `hash_tree_root` and `serialize` are the same as those defined in [sync-gossip](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/sync-gossip.md).
+      Finally, we define the necessary encodings. A light client only knows the root of the beacon state. The client wants to know the details of some leave nodes. The client has to be able to construct the `content_key` only knowing the root and which leave nodes it wants see. The `content_key` is the ssz serialization of the paths. The paths represent the part of the beacon state that one wants to know about. The paths are represented by generalized indices. Note that `hash_tree_root` and `serialize` are the same as those defined in [sync-gossip](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/sync-gossip.md).
 
 - TODO: Review of Retrieving a transaction proof not just retrieving data on-demand
 
@@ -567,12 +564,12 @@ _Note: Time on Ethereum 2.0 Proof of Stake is divided into slots and epochs. One
 - [Ethereum 2.0 Light Client Support](./ETH2_0.md#ethereum-20-light-client-support)
 
 - Ethereum 2.0 Specifications
-  - [Beacon Chain Specification](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/beacon-chain.md)
-  - [Extended light client protocol](https://notes.ethereum.org/@vbuterin/extended_light_client_protocol)
-  - [Altair Light Client -- Light Client](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/light-client.md)
-  - [Altair Light Client -- Sync Protocol](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md)
-  - [Beacon Chain Fork Choice](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/fork-choice.md)
-  - [The Portal Network Specification](https://github.com/ethereum/portal-network-specs): an in progess effort to enable lightweight protocol access by resource constrained devices.
+- [Beacon Chain Specification](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/beacon-chain.md)
+- [Extended light client protocol](https://notes.ethereum.org/@vbuterin/extended_light_client_protocol)
+- [Altair Light Client -- Light Client](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/light-client.md)
+- [Altair Light Client -- Sync Protocol](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/light-client/sync-protocol.md)
+- [Beacon Chain Fork Choice](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/fork-choice.md)
+- [The Portal Network Specification](https://github.com/ethereum/portal-network-specs): an in progess effort to enable lightweight protocol access by resource constrained devices.
 - [Light Ethereum Subprotocol (LES)](https://github.com/ethereum/devp2p/blob/master/caps/les.md): the protocol used by "light" clients, which only download block headers as they appear and fetch other parts of the blockchain on-demand.
 - [BlockDaemon: Ethereum Altair Hard Folk: Light Clients & Sync Committees](https://blockdaemon.com/blog/ethereum-altair-hard-folk-light-clients-sync-committees/)
 - [Efficient algorithms for CBC Casper](https://docs.google.com/presentation/d/1oc_zdywOsHxz3zez1ILAgrerS7RkaF1hHoW0FLtp0Gw/edit#slide=id.p): Review of LMD GHOST (Latest Message Driven, Greediest Heaviest Observed Sub-Tree)
@@ -591,89 +588,111 @@ _Note: Time on Ethereum 2.0 Proof of Stake is divided into slots and epochs. One
 
 **References Overview**
 
-<a name="ov1">[1]</a> [Part I: What to build next in Zero Knowledge?](https://delendum.xyz/2022/11/22/what-to-build-next-in-zero-knowledge.html):
-What are the problems that haven’t been solved in blockchain and how can we leverage
-zero-knowledge proof as a tool to solve these problems?
+<a name="ov1">[1]</a> [Part I: What to build next in Zero
+Knowledge?](https://delendum.xyz/2022/11/22/what-to-build-next-in-zero-knowledge.html):
+What are the problems that haven’t been solved in blockchain and how can we
+leverage zero-knowledge proof as a tool to solve these problems?
 
-<a name="ov1">[2]</a> [Crosschain Future](https://github.com/isolab-gg/isomorph/blob/main/docs/blog/crosschain-future.md):
-A review of the growing blockchain ecosystem and the role of zkp in building trustless
-bridges.
+<a name="ov1">[2]</a> [Crosschain
+Future](https://github.com/isolab-gg/isomorph/blob/main/docs/blog/crosschain-future.md):
+A review of the growing blockchain ecosystem and the role of zkp in building
+trustless bridges.
 
-<a name="ov2">[3]</a> [Technical Problems Overview](https://github.com/isolab-gg/isomorph/blob/main/docs/problems/technical-problems-part-1.md):
-Trustless Bridging Technical Problems - PART 1: Problem Overview, Consensus Protocols,
-Signature Schemes.
+<a name="ov2">[3]</a> [Technical Problems
+Overview](https://github.com/isolab-gg/isomorph/blob/main/docs/problems/technical-problems-part-1.md):
+Trustless Bridging Technical Problems - PART 1: Problem Overview, Consensus
+Protocols, Signature Schemes.
 
 **Reference Trustless Bridge Design**
 
-<a name="tb1">[1]</a> [Succinct: Proof of Consensus Bridging between Ethereum and
-Gnosis Chain](https://blog.succinct.xyz/blog/proof-of-consensus/): gas efficient
-on-chain light client for Ethereum PoS, powered by succinct zero-knowledge proofs
-(zkSNARKs), allowing for arbitrary, trust-minimized cross-chain communication between
-Ethereum and Gnosis Chain.
+<a name="tb1">[1]</a> [Succinct: Proof of Consensus Bridging between Ethereum
+and Gnosis Chain](https://blog.succinct.xyz/blog/proof-of-consensus/): gas
+efficient on-chain light client for Ethereum PoS, powered by succinct
+zero-knowledge proofs (zkSNARKs), allowing for arbitrary, trust-minimized
+cross-chain communication between Ethereum and Gnosis Chain.
 
 **References Block Production**
 
-<a name="bp1">[1]</a> [EIP-3675: Upgrade consensus to Proof-of-Stake](https://eips.ethereum.org/EIPS/eip-3675#pow-block-processing):
-Specification of the consensus mechanism upgrade on Ethereum Mainnet that introduces
-Proof-of-Stake.
+<a name="bp1">[1]</a> [EIP-3675: Upgrade consensus to
+Proof-of-Stake](https://eips.ethereum.org/EIPS/eip-3675#pow-block-processing):
+Specification of the consensus mechanism upgrade on Ethereum Mainnet that
+introduces Proof-of-Stake.
 
-<a name="bp2">[2]</a> [EIP-2982: Serenity Phase 0](https://eips.ethereum.org/EIPS/eip-2982):
-Phase 0 of the release schedule of Serenity, a series of updates to Ethereum a scalable,
-proof-of-stake consensus.
+<a name="bp2">[2]</a> [EIP-2982: Serenity Phase
+0](https://eips.ethereum.org/EIPS/eip-2982): Phase 0 of the release schedule of
+Serenity, a series of updates to Ethereum a scalable, proof-of-stake consensus.
 
-<a name="bp3">[3]</a> [Ethreum Consensus Specs Phase 0](https://github.com/ethereum/consensus-specs/tree/dev/specs/phase0):
-Specifications for Ethereum 2.0 Phase 0 including [beacon-chain](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md),
+<a name="bp3">[3]</a> [Ethreum Consensus Specs Phase
+0](https://github.com/ethereum/consensus-specs/tree/dev/specs/phase0):
+Specifications for Ethereum 2.0 Phase 0 including
+[beacon-chain](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md),
 [deposit-contract](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/deposit-contract.md),
 [fork-choice](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/fork-choice.md),
 [p2p-interface](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/p2p-interface.md),
 [validator](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/validator.md)
-and [weak-subjectivity](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/weak-subjectivity.md)
+and
+[weak-subjectivity](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/weak-subjectivity.md)
 
-<a name="bp4">[6]</a> [Ethereum Consensus and Execution Client Distribution](https://clientdiversity.org/#distribution):
-Percentages of nodes running client types for both Consensus (Prysm, Lighthours,
-Nimbus, Teku) and Execution (Geth, Erigon, Besu, Nethermind) clients.
+<a name="bp4">[6]</a> [Ethereum Consensus and Execution Client
+Distribution](https://clientdiversity.org/#distribution): Percentages of nodes
+running client types for both Consensus (Prysm, Lighthours, Nimbus, Teku) and
+Execution (Geth, Erigon, Besu, Nethermind) clients.
 
-<a name="bp5">[5]</a> [go-ethereum go documentation](https://pkg.go.dev/github.com/ethereum/go-ethereum@v1.10.26):
-Documentation for Go Ethereum, Official Golang implementation of the Ethereum protocol.
-Which is an execution chain implementation.
+<a name="bp5">[5]</a> [go-ethereum go
+documentation](https://pkg.go.dev/github.com/ethereum/go-ethereum@v1.10.26):
+Documentation for Go Ethereum, Official Golang implementation of the Ethereum
+protocol. Which is an execution chain implementation.
 
-<a name="bp6">[6]</a> [prysm go documentation](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2):
-Documentation for prysm, An Ethereum Consensus Implementation Written in Go. A beacon-chain
-immplementation. Also see [Prysm Documentation](https://docs.prylabs.network/docs/getting-started)
+<a name="bp6">[6]</a> [prysm go
+documentation](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2):
+Documentation for prysm, An Ethereum Consensus Implementation Written in Go. A
+beacon-chain immplementation. Also see [Prysm
+Documentation](https://docs.prylabs.network/docs/getting-started)
 
-<a name="bp7">[7]</a> [lighthouse documentation](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2):
+<a name="bp7">[7]</a> [lighthouse
+documentation](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2):
 Documentation for lighthouse, written in Rust. A beacon-chain immplementation.
 
-<a name="bp8">[8]</a> [Etherum 2.0 Validators Overview](https://beaconcha.in/validators):
-Live Monitoring of Ethreum 2.0 Validators from beachoncha.in
+<a name="bp8">[8]</a> [Etherum 2.0 Validators
+Overview](https://beaconcha.in/validators): Live Monitoring of Ethreum 2.0
+Validators from beachoncha.in
 
 **References Technical Summary**
 
-<a name="ts1">[1]</a> [Ethereum EVM illustrated](https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf):
-A technical overview of Ethereum including state, accounts, transactions and messages
-as well as the EVM. [Appendix E](#appendix-e-data-structures) has links to type definitions
-for blocks, transactions, state etc in geth.
+<a name="ts1">[1]</a> [Ethereum EVM
+illustrated](https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf):
+A technical overview of Ethereum including state, accounts, transactions and
+messages as well as the EVM. [Appendix E](#appendix-e-data-structures) has links
+to type definitions for blocks, transactions, state etc in geth.
 
 <a name="ts2">[2]</a> [Blocks](https://ethereum.org/en/developers/docs/blocks/):
 Block data definitions including attestations from ethereum.org
 
-<a name="ts3">[3]</a> [eth1 block proposal](https://hackmd.io/@flashbots/mev-in-eth2#eth1-block-proposal):
+<a name="ts3">[3]</a> [eth1 block
+proposal](https://hackmd.io/@flashbots/mev-in-eth2#eth1-block-proposal):
 Technical walkthrough of how blocks are proposed and potential MEV opportunities
 from FlashBots.
 
-<a name="ts4">[4]</a> [Assemble Block](https://github.com/ethereum/rayonism/blob/master/specs/merge.md#assemble-block):
+<a name="ts4">[4]</a> [Assemble
+Block](https://github.com/ethereum/rayonism/blob/master/specs/merge.md#assemble-block):
 Ethereum Specification for block Assembly as part of Rayonism -- The Merge spec.
 
-<a name="ts5">[5]</a> [Prysm running a node](https://docs.prylabs.network/docs/install/install-with-script):
-Operational procedures for Validators by Prysm. Note validators run both the beacon
-chain(consensus) and a geth node(execution)
+<a name="ts5">[5]</a> [Prysm running a
+node](https://docs.prylabs.network/docs/install/install-with-script):
+Operational procedures for Validators by Prysm. Note validators run both the
+beacon chain(consensus) and a geth node(execution)
 
 <a name="ts6">[6]</a>[The Beacon Chain Ethereum 2.0 explainer you need to read
 first](https://ethos.dev/beacon-chain): Detailed walk through og Ethereum 2.0
 block production including slots, epochs, validators, commitees and finality.
 
-<a name="ts7">[7]</a> [Etherum 2.0 Validators Overview](https://beaconcha.in/validators):
-Live Monitoring of Ethreum 2.0 Validators from beachoncha.in
+<a name="ts6b">[6]</a>[The Beacon Chain Ethereum 2.0 explainer you need to read
+first](https://ethos.dev/beacon-chain): Detailed walk through og Ethereum 2.0
+block production including slots, epochs, validators, commitees and finality.
+
+<a name="ts7">[7]</a> [Etherum 2.0 Validators
+Overview](https://beaconcha.in/validators): Live Monitoring of Ethreum 2.0
+Validators from beachoncha.in
 
 <a name="ts8">[8]</a>[BLS
 Signatures](https://eth2book.info/bellatrix/part2/building_blocks/signatures/):
@@ -684,27 +703,32 @@ Lifecycle](https://kb.beaconcha.in/attestation#attestation-inclusion-lifecycle):
 High Level overview of the attestation life cycle including geeration,
 propogation, aggregation and inclusion.Attest
 
-<a name="ts10">[ts10]</a> [Beacon Chain Proposal: Sync Comittees](https://notes.ethereum.org/@vbuterin/HF1_proposal#Sync-committees):
+<a name="ts10">[ts10]</a> [Beacon Chain Proposal: Sync
+Comittees](https://notes.ethereum.org/@vbuterin/HF1_proposal#Sync-committees):
 For each period (~27 hours), 1024 validators are randomly selected to be part of
-the sync committee during that period. Validators in the sync committee would publish
-signatures attesting to the current head. These signatures would be broadcasted as
-part of a LightClientUpdate object that could help light clients find the head, and
-would be included in the beacon chain to be rewarded.
+the sync committee during that period. Validators in the sync committee would
+publish signatures attesting to the current head. These signatures would be
+broadcasted as part of a LightClientUpdate object that could help light clients
+find the head, and would be included in the beacon chain to be rewarded.
 
-<a name="ts11">[ts11]</a> [Altair Light Client -- Sync Protocol](https://notes.ethereum.org/@vbuterin/HF1_proposal#Sync-committees):
-This document suggests a minimal light client design for the beacon chain that uses
-sync committees.
+<a name="ts11">[ts11]</a> [Altair Light Client -- Sync
+Protocol](https://notes.ethereum.org/@vbuterin/HF1_proposal#Sync-committees):
+This document suggests a minimal light client design for the beacon chain that
+uses sync committees.
 
-<a name="ts12">[ts12]</a> [Ethereum Builder Specifications: Honest Validator](https://github.com/ethereum/builder-specs/blob/main/specs/validator.md):
-explains the way in which a beacon chain validator is expected to use the Builder
-spec to participate in an external builder network.
+<a name="ts12">[ts12]</a> [Ethereum Builder Specifications: Honest
+Validator](https://github.com/ethereum/builder-specs/blob/main/specs/validator.md):
+explains the way in which a beacon chain validator is expected to use the
+Builder spec to participate in an external builder network.
 
-<a name="ts13">[ts13]</a> [Flashbots: mev-boost](https://github.com/flashbots/mev-boost):
-open source middleware run by validators to access a competitive block-building market.
+<a name="ts13">[ts13]</a> [Flashbots:
+mev-boost](https://github.com/flashbots/mev-boost): open source middleware run
+by validators to access a competitive block-building market.
 
-<a name="ts14">[ts14]</a> [A note on Ethereum 2.0 phase 0 validator lifecycle](https://notes.ethereum.org/7CFxjwMgQSWOHIxLgJP2Bw#A-note-on-Ethereum-20-phase-0-validator-lifecycle):
-describes the concept of validator status epochs and the cases of validator lifecycle
-in the view of “validator status transition” in phase 0.
+<a name="ts14">[ts14]</a> [A note on Ethereum 2.0 phase 0 validator
+lifecycle](https://notes.ethereum.org/7CFxjwMgQSWOHIxLgJP2Bw#A-note-on-Ethereum-20-phase-0-validator-lifecycle):
+describes the concept of validator status epochs and the cases of validator
+lifecycle in the view of “validator status transition” in phase 0.
 
 ## Appendices
 
@@ -726,21 +750,21 @@ Circuits
 Verification
 
 - [AMB](https://github.com/succinctlabs/eth-proof-of-consensus/tree/main/contracts/src/amb): Arbitrary Message Passing
-  - [TrustlessAMB.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/amb/TrustlessAMB.sol): sends and executes messages
-  - [TrustlessAMBStorage.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/amb/TrustlessAMBStorage.sol): Storage for messages between two chains
+- [TrustlessAMB.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/amb/TrustlessAMB.sol): sends and executes messages
+- [TrustlessAMBStorage.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/amb/TrustlessAMBStorage.sol): Storage for messages between two chains
 - [bridge](https://github.com/succinctlabs/eth-proof-of-consensus/tree/main/contracts/src/bridge): Allows for the deposit and withdrawal of ERC20 tokens
-  - [Bridge.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/bridge/Bridge.sol): Deposit and withdraw functionality
-  - [Token.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/bridge/Tokens.sol): ERC20 bridge token definitions
+- [Bridge.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/bridge/Bridge.sol): Deposit and withdraw functionality
+- [Token.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/bridge/Tokens.sol): ERC20 bridge token definitions
 - [lightclient](https://github.com/succinctlabs/eth-proof-of-consensus/tree/main/contracts/src/lightclient)
-  - [BLSAggregatedSignatureVerifier.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BLSAggregatedSignatureVerifier.sol): Verifies BLS aggregated signature proofs
-  - [BeaconLightClient.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol): Beacon Light Client Functionality including
-    - [step(LightClientUpdate memory update)](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L86): Updates the head given a finalized light client update.
-    - [function updateSyncCommittee(LightClientUpdate memory update, bytes32 nextSyncCommitteePoseidon, Groth16Proof memory commitmentMappingProof)](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L102): Set the sync committee validator set root for the next sync commitee period.
-    - [function forceUpdate()](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L131): Finalizes the optimistic update and sets the next sync committee if no finalized updates have been received for a period.
-    - [function processLightClientUpdate(LightClientUpdate memory update)](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L131): Implements shared logic for processing light client updates.
-    - [function zkMapSSZToPoseidon(bytes32 sszCommitment, bytes32 poseidonCommitment, Groth16Proof memory proof)](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L190): Maps a simple serialize merkle root to a poseidon merkle root with a zkSNARK. The proof asserts that: SimpleSerialize(syncCommittee) == Poseidon(syncCommittee).
-    - [function zkBLSVerify(bytes32 signingRoot, bytes32 syncCommitteeRoot, uint256 claimedParticipation, Groth16Proof memory proof)](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L208): Does an aggregated BLS signature verification with a zkSNARK.
-  - [scripts](https://github.com/succinctlabs/eth-proof-of-consensus/tree/main/contracts/src/scripts): A collection of [forge-scripts](https://book.getfoundry.sh/reference/forge/forge-script) for contract deployment.
+- [BLSAggregatedSignatureVerifier.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BLSAggregatedSignatureVerifier.sol): Verifies BLS aggregated signature proofs
+- [BeaconLightClient.sol](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol): Beacon Light Client Functionality including
+  - [step(LightClientUpdate memory update)](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L86): Updates the head given a finalized light client update.
+  - [function updateSyncCommittee(LightClientUpdate memory update, bytes32 nextSyncCommitteePoseidon, Groth16Proof memory commitmentMappingProof)](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L102): Set the sync committee validator set root for the next sync commitee period.
+  - [function forceUpdate()](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L131): Finalizes the optimistic update and sets the next sync committee if no finalized updates have been received for a period.
+  - [function processLightClientUpdate(LightClientUpdate memory update)](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L131): Implements shared logic for processing light client updates.
+  - [function zkMapSSZToPoseidon(bytes32 sszCommitment, bytes32 poseidonCommitment, Groth16Proof memory proof)](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L190): Maps a simple serialize merkle root to a poseidon merkle root with a zkSNARK. The proof asserts that: SimpleSerialize(syncCommittee) == Poseidon(syncCommittee).
+  - [function zkBLSVerify(bytes32 signingRoot, bytes32 syncCommitteeRoot, uint256 claimedParticipation, Groth16Proof memory proof)](https://github.com/succinctlabs/eth-proof-of-consensus/blob/main/contracts/src/lightclient/BeaconLightClient.sol#L208): Does an aggregated BLS signature verification with a zkSNARK.
+- [scripts](https://github.com/succinctlabs/eth-proof-of-consensus/tree/main/contracts/src/scripts): A collection of [forge-scripts](https://book.getfoundry.sh/reference/forge/forge-script) for contract deployment.
 
 ### Appendix C: Topics
 
@@ -808,28 +832,30 @@ BlsToExecutionChangeSubnetTopicFormat = GossipProtocolAndDigest + GossipBlsToExe
 - Block Structure from [go-ethereum](https://github.com/ethereum/go-ethereum/blob/release/1.9/consensus/ethash/consensus.go)
 
 ```
+
 // SealHash returns the hash of a block prior to it being sealed.
 func (ethash *Ethash) SealHash(header *types.Header) (hash common.Hash) {
- hasher := sha3.NewLegacyKeccak256()
+hasher := sha3.NewLegacyKeccak256()
 
- rlp.Encode(hasher, []interface{}{
-  header.ParentHash,
-  header.UncleHash,
-  header.Coinbase,
-  header.Root,
-  header.TxHash,
-  header.ReceiptHash,
-  header.Bloom,
-  header.Difficulty,
-  header.Number,
-  header.GasLimit,
-  header.GasUsed,
-  header.Time,
-  header.Extra,
- })
- hasher.Sum(hash[:0])
- return hash
+rlp.Encode(hasher, []interface{}{
+header.ParentHash,
+header.UncleHash,
+header.Coinbase,
+header.Root,
+header.TxHash,
+header.ReceiptHash,
+header.Bloom,
+header.Difficulty,
+header.Number,
+header.GasLimit,
+header.GasUsed,
+header.Time,
+header.Extra,
+})
+hasher.Sum(hash[:0])
+return hash
 }
+
 ```
 
 - Blocks Headers get forwarded to the Beacon chain once they pass [beacon consensus](https://github.com/ethereum/go-ethereum/blob/master/consensus/beacon/consensus.go)
@@ -838,71 +864,76 @@ func (ethash *Ethash) SealHash(header *types.Header) (hash common.Hash) {
 BeaconBlockBody from [prysm](https://github.com/prysmaticlabs/prysm/blob/develop/consensus-types/blocks/types.go) (golang)
 
 ```
+
 // BeaconBlockBody is the main beacon block body structure. It can represent any block type.
 type BeaconBlockBody struct {
- version                int
- isBlinded              bool
- randaoReveal           [field_params.BLSSignatureLength]byte
- eth1Data               *eth.Eth1Data
- graffiti               [field_params.RootLength]byte
- proposerSlashings      []*eth.ProposerSlashing
- attesterSlashings      []*eth.AttesterSlashing
- attestations           []*eth.Attestation
- deposits               []*eth.Deposit
- voluntaryExits         []*eth.SignedVoluntaryExit
- syncAggregate          *eth.SyncAggregate
- executionPayload       *engine.ExecutionPayload
- executionPayloadHeader *engine.ExecutionPayloadHeader
+version int
+isBlinded bool
+randaoReveal [field_params.BLSSignatureLength]byte
+eth1Data *eth.Eth1Data
+graffiti [field_params.RootLength]byte
+proposerSlashings []*eth.ProposerSlashing
+attesterSlashings []*eth.AttesterSlashing
+attestations []*eth.Attestation
+deposits []*eth.Deposit
+voluntaryExits []*eth.SignedVoluntaryExit
+syncAggregate *eth.SyncAggregate
+executionPayload *engine.ExecutionPayload
+executionPayloadHeader \*engine.ExecutionPayloadHeader
 }
 
 // BeaconBlock is the main beacon block structure. It can represent any block type.
 type BeaconBlock struct {
- version       int
- slot          types.Slot
- proposerIndex types.ValidatorIndex
- parentRoot    [field_params.RootLength]byte
- stateRoot     [field_params.RootLength]byte
- body          *BeaconBlockBody
+version int
+slot types.Slot
+proposerIndex types.ValidatorIndex
+parentRoot [field_params.RootLength]byte
+stateRoot [field_params.RootLength]byte
+body \*BeaconBlockBody
 }
 
 // SignedBeaconBlock is the main signed beacon block structure. It can represent any block type.
 type SignedBeaconBlock struct {
- version   int
- block     *BeaconBlock
- signature [field_params.BLSSignatureLength]byte
+version int
+block \*BeaconBlock
+signature [field_params.BLSSignatureLength]byte
 }
+
 ```
 
 Eth1Data from [prysm](https://github.com/prysmaticlabs/prysm/blob/develop/proto/prysm/v1alpha1/powchain.pb.go#L24) (golang)
 
 ```
-type ETH1ChainData struct {
- state         protoimpl.MessageState
- sizeCache     protoimpl.SizeCache
- unknownFields protoimpl.UnknownFields
 
- CurrentEth1Data   *LatestETH1Data     `protobuf:"bytes,1,opt,name=current_eth1_data,json=currentEth1Data,proto3" json:"current_eth1_data,omitempty"`
- ChainstartData    *ChainStartData     `protobuf:"bytes,2,opt,name=chainstart_data,json=chainstartData,proto3" json:"chainstart_data,omitempty"`
- BeaconState       *BeaconState        `protobuf:"bytes,3,opt,name=beacon_state,json=beaconState,proto3" json:"beacon_state,omitempty"`
- Trie              *SparseMerkleTrie   `protobuf:"bytes,4,opt,name=trie,proto3" json:"trie,omitempty"`
- DepositContainers []*DepositContainer `protobuf:"bytes,5,rep,name=deposit_containers,json=depositContainers,proto3" json:"deposit_containers,omitempty"`
+type ETH1ChainData struct {
+state protoimpl.MessageState
+sizeCache protoimpl.SizeCache
+unknownFields protoimpl.UnknownFields
+
+CurrentEth1Data *LatestETH1Data `protobuf:"bytes,1,opt,name=current_eth1_data,json=currentEth1Data,proto3" json:"current_eth1_data,omitempty"`
+ChainstartData *ChainStartData `protobuf:"bytes,2,opt,name=chainstart_data,json=chainstartData,proto3" json:"chainstart_data,omitempty"`
+BeaconState *BeaconState `protobuf:"bytes,3,opt,name=beacon_state,json=beaconState,proto3" json:"beacon_state,omitempty"`
+Trie *SparseMerkleTrie `protobuf:"bytes,4,opt,name=trie,proto3" json:"trie,omitempty"`
+DepositContainers []\*DepositContainer `protobuf:"bytes,5,rep,name=deposit_containers,json=depositContainers,proto3" json:"deposit_containers,omitempty"`
 }
 
 type LatestETH1Data struct {
- state         protoimpl.MessageState
- sizeCache     protoimpl.SizeCache
- unknownFields protoimpl.UnknownFields
+state protoimpl.MessageState
+sizeCache protoimpl.SizeCache
+unknownFields protoimpl.UnknownFields
 
- BlockHeight        uint64 `protobuf:"varint,2,opt,name=block_height,json=blockHeight,proto3" json:"block_height,omitempty"`
- BlockTime          uint64 `protobuf:"varint,3,opt,name=block_time,json=blockTime,proto3" json:"block_time,omitempty"`
- BlockHash          []byte `protobuf:"bytes,4,opt,name=block_hash,json=blockHash,proto3" json:"block_hash,omitempty"`
- LastRequestedBlock uint64 `protobuf:"varint,5,opt,name=last_requested_block,json=lastRequestedBlock,proto3" json:"last_requested_block,omitempty"`
+BlockHeight uint64 `protobuf:"varint,2,opt,name=block_height,json=blockHeight,proto3" json:"block_height,omitempty"`
+BlockTime uint64 `protobuf:"varint,3,opt,name=block_time,json=blockTime,proto3" json:"block_time,omitempty"`
+BlockHash []byte `protobuf:"bytes,4,opt,name=block_hash,json=blockHash,proto3" json:"block_hash,omitempty"`
+LastRequestedBlock uint64 `protobuf:"varint,5,opt,name=last_requested_block,json=lastRequestedBlock,proto3" json:"last_requested_block,omitempty"`
 }
+
 ```
 
 BeaconBlockAltair from [lighthouse](https://github.com/sigp/lighthouse/blob/stable/consensus/types/src/beacon_block.rs#L407) rust
 
 ```
+
     /// Return an Altair block where the block has maximum size.
     pub fn full(spec: &ChainSpec) -> Self {
         let base_block: BeaconBlockBase<_, Payload> = BeaconBlockBase::full(spec);
@@ -933,190 +964,211 @@ BeaconBlockAltair from [lighthouse](https://github.com/sigp/lighthouse/blob/stab
             },
         }
     }
+
 }
+
 ```
 
 #### Beacon State Data Structures from Prysm
 
 ```
+
 type BeaconState interface {
- SpecParametersProvider
- ReadOnlyBeaconState
- WriteOnlyBeaconState
- Copy() BeaconState
- HashTreeRoot(ctx context.Context) ([32]byte, error)
- FutureForkStub
- StateProver
+SpecParametersProvider
+ReadOnlyBeaconState
+WriteOnlyBeaconState
+Copy() BeaconState
+HashTreeRoot(ctx context.Context) ([32]byte, error)
+FutureForkStub
+StateProver
 }
+
 ```
 
 ```
+
 type ReadOnlyBeaconState interface {
- ReadOnlyBlockRoots
- ReadOnlyStateRoots
- ReadOnlyRandaoMixes
- ReadOnlyEth1Data
- ReadOnlyValidators
- ReadOnlyBalances
- ReadOnlyCheckpoint
- ReadOnlyAttestations
- ToProtoUnsafe() interface{}
- ToProto() interface{}
- GenesisTime() uint64
- GenesisValidatorsRoot() []byte
- Slot() types.Slot
- Fork() *ethpb.Fork
- LatestBlockHeader() *ethpb.BeaconBlockHeader
- HistoricalRoots() [][]byte
- Slashings() []uint64
- FieldReferencesCount() map[string]uint64
- MarshalSSZ() ([]byte, error)
- IsNil() bool
- Version() int
- LatestExecutionPayloadHeader() (interfaces.ExecutionData, error)
+ReadOnlyBlockRoots
+ReadOnlyStateRoots
+ReadOnlyRandaoMixes
+ReadOnlyEth1Data
+ReadOnlyValidators
+ReadOnlyBalances
+ReadOnlyCheckpoint
+ReadOnlyAttestations
+ToProtoUnsafe() interface{}
+ToProto() interface{}
+GenesisTime() uint64
+GenesisValidatorsRoot() []byte
+Slot() types.Slot
+Fork() *ethpb.Fork
+LatestBlockHeader() *ethpb.BeaconBlockHeader
+HistoricalRoots() [][]byte
+Slashings() []uint64
+FieldReferencesCount() map[string]uint64
+MarshalSSZ() ([]byte, error)
+IsNil() bool
+Version() int
+LatestExecutionPayloadHeader() (interfaces.ExecutionData, error)
 }
+
 ```
 
 ```
+
 type ReadOnlyValidators interface {
- Validators() []*ethpb.Validator
- ValidatorAtIndex(idx types.ValidatorIndex) (*ethpb.Validator, error)
- ValidatorAtIndexReadOnly(idx types.ValidatorIndex) (ReadOnlyValidator, error)
- ValidatorIndexByPubkey(key [fieldparams.BLSPubkeyLength]byte) (types.ValidatorIndex, bool)
- PubkeyAtIndex(idx types.ValidatorIndex) [fieldparams.BLSPubkeyLength]byte
- NumValidators() int
- ReadFromEveryValidator(f func(idx int, val ReadOnlyValidator) error) error
+Validators() []*ethpb.Validator
+ValidatorAtIndex(idx types.ValidatorIndex) (*ethpb.Validator, error)
+ValidatorAtIndexReadOnly(idx types.ValidatorIndex) (ReadOnlyValidator, error)
+ValidatorIndexByPubkey(key [fieldparams.BLSPubkeyLength]byte) (types.ValidatorIndex, bool)
+PubkeyAtIndex(idx types.ValidatorIndex) [fieldparams.BLSPubkeyLength]byte
+NumValidators() int
+ReadFromEveryValidator(f func(idx int, val ReadOnlyValidator) error) error
 }
+
 ```
 
 ```
+
 type ReadOnlyRandaoMixes interface {
- RandaoMixes() [][]byte
- RandaoMixAtIndex(idx uint64) ([]byte, error)
- RandaoMixesLength() int
+RandaoMixes() [][]byte
+RandaoMixAtIndex(idx uint64) ([]byte, error)
+RandaoMixesLength() int
 }
+
 ```
 
 ```
+
 type WriteOnlyBeaconState interface {
- WriteOnlyBlockRoots
- WriteOnlyStateRoots
- WriteOnlyRandaoMixes
- WriteOnlyEth1Data
- WriteOnlyValidators
- WriteOnlyBalances
- WriteOnlyCheckpoint
- WriteOnlyAttestations
- SetGenesisTime(val uint64) error
- SetGenesisValidatorsRoot(val []byte) error
- SetSlot(val types.Slot) error
- SetFork(val *ethpb.Fork) error
- SetLatestBlockHeader(val *ethpb.BeaconBlockHeader) error
- SetHistoricalRoots(val [][]byte) error
- SetSlashings(val []uint64) error
- UpdateSlashingsAtIndex(idx, val uint64) error
- AppendHistoricalRoots(root [32]byte) error
- SetLatestExecutionPayloadHeader(payload interfaces.ExecutionData) error
- SetWithdrawalQueue(val []*enginev1.Withdrawal) error
- AppendWithdrawal(val *enginev1.Withdrawal) error
- SetNextWithdrawalIndex(i uint64) error
- SetNextPartialWithdrawalValidatorIndex(i types.ValidatorIndex) error
+WriteOnlyBlockRoots
+WriteOnlyStateRoots
+WriteOnlyRandaoMixes
+WriteOnlyEth1Data
+WriteOnlyValidators
+WriteOnlyBalances
+WriteOnlyCheckpoint
+WriteOnlyAttestations
+SetGenesisTime(val uint64) error
+SetGenesisValidatorsRoot(val []byte) error
+SetSlot(val types.Slot) error
+SetFork(val *ethpb.Fork) error
+SetLatestBlockHeader(val *ethpb.BeaconBlockHeader) error
+SetHistoricalRoots(val [][]byte) error
+SetSlashings(val []uint64) error
+UpdateSlashingsAtIndex(idx, val uint64) error
+AppendHistoricalRoots(root [32]byte) error
+SetLatestExecutionPayloadHeader(payload interfaces.ExecutionData) error
+SetWithdrawalQueue(val []*enginev1.Withdrawal) error
+AppendWithdrawal(val *enginev1.Withdrawal) error
+SetNextWithdrawalIndex(i uint64) error
+SetNextPartialWithdrawalValidatorIndex(i types.ValidatorIndex) error
 }
+
 ```
 
 ```
+
 type WriteOnlyValidators interface {
- SetValidators(val []*ethpb.Validator) error
- ApplyToEveryValidator(f func(idx int, val *ethpb.Validator) (bool, *ethpb.Validator, error)) error
- UpdateValidatorAtIndex(idx types.ValidatorIndex, val *ethpb.Validator) error
- AppendValidator(val *ethpb.Validator) error
+SetValidators(val []*ethpb.Validator) error
+ApplyToEveryValidator(f func(idx int, val *ethpb.Validator) (bool, *ethpb.Validator, error)) error
+UpdateValidatorAtIndex(idx types.ValidatorIndex, val *ethpb.Validator) error
+AppendValidator(val \*ethpb.Validator) error
 }
+
 ```
 
 ```
+
 type WriteOnlyRandaoMixes interface {
- SetRandaoMixes(val [][]byte) error
- UpdateRandaoMixesAtIndex(idx uint64, val []byte) error
+SetRandaoMixes(val [][]byte) error
+UpdateRandaoMixesAtIndex(idx uint64, val []byte) error
 }
+
 ```
 
 [Validator](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/proto/prysm/v1alpha1#Validator) information
 
 ```
+
 type Validator struct {
- PublicKey                  []byte                                                             `protobuf:"bytes,1,opt,name=public_key,json=publicKey,proto3" json:"public_key,omitempty" spec-name:"pubkey" ssz-size:"48"`
- WithdrawalCredentials      []byte                                                             `` /* 138-byte string literal not displayed */
+PublicKey []byte `protobuf:"bytes,1,opt,name=public_key,json=publicKey,proto3" json:"public_key,omitempty" spec-name:"pubkey" ssz-size:"48"`
+WithdrawalCredentials []byte ``/* 138-byte string literal not displayed */
  EffectiveBalance           uint64                                                             `protobuf:"varint,3,opt,name=effective_balance,json=effectiveBalance,proto3" json:"effective_balance,omitempty"`
  Slashed                    bool                                                               `protobuf:"varint,4,opt,name=slashed,proto3" json:"slashed,omitempty"`
- ActivationEligibilityEpoch github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `` /* 221-byte string literal not displayed */
- ActivationEpoch            github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `` /* 186-byte string literal not displayed */
- ExitEpoch                  github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `` /* 168-byte string literal not displayed */
- WithdrawableEpoch          github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `` /* 192-byte string literal not displayed */
- // contains filtered or unexported fields
+ ActivationEligibilityEpoch github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch`` /_ 221-byte string literal not displayed _/
+ActivationEpoch github*com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `/* 186-byte string literal not displayed _/
+ExitEpoch github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch` /_ 168-byte string literal not displayed _/
+WithdrawableEpoch github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `` /_ 192-byte string literal not displayed \_/
+// contains filtered or unexported fields
 }
+
 ```
 
 #### [web3signer_types from prysm](https://github.com/prysmaticlabs/prysm/blob/develop/validator/keymanager/remote-web3signer/v1/web3signer_types.go#L107)
 
 ```
+
 ////////////////////////////////////////////////////////////////////////////////
 // sub properties of Sign Requests /////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 // ForkInfo a sub property object of the Sign request
 type ForkInfo struct {
- Fork                  *Fork         `json:"fork"`
- GenesisValidatorsRoot hexutil.Bytes `json:"genesis_validators_root"`
+Fork \*Fork `json:"fork"`
+GenesisValidatorsRoot hexutil.Bytes `json:"genesis_validators_root"`
 }
 
 // Fork a sub property of ForkInfo.
 type Fork struct {
- PreviousVersion hexutil.Bytes `json:"previous_version"`
- CurrentVersion  hexutil.Bytes `json:"current_version"`
- Epoch           string        `json:"epoch"` /*uint64*/
+PreviousVersion hexutil.Bytes `json:"previous_version"`
+CurrentVersion hexutil.Bytes `json:"current_version"`
+Epoch string `json:"epoch"` /_uint64_/
 }
 
 // AggregationSlot a sub property of AggregationSlotSignRequest.
 type AggregationSlot struct {
- Slot string `json:"slot"`
+Slot string `json:"slot"`
 }
 
 // AggregateAndProof a sub property of AggregateAndProofSignRequest.
 type AggregateAndProof struct {
- AggregatorIndex string        `json:"aggregator_index"` /* uint64 */
- Aggregate       *Attestation  `json:"aggregate"`
- SelectionProof  hexutil.Bytes `json:"selection_proof"` /* 96 bytes */
+AggregatorIndex string `json:"aggregator_index"` /_ uint64 _/
+Aggregate _Attestation `json:"aggregate"`
+SelectionProof hexutil.Bytes `json:"selection_proof"` /_ 96 bytes \*/
 }
 
 // Attestation a sub property of AggregateAndProofSignRequest.
 type Attestation struct {
- AggregationBits hexutil.Bytes    `json:"aggregation_bits"` /*hex bitlist*/
- Data            *AttestationData `json:"data"`
- Signature       hexutil.Bytes    `json:"signature"`
+AggregationBits hexutil.Bytes `json:"aggregation_bits"` /_hex bitlist_/
+Data \*AttestationData `json:"data"`
+Signature hexutil.Bytes `json:"signature"`
 }
 
 // AttestationData a sub property of Attestation.
 type AttestationData struct {
- Slot            string        `json:"slot"`  /* uint64 */
- Index           string        `json:"index"` /* uint64 */ // Prysm uses CommitteeIndex but web3signer uses index.
- BeaconBlockRoot hexutil.Bytes `json:"beacon_block_root"`
- Source          *Checkpoint   `json:"source"`
- Target          *Checkpoint   `json:"target"`
+Slot string `json:"slot"` /_ uint64 _/
+Index string `json:"index"` /_ uint64 _/ // Prysm uses CommitteeIndex but web3signer uses index.
+BeaconBlockRoot hexutil.Bytes `json:"beacon_block_root"`
+Source *Checkpoint `json:"source"`
+Target *Checkpoint `json:"target"`
 }
 
 // Checkpoint a sub property of AttestationData.
 type Checkpoint struct {
- Epoch string `json:"epoch"`
- Root  string `json:"root"`
+Epoch string `json:"epoch"`
+Root string `json:"root"`
 }
+
 ```
 
 [attestation.proto from prysm (Message Structure)](https://github.com/prysmaticlabs/prysm/blob/develop/proto/prysm/v1alpha1/attestation.proto)
 
 ```
+
 message AttestationData {
-    // Attestation data includes information on Casper the Friendly Finality Gadget's votes
-    // See: https://arxiv.org/pdf/1710.09437.pdf
+// Attestation data includes information on Casper the Friendly Finality Gadget's votes
+// See: https://arxiv.org/pdf/1710.09437.pdf
 
     // Slot of the attestation attesting for.
     uint64 slot = 1 [(ethereum.eth.ext.cast_type) = "github.com/prysmaticlabs/prysm/v3/consensus-types/primitives.Slot"];
@@ -1132,7 +1184,9 @@ message AttestationData {
 
     // The checkpoint attempting to be justified for the current epoch and its epoch boundary block
     Checkpoint target = 5;
+
 }
+
 ```
 
 ### Appendix F: Sample Data
@@ -1149,29 +1203,31 @@ It can be retrieved from [here](https://beaconcha.in/api/v1/docs/index.html#/Epo
 Response
 
 ```
+
 {
-  "status": "OK",
-  "data": {
-    "attestationscount": 3457,
-    "attesterslashingscount": 0,
-    "averagevalidatorbalance": 33899775551,
-    "blockscount": 32,
-    "depositscount": 0,
-    "eligibleether": 15596542000000000,
-    "epoch": 167040,
-    "finalized": true,
-    "globalparticipationrate": 0.9963188171386719,
-    "missedblocks": 0,
-    "orphanedblocks": 0,
-    "proposedblocks": 32,
-    "proposerslashingscount": 0,
-    "scheduledblocks": 0,
-    "totalvalidatorbalance": 16522615004645864,
-    "validatorscount": 487396,
-    "voluntaryexitscount": 0,
-    "votedether": 15539128000000000
-  }
+"status": "OK",
+"data": {
+"attestationscount": 3457,
+"attesterslashingscount": 0,
+"averagevalidatorbalance": 33899775551,
+"blockscount": 32,
+"depositscount": 0,
+"eligibleether": 15596542000000000,
+"epoch": 167040,
+"finalized": true,
+"globalparticipationrate": 0.9963188171386719,
+"missedblocks": 0,
+"orphanedblocks": 0,
+"proposedblocks": 32,
+"proposerslashingscount": 0,
+"scheduledblocks": 0,
+"totalvalidatorbalance": 16522615004645864,
+"validatorscount": 487396,
+"voluntaryexitscount": 0,
+"votedether": 15539128000000000
 }
+}
+
 ```
 
 #### Block Data for Slot 5,330,592
@@ -1184,48 +1240,50 @@ It can be retrieved from [here](https://beaconcha.in/api/v1/docs/index.html#/Blo
 Response
 
 ```
+
 {
-  "status": "OK",
-  "data": {
-    "attestationscount": 126,
-    "attesterslashingscount": 0,
-    "blockroot": "0xaebe891086c79ab79b325f474dc1150f1223e567337bff815cc318f14c64c233",
-    "depositscount": 0,
-    "epoch": 166581,
-    "eth1data_blockhash": "0xd346f84ffe7c600b7714d6411c8bea988d9d64dbdb432f26db58e72946337954",
-    "eth1data_depositcount": 498785,
-    "eth1data_depositroot": "0x9a5603a34aa60f299384679bf4bfc267e99b68278a81f343bde8cb5650bf1d60",
-    "exec_base_fee_per_gas": 12376913565,
-    "exec_block_hash": "0x26239efe09f51b24bdf7c518b1aa925a3b0b6453682408ec8a5c906d5038a6e7",
-    "exec_block_number": 16163905,
-    "exec_extra_data": "0x496c6c756d696e61746520446d6f63726174697a6520447374726962757465",
-    "exec_fee_recipient": "0xdafea492d9c6733ae3d56b7ed1adb60692c98bc5",
-    "exec_gas_limit": 30000000,
-    "exec_gas_used": 9901267,
-    "exec_logs_bloom": "0x8c21554815843b4084a999b2901917a52c58004a82a8440d94919a77f9241181388a0c404f000a8c0321ab024800bf899610e60ec801fb4b0352e34f147626192648619065381ded6b9d92bcd0861120adc1ec01064e7a016ea91c478d01b81316462d2d622a60010bc0139f6fb8ccf200499c0e211a85c042047d1601aa0c2ea2833902a2a3091528492dad09f6dc064529c455d328413b78c680c4699815ac9a91610f19e66542edca45a10518ee65b02cf02241a124232d5958b6004cd0a5846c5703d00b5e4d8353221015f7d38c1429074e34aaa11f3804f933082860c401152088251479918297a1a9237d9ac35539f6d069cca07a005819494a653913",
-    "exec_parent_hash": "0x06746d5ff105e96a1b8961c2490c0261b474604fbcbf934e86295c0030e26ce2",
-    "exec_random": "0xc2861c72cf4d34b37ec73519dbc20b690742b5cc119ed3738f1dd67d8ca52723",
-    "exec_receipts_root": "0x33cdf5c6e03dd341f282d02d3c354c2361a6212692b2a3c06b520397045313f4",
-    "exec_state_root": "0x517304bade8d83337c9a52f8ceeb13f924b64486b3b8033f7c348c176922104a",
-    "exec_timestamp": 1670791127,
-    "exec_transactions_count": 139,
-    "graffiti": "0x0000000000000000000000000000000000000000000000000000000000000000",
-    "graffiti_text": "",
-    "parentroot": "0x0cab36616bbcbbc67c343ddce00241c27d0df2c367c5fa82fc7c0fdf0ed37405",
-    "proposer": 4345,
-    "proposerslashingscount": 0,
-    "randaoreveal": "0x83950cb64781aff91f4bd14aa6abb0f5fdb7e08e4e81c264f0754c93d7672c4a9615de196491fdb53eafdeb8f49e9cf515f1bd3dc05bb5dc0e2dd8bff5a8d783b503e3385e80b61485f0ddac1caa9361132a863db84e7e234df5815e6908e4e7",
-    "signature": "0x84865a9480ae6313b0e5fcadfa294b35f5963e06c66ad1c7613dc081e9700c07f82a2583ba4b62b2483b4a1b9d49aafe0690f22fcf4d0072f9f44a5ce3067ef4fda560d171001cc6bf5dc84e09d9055d92894b86b27695c297f25530cd8db7a0",
-    "slot": 5330592,
-    "stateroot": "0x9e7e40d844c3b229cd9497d662a6d94276d285945073849995aba93c7e73cfe7",
-    "status": "1",
-    "syncaggregate_bits": "0xdffffffffffffffffffffffffffffff7fffffffffffffffffffffffffffffffffffffffffffffffffffffffdfffffffffffffffdffffffffffffffffffffffff",
-    "syncaggregate_participation": 0.9921875,
-    "syncaggregate_signature": "0x95332c55790018eed3d17eada01cb4045348d09137505bc8697eeedaa3800a830ee2c138251850a9577f62a5488419ef0a722579156a177fb3a147017f1077af5d778f46a4cdf815fc450129d135fe5286e16df68333592e4aa45821bde780dd",
-    "voluntaryexitscount": 0,
-    "votes": 19227
-  }
+"status": "OK",
+"data": {
+"attestationscount": 126,
+"attesterslashingscount": 0,
+"blockroot": "0xaebe891086c79ab79b325f474dc1150f1223e567337bff815cc318f14c64c233",
+"depositscount": 0,
+"epoch": 166581,
+"eth1data_blockhash": "0xd346f84ffe7c600b7714d6411c8bea988d9d64dbdb432f26db58e72946337954",
+"eth1data_depositcount": 498785,
+"eth1data_depositroot": "0x9a5603a34aa60f299384679bf4bfc267e99b68278a81f343bde8cb5650bf1d60",
+"exec_base_fee_per_gas": 12376913565,
+"exec_block_hash": "0x26239efe09f51b24bdf7c518b1aa925a3b0b6453682408ec8a5c906d5038a6e7",
+"exec_block_number": 16163905,
+"exec_extra_data": "0x496c6c756d696e61746520446d6f63726174697a6520447374726962757465",
+"exec_fee_recipient": "0xdafea492d9c6733ae3d56b7ed1adb60692c98bc5",
+"exec_gas_limit": 30000000,
+"exec_gas_used": 9901267,
+"exec_logs_bloom": "0x8c21554815843b4084a999b2901917a52c58004a82a8440d94919a77f9241181388a0c404f000a8c0321ab024800bf899610e60ec801fb4b0352e34f147626192648619065381ded6b9d92bcd0861120adc1ec01064e7a016ea91c478d01b81316462d2d622a60010bc0139f6fb8ccf200499c0e211a85c042047d1601aa0c2ea2833902a2a3091528492dad09f6dc064529c455d328413b78c680c4699815ac9a91610f19e66542edca45a10518ee65b02cf02241a124232d5958b6004cd0a5846c5703d00b5e4d8353221015f7d38c1429074e34aaa11f3804f933082860c401152088251479918297a1a9237d9ac35539f6d069cca07a005819494a653913",
+"exec_parent_hash": "0x06746d5ff105e96a1b8961c2490c0261b474604fbcbf934e86295c0030e26ce2",
+"exec_random": "0xc2861c72cf4d34b37ec73519dbc20b690742b5cc119ed3738f1dd67d8ca52723",
+"exec_receipts_root": "0x33cdf5c6e03dd341f282d02d3c354c2361a6212692b2a3c06b520397045313f4",
+"exec_state_root": "0x517304bade8d83337c9a52f8ceeb13f924b64486b3b8033f7c348c176922104a",
+"exec_timestamp": 1670791127,
+"exec_transactions_count": 139,
+"graffiti": "0x0000000000000000000000000000000000000000000000000000000000000000",
+"graffiti_text": "",
+"parentroot": "0x0cab36616bbcbbc67c343ddce00241c27d0df2c367c5fa82fc7c0fdf0ed37405",
+"proposer": 4345,
+"proposerslashingscount": 0,
+"randaoreveal": "0x83950cb64781aff91f4bd14aa6abb0f5fdb7e08e4e81c264f0754c93d7672c4a9615de196491fdb53eafdeb8f49e9cf515f1bd3dc05bb5dc0e2dd8bff5a8d783b503e3385e80b61485f0ddac1caa9361132a863db84e7e234df5815e6908e4e7",
+"signature": "0x84865a9480ae6313b0e5fcadfa294b35f5963e06c66ad1c7613dc081e9700c07f82a2583ba4b62b2483b4a1b9d49aafe0690f22fcf4d0072f9f44a5ce3067ef4fda560d171001cc6bf5dc84e09d9055d92894b86b27695c297f25530cd8db7a0",
+"slot": 5330592,
+"stateroot": "0x9e7e40d844c3b229cd9497d662a6d94276d285945073849995aba93c7e73cfe7",
+"status": "1",
+"syncaggregate_bits": "0xdffffffffffffffffffffffffffffff7fffffffffffffffffffffffffffffffffffffffffffffffffffffffdfffffffffffffffdffffffffffffffffffffffff",
+"syncaggregate_participation": 0.9921875,
+"syncaggregate_signature": "0x95332c55790018eed3d17eada01cb4045348d09137505bc8697eeedaa3800a830ee2c138251850a9577f62a5488419ef0a722579156a177fb3a147017f1077af5d778f46a4cdf815fc450129d135fe5286e16df68333592e4aa45821bde780dd",
+"voluntaryexitscount": 0,
+"votes": 19227
 }
+}
+
 ```
 
 #### Execution Block for 16163905
@@ -1238,42 +1296,44 @@ It can be retrieved from [here](https://beaconcha.in/api/v1/docs/index.html#/Exe
 Result
 
 ```
+
 {
-  "status": "OK",
-  "data": [
-    {
-      "blockHash": "0x26239efe09f51b24bdf7c518b1aa925a3b0b6453682408ec8a5c906d5038a6e7",
-      "blockNumber": 16163905,
-      "timestamp": 1670791127,
-      "blockReward": 37343826945103810,
-      "blockMevReward": 37083911760238810,
-      "producerReward": 37083911760238810,
-      "feeRecipient": "0xdafea492d9c6733ae3d56b7ed1adb60692c98bc5",
-      "gasLimit": 30000000,
-      "gasUsed": 9901267,
-      "baseFee": 12376913565,
-      "txCount": 139,
-      "internalTxCount": 54,
-      "uncleCount": 0,
-      "parentHash": "0x06746d5ff105e96a1b8961c2490c0261b474604fbcbf934e86295c0030e26ce2",
-      "uncleHash": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-      "difficulty": 0,
-      "posConsensus": {
-        "executionBlockNumber": 16163905,
-        "proposerIndex": 4345,
-        "slot": 5330592,
-        "epoch": 166581,
-        "finalized": true
-      },
-      "relay": {
-        "tag": "flashbots-relay",
-        "builderPubkey": "0x81beef03aafd3dd33ffd7deb337407142c80fea2690e5b3190cfc01bde5753f28982a7857c96172a75a234cb7bcb994f",
-        "producerFeeRecipient": "0x60987e0d8b5e0095869ca6f0e642828e3f258bb5"
-      },
-      "consensusAlgorithm": "pos"
-    }
-  ]
+"status": "OK",
+"data": [
+{
+"blockHash": "0x26239efe09f51b24bdf7c518b1aa925a3b0b6453682408ec8a5c906d5038a6e7",
+"blockNumber": 16163905,
+"timestamp": 1670791127,
+"blockReward": 37343826945103810,
+"blockMevReward": 37083911760238810,
+"producerReward": 37083911760238810,
+"feeRecipient": "0xdafea492d9c6733ae3d56b7ed1adb60692c98bc5",
+"gasLimit": 30000000,
+"gasUsed": 9901267,
+"baseFee": 12376913565,
+"txCount": 139,
+"internalTxCount": 54,
+"uncleCount": 0,
+"parentHash": "0x06746d5ff105e96a1b8961c2490c0261b474604fbcbf934e86295c0030e26ce2",
+"uncleHash": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+"difficulty": 0,
+"posConsensus": {
+"executionBlockNumber": 16163905,
+"proposerIndex": 4345,
+"slot": 5330592,
+"epoch": 166581,
+"finalized": true
+},
+"relay": {
+"tag": "flashbots-relay",
+"builderPubkey": "0x81beef03aafd3dd33ffd7deb337407142c80fea2690e5b3190cfc01bde5753f28982a7857c96172a75a234cb7bcb994f",
+"producerFeeRecipient": "0x60987e0d8b5e0095869ca6f0e642828e3f258bb5"
+},
+"consensusAlgorithm": "pos"
 }
+]
+}
+
 ```
 
 #### Sync Committee (latest)
@@ -1286,546 +1346,549 @@ It can be retrieved from [here](https://beaconcha.in/api/v1/docs/index.html#/Syn
 Abbrieviated Result
 
 ```
+
 {
-  "status": "OK",
-  "data": {
-    "end_epoch": 167167,
-    "period": 652,
-    "start_epoch": 166912,
-    "validators": [
-      328781,
-      184949,
-      ...
-    ]
-  }
+"status": "OK",
+"data": {
+"end_epoch": 167167,
+"period": 652,
+"start_epoch": 166912,
+"validators": [
+328781,
+184949,
+...
+]
 }
+}
+
 ```
 
 <details>
 <summary>Full Result</summary>
 
 ```
+
 {
-  "status": "OK",
-  "data": {
-    "end_epoch": 167167,
-    "period": 652,
-    "start_epoch": 166912,
-    "validators": [
-      328781,
-      184949,
-      269719,
-      484753,
-      447707,
-      190522,
-      222987,
-      429436,
-      23553,
-      353182,
-      394935,
-      347121,
-      3941,
-      77287,
-      390407,
-      41282,
-      440380,
-      477794,
-      13208,
-      321552,
-      338223,
-      414921,
-      77542,
-      57797,
-      471002,
-      238719,
-      87491,
-      85099,
-      16484,
-      220174,
-      256680,
-      194973,
-      77409,
-      150279,
-      322042,
-      275140,
-      393620,
-      21206,
-      59424,
-      308071,
-      20736,
-      173428,
-      365316,
-      293687,
-      136783,
-      459882,
-      9048,
-      128613,
-      132177,
-      267018,
-      290896,
-      236936,
-      406218,
-      380040,
-      481667,
-      34410,
-      413701,
-      158755,
-      222721,
-      295335,
-      106306,
-      426104,
-      229412,
-      377442,
-      300381,
-      251157,
-      2301,
-      255801,
-      160943,
-      417370,
-      290905,
-      435535,
-      164094,
-      204304,
-      258455,
-      366943,
-      119808,
-      311117,
-      79552,
-      164660,
-      446993,
-      347592,
-      256827,
-      244517,
-      277343,
-      303208,
-      425967,
-      216346,
-      13359,
-      481813,
-      142254,
-      105339,
-      465226,
-      200109,
-      198691,
-      43343,
-      32947,
-      392889,
-      304855,
-      452188,
-      148690,
-      441869,
-      15210,
-      216221,
-      33338,
-      124091,
-      299153,
-      305746,
-      230810,
-      484937,
-      464816,
-      474017,
-      307185,
-      370171,
-      430926,
-      21371,
-      7607,
-      209940,
-      439052,
-      398079,
-      238559,
-      108372,
-      127122,
-      62084,
-      5906,
-      278678,
-      404838,
-      253340,
-      146867,
-      437165,
-      470827,
-      252487,
-      430474,
-      433777,
-      282060,
-      221522,
-      273826,
-      56274,
-      359184,
-      401626,
-      43613,
-      287311,
-      465536,
-      301609,
-      21832,
-      192551,
-      412598,
-      186526,
-      447005,
-      112768,
-      404399,
-      289582,
-      290124,
-      191275,
-      213003,
-      39276,
-      200971,
-      315798,
-      135302,
-      121320,
-      227480,
-      156978,
-      98919,
-      201671,
-      195988,
-      186622,
-      475967,
-      314720,
-      58582,
-      404742,
-      215008,
-      306959,
-      267381,
-      126574,
-      73725,
-      156317,
-      83010,
-      375189,
-      167000,
-      459137,
-      294856,
-      144931,
-      234176,
-      371047,
-      446790,
-      219650,
-      26577,
-      64091,
-      482916,
-      203241,
-      306809,
-      178005,
-      380280,
-      452614,
-      266272,
-      264801,
-      428464,
-      342535,
-      310436,
-      297012,
-      173959,
-      384721,
-      311372,
-      375367,
-      304633,
-      247177,
-      373217,
-      43689,
-      363227,
-      447608,
-      203474,
-      186229,
-      63975,
-      189189,
-      391682,
-      197510,
-      423160,
-      168160,
-      336488,
-      11240,
-      86706,
-      316746,
-      272065,
-      50516,
-      411785,
-      25826,
-      212663,
-      233378,
-      186547,
-      268142,
-      387972,
-      275194,
-      134600,
-      337298,
-      51510,
-      206067,
-      111837,
-      461165,
-      137209,
-      317427,
-      153989,
-      464678,
-      975,
-      384374,
-      433258,
-      62611,
-      413087,
-      424810,
-      449054,
-      190150,
-      310602,
-      336220,
-      71740,
-      230657,
-      453370,
-      468144,
-      322259,
-      283775,
-      1606,
-      139348,
-      352593,
-      356482,
-      156500,
-      157489,
-      454159,
-      337203,
-      63370,
-      369541,
-      170461,
-      99771,
-      398154,
-      126177,
-      281482,
-      24217,
-      234556,
-      251792,
-      201614,
-      249765,
-      130900,
-      409074,
-      46296,
-      172953,
-      194464,
-      229313,
-      120835,
-      141417,
-      187795,
-      169516,
-      352531,
-      402467,
-      433379,
-      73331,
-      345245,
-      167093,
-      176171,
-      198482,
-      486643,
-      456439,
-      449333,
-      221367,
-      481580,
-      200704,
-      197099,
-      314035,
-      336100,
-      146714,
-      415630,
-      47127,
-      287953,
-      153548,
-      438248,
-      2664,
-      325723,
-      467719,
-      408858,
-      82963,
-      180891,
-      192679,
-      86617,
-      100068,
-      2394,
-      11764,
-      48047,
-      127406,
-      149052,
-      283994,
-      342457,
-      463547,
-      320210,
-      293252,
-      6540,
-      464926,
-      265551,
-      109109,
-      164735,
-      381110,
-      29080,
-      246178,
-      355576,
-      448267,
-      430466,
-      444401,
-      126905,
-      414347,
-      451523,
-      331926,
-      366508,
-      480803,
-      387850,
-      413867,
-      17772,
-      268744,
-      427797,
-      163955,
-      333814,
-      93663,
-      338046,
-      236013,
-      180066,
-      68685,
-      466537,
-      3904,
-      277412,
-      449845,
-      16633,
-      62120,
-      108501,
-      486885,
-      60466,
-      380719,
-      269930,
-      365432,
-      377380,
-      260009,
-      300616,
-      203897,
-      289145,
-      249814,
-      26558,
-      343110,
-      48226,
-      365643,
-      401664,
-      7355,
-      350107,
-      100836,
-      99073,
-      294093,
-      7587,
-      169932,
-      166154,
-      396054,
-      108167,
-      229069,
-      307648,
-      148531,
-      233563,
-      40093,
-      44708,
-      353913,
-      456080,
-      176129,
-      156427,
-      412072,
-      154317,
-      271015,
-      126289,
-      345876,
-      156388,
-      195860,
-      25422,
-      482057,
-      362295,
-      466187,
-      115725,
-      387438,
-      170886,
-      224753,
-      126768,
-      421612,
-      96187,
-      9314,
-      194598,
-      297360,
-      121794,
-      422582,
-      428474,
-      281996,
-      211966,
-      303980,
-      232330,
-      314475,
-      485,
-      146262,
-      8780,
-      459648,
-      88780,
-      371355,
-      283376,
-      480636,
-      67695,
-      153169,
-      205011,
-      52231,
-      103646,
-      432471,
-      433747,
-      16092,
-      78487,
-      165644,
-      412660,
-      451750,
-      8088,
-      185452,
-      192135,
-      355751,
-      59734,
-      341708,
-      347491,
-      466763,
-      446951,
-      670,
-      392454,
-      39840,
-      469691,
-      329363,
-      61899,
-      384770,
-      317497,
-      282776,
-      211703,
-      427937,
-      284122,
-      238949,
-      417486,
-      341081,
-      241572,
-      67225,
-      294159,
-      302865,
-      227806,
-      123006,
-      329514,
-      449279,
-      31448,
-      450144,
-      485006,
-      199737,
-      253646,
-      117814,
-      408604,
-      141399,
-      121937,
-      237632,
-      315197,
-      10397,
-      318494,
-      221051,
-      444960,
-      417643,
-      90991,
-      153828,
-      291638,
-      96654,
-      280019,
-      218632,
-      74162,
-      119769,
-      20024,
-      420771,
-      219118,
-      96325
-    ]
-  }
+"status": "OK",
+"data": {
+"end_epoch": 167167,
+"period": 652,
+"start_epoch": 166912,
+"validators": [
+328781,
+184949,
+269719,
+484753,
+447707,
+190522,
+222987,
+429436,
+23553,
+353182,
+394935,
+347121,
+3941,
+77287,
+390407,
+41282,
+440380,
+477794,
+13208,
+321552,
+338223,
+414921,
+77542,
+57797,
+471002,
+238719,
+87491,
+85099,
+16484,
+220174,
+256680,
+194973,
+77409,
+150279,
+322042,
+275140,
+393620,
+21206,
+59424,
+308071,
+20736,
+173428,
+365316,
+293687,
+136783,
+459882,
+9048,
+128613,
+132177,
+267018,
+290896,
+236936,
+406218,
+380040,
+481667,
+34410,
+413701,
+158755,
+222721,
+295335,
+106306,
+426104,
+229412,
+377442,
+300381,
+251157,
+2301,
+255801,
+160943,
+417370,
+290905,
+435535,
+164094,
+204304,
+258455,
+366943,
+119808,
+311117,
+79552,
+164660,
+446993,
+347592,
+256827,
+244517,
+277343,
+303208,
+425967,
+216346,
+13359,
+481813,
+142254,
+105339,
+465226,
+200109,
+198691,
+43343,
+32947,
+392889,
+304855,
+452188,
+148690,
+441869,
+15210,
+216221,
+33338,
+124091,
+299153,
+305746,
+230810,
+484937,
+464816,
+474017,
+307185,
+370171,
+430926,
+21371,
+7607,
+209940,
+439052,
+398079,
+238559,
+108372,
+127122,
+62084,
+5906,
+278678,
+404838,
+253340,
+146867,
+437165,
+470827,
+252487,
+430474,
+433777,
+282060,
+221522,
+273826,
+56274,
+359184,
+401626,
+43613,
+287311,
+465536,
+301609,
+21832,
+192551,
+412598,
+186526,
+447005,
+112768,
+404399,
+289582,
+290124,
+191275,
+213003,
+39276,
+200971,
+315798,
+135302,
+121320,
+227480,
+156978,
+98919,
+201671,
+195988,
+186622,
+475967,
+314720,
+58582,
+404742,
+215008,
+306959,
+267381,
+126574,
+73725,
+156317,
+83010,
+375189,
+167000,
+459137,
+294856,
+144931,
+234176,
+371047,
+446790,
+219650,
+26577,
+64091,
+482916,
+203241,
+306809,
+178005,
+380280,
+452614,
+266272,
+264801,
+428464,
+342535,
+310436,
+297012,
+173959,
+384721,
+311372,
+375367,
+304633,
+247177,
+373217,
+43689,
+363227,
+447608,
+203474,
+186229,
+63975,
+189189,
+391682,
+197510,
+423160,
+168160,
+336488,
+11240,
+86706,
+316746,
+272065,
+50516,
+411785,
+25826,
+212663,
+233378,
+186547,
+268142,
+387972,
+275194,
+134600,
+337298,
+51510,
+206067,
+111837,
+461165,
+137209,
+317427,
+153989,
+464678,
+975,
+384374,
+433258,
+62611,
+413087,
+424810,
+449054,
+190150,
+310602,
+336220,
+71740,
+230657,
+453370,
+468144,
+322259,
+283775,
+1606,
+139348,
+352593,
+356482,
+156500,
+157489,
+454159,
+337203,
+63370,
+369541,
+170461,
+99771,
+398154,
+126177,
+281482,
+24217,
+234556,
+251792,
+201614,
+249765,
+130900,
+409074,
+46296,
+172953,
+194464,
+229313,
+120835,
+141417,
+187795,
+169516,
+352531,
+402467,
+433379,
+73331,
+345245,
+167093,
+176171,
+198482,
+486643,
+456439,
+449333,
+221367,
+481580,
+200704,
+197099,
+314035,
+336100,
+146714,
+415630,
+47127,
+287953,
+153548,
+438248,
+2664,
+325723,
+467719,
+408858,
+82963,
+180891,
+192679,
+86617,
+100068,
+2394,
+11764,
+48047,
+127406,
+149052,
+283994,
+342457,
+463547,
+320210,
+293252,
+6540,
+464926,
+265551,
+109109,
+164735,
+381110,
+29080,
+246178,
+355576,
+448267,
+430466,
+444401,
+126905,
+414347,
+451523,
+331926,
+366508,
+480803,
+387850,
+413867,
+17772,
+268744,
+427797,
+163955,
+333814,
+93663,
+338046,
+236013,
+180066,
+68685,
+466537,
+3904,
+277412,
+449845,
+16633,
+62120,
+108501,
+486885,
+60466,
+380719,
+269930,
+365432,
+377380,
+260009,
+300616,
+203897,
+289145,
+249814,
+26558,
+343110,
+48226,
+365643,
+401664,
+7355,
+350107,
+100836,
+99073,
+294093,
+7587,
+169932,
+166154,
+396054,
+108167,
+229069,
+307648,
+148531,
+233563,
+40093,
+44708,
+353913,
+456080,
+176129,
+156427,
+412072,
+154317,
+271015,
+126289,
+345876,
+156388,
+195860,
+25422,
+482057,
+362295,
+466187,
+115725,
+387438,
+170886,
+224753,
+126768,
+421612,
+96187,
+9314,
+194598,
+297360,
+121794,
+422582,
+428474,
+281996,
+211966,
+303980,
+232330,
+314475,
+485,
+146262,
+8780,
+459648,
+88780,
+371355,
+283376,
+480636,
+67695,
+153169,
+205011,
+52231,
+103646,
+432471,
+433747,
+16092,
+78487,
+165644,
+412660,
+451750,
+8088,
+185452,
+192135,
+355751,
+59734,
+341708,
+347491,
+466763,
+446951,
+670,
+392454,
+39840,
+469691,
+329363,
+61899,
+384770,
+317497,
+282776,
+211703,
+427937,
+284122,
+238949,
+417486,
+341081,
+241572,
+67225,
+294159,
+302865,
+227806,
+123006,
+329514,
+449279,
+31448,
+450144,
+485006,
+199737,
+253646,
+117814,
+408604,
+141399,
+121937,
+237632,
+315197,
+10397,
+318494,
+221051,
+444960,
+417643,
+90991,
+153828,
+291638,
+96654,
+280019,
+218632,
+74162,
+119769,
+20024,
+420771,
+219118,
+96325
+]
+}
 }
 
 ```
@@ -1883,7 +1946,7 @@ Abbrieviated Result
 - [beacon-chain/blockchain](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/blockchain)
   - [process_block.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go): has function `onBlock` which is called when a gossip block is received. It also has function `handleEpochBoundary` which calls `ProcessSlots` in [beacon-chain/core/transition](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/core/transition) and calls function `UpdateCommitteeCache` in [beacon-chain/core/helpers](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/core/helpers)
 - [beacon-chain/core/transition](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/core/transition)
-  - [transition.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/transition/transition.go): implements the whole state transition function which consists of per slot, per-epoch transitions. function `ProcessSlots` calls `ProcessEpoch` in [beacon-chain/core/altair/transition.go](<(<https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/altair/transition.go>)>)
+  - [transition.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/transition/transition.go): implements the whole state transition function which consists of per slot, per-epoch transitions. function `ProcessSlots` calls `ProcessEpoch` in [beacon-chain/core/altair/transition.go](<(%3Chttps://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/altair/transition.go)%3E>)
 - [beacon-chain/core/altair](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/core/altair)
   - [transition.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/altair/transition.go): includes function `ProcessEpoch` which calls `ProcessSyncCommitteeUpdates` in [epoch_spec.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/altair/epoch_spec.go)
   - [epoch_spec.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/altair/epoch_spec.go): includes function `ProcessSyncCommitteeUpdates` which calls `NextSyncCommittee` it also persists beacon state syncCommittee by calling `beaconState.SetNextSyncCommittee(nextSyncCommittee)` in [setters_sync_committee.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/state/state-native/setters_sync_committee.go)
@@ -1907,15 +1970,17 @@ which [manages sync committee duties](https://github.com/prysmaticlabs/prysm/blo
 [registerSyncSubnetNextPeriod](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/rpc/prysm/v1alpha1/validator/assignments.go#L281)
 
 ```
+
 func registerSyncSubnetNextPeriod(s beaconState.BeaconState, epoch types.Epoch, pubKey []byte, status ethpb.ValidatorStatus) error {
- committee, err := s.NextSyncCommittee()
- if err != nil {
-  return err
- }
- syncCommPeriod := slots.SyncCommitteePeriod(epoch)
- registerSyncSubnet(epoch, syncCommPeriod+1, pubKey, committee, status)
- return nil
+committee, err := s.NextSyncCommittee()
+if err != nil {
+return err
 }
+syncCommPeriod := slots.SyncCommitteePeriod(epoch)
+registerSyncSubnet(epoch, syncCommPeriod+1, pubKey, committee, status)
+return nil
+}
+
 ```
 
 **Sync Committee Storage**
@@ -1930,86 +1995,102 @@ Persistence Mechanism
 [beacon_state_mainnet.go](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/state/state-native/beacon_state_mainnet.go)
 
 ```
+
 // BeaconState defines a struct containing utilities for the Ethereum Beacon Chain state, defining
 // getters and setters for its respective values and helpful functions such as HashTreeRoot().
 type BeaconState struct {
- version                             int
- genesisTime                         uint64
- genesisValidatorsRoot               [32]byte
- slot                                eth2types.Slot
- fork                                *ethpb.Fork
- latestBlockHeader                   *ethpb.BeaconBlockHeader
- blockRoots                          *customtypes.BlockRoots
- stateRoots                          *customtypes.StateRoots
- historicalRoots                     customtypes.HistoricalRoots
- eth1Data                            *ethpb.Eth1Data
- eth1DataVotes                       []*ethpb.Eth1Data
- eth1DepositIndex                    uint64
- validators                          []*ethpb.Validator
- balances                            []uint64
- randaoMixes                         *customtypes.RandaoMixes
- slashings                           []uint64
- previousEpochAttestations           []*ethpb.PendingAttestation
- currentEpochAttestations            []*ethpb.PendingAttestation
- previousEpochParticipation          []byte
- currentEpochParticipation           []byte
- justificationBits                   bitfield.Bitvector4
- previousJustifiedCheckpoint         *ethpb.Checkpoint
- currentJustifiedCheckpoint          *ethpb.Checkpoint
- finalizedCheckpoint                 *ethpb.Checkpoint
- inactivityScores                    []uint64
- currentSyncCommittee                *ethpb.SyncCommittee
- nextSyncCommittee                   *ethpb.SyncCommittee
- latestExecutionPayloadHeader        *enginev1.ExecutionPayloadHeader
- latestExecutionPayloadHeaderCapella *enginev1.ExecutionPayloadHeaderCapella
- nextWithdrawalIndex                 uint64
- nextWithdrawalValidatorIndex        eth2types.ValidatorIndex
+version int
+genesisTime uint64
+genesisValidatorsRoot [32]byte
+slot eth2types.Slot
+fork *ethpb.Fork
+latestBlockHeader *ethpb.BeaconBlockHeader
+blockRoots *customtypes.BlockRoots
+stateRoots *customtypes.StateRoots
+historicalRoots customtypes.HistoricalRoots
+eth1Data *ethpb.Eth1Data
+eth1DataVotes []*ethpb.Eth1Data
+eth1DepositIndex uint64
+validators []*ethpb.Validator
+balances []uint64
+randaoMixes *customtypes.RandaoMixes
+slashings []uint64
+previousEpochAttestations []*ethpb.PendingAttestation
+currentEpochAttestations []*ethpb.PendingAttestation
+previousEpochParticipation []byte
+currentEpochParticipation []byte
+justificationBits bitfield.Bitvector4
+previousJustifiedCheckpoint *ethpb.Checkpoint
+currentJustifiedCheckpoint *ethpb.Checkpoint
+finalizedCheckpoint *ethpb.Checkpoint
+inactivityScores []uint64
+currentSyncCommittee *ethpb.SyncCommittee
+nextSyncCommittee *ethpb.SyncCommittee
+latestExecutionPayloadHeader *enginev1.ExecutionPayloadHeader
+latestExecutionPayloadHeaderCapella \*enginev1.ExecutionPayloadHeaderCapella
+nextWithdrawalIndex uint64
+nextWithdrawalValidatorIndex eth2types.ValidatorIndex
 
- lock                  sync.RWMutex
- dirtyFields           map[nativetypes.FieldIndex]bool
- dirtyIndices          map[nativetypes.FieldIndex][]uint64
- stateFieldLeaves      map[nativetypes.FieldIndex]*fieldtrie.FieldTrie
- rebuildTrie           map[nativetypes.FieldIndex]bool
- valMapHandler         *stateutil.ValidatorMapHandler
- merkleLayers          [][][]byte
- sharedFieldReferences map[nativetypes.FieldIndex]*stateutil.Reference
+lock sync.RWMutex
+dirtyFields map[nativetypes.FieldIndex]bool
+dirtyIndices map[nativetypes.FieldIndex][]uint64
+stateFieldLeaves map[nativetypes.FieldIndex]*fieldtrie.FieldTrie
+rebuildTrie map[nativetypes.FieldIndex]bool
+valMapHandler *stateutil.ValidatorMapHandler
+merkleLayers [][][]byte
+sharedFieldReferences map[nativetypes.FieldIndex]\*stateutil.Reference
 }
+
 ```
 
 [beacon_state.pb.go](https://github.com/prysmaticlabs/prysm/blob/develop/proto/prysm/v1alpha1/beacon_state.pb.go#L962)
 
 ```
-type SyncCommittee struct {
- state         protoimpl.MessageState
- sizeCache     protoimpl.SizeCache
- unknownFields protoimpl.UnknownFields
 
- Pubkeys         [][]byte `protobuf:"bytes,1,rep,name=pubkeys,proto3" json:"pubkeys,omitempty" ssz-size:"512,48"`
- AggregatePubkey []byte   `protobuf:"bytes,2,opt,name=aggregate_pubkey,json=aggregatePubkey,proto3" json:"aggregate_pubkey,omitempty" ssz-size:"48"`
+type SyncCommittee struct {
+state protoimpl.MessageState
+sizeCache protoimpl.SizeCache
+unknownFields protoimpl.UnknownFields
+
+Pubkeys [][]byte `protobuf:"bytes,1,rep,name=pubkeys,proto3" json:"pubkeys,omitempty" ssz-size:"512,48"`
+AggregatePubkey []byte `protobuf:"bytes,2,opt,name=aggregate_pubkey,json=aggregatePubkey,proto3" json:"aggregate_pubkey,omitempty" ssz-size:"48"`
 }
+
 ```
 
 [Interfaces](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/state/interfaces.go)
 
 ```
+
 // BeaconState has read and write access to beacon state methods.
 type BeaconState interface {
- SpecParametersProvider
- ReadOnlyBeaconState
- ReadOnlyWithdrawals
- WriteOnlyBeaconState
- Copy() BeaconState
- HashTreeRoot(ctx context.Context) ([32]byte, error)
- FutureForkStub
- StateProver
+SpecParametersProvider
+ReadOnlyBeaconState
+ReadOnlyWithdrawals
+WriteOnlyBeaconState
+Copy() BeaconState
+HashTreeRoot(ctx context.Context) ([32]byte, error)
+FutureForkStub
+StateProver
 }
+
 ```
 
 ```
+
 // StateProver defines the ability to create Merkle proofs for beacon state fields.
 type StateProver interface {
- FinalizedRootProof(ctx context.Context) ([][]byte, error)
- CurrentSyncCommitteeProof(ctx context.Context) ([][]byte, error)
- NextSyncCommitteeProof(ctx context.Context) ([][]byte, error)
+FinalizedRootProof(ctx context.Context) ([][]byte, error)
+CurrentSyncCommitteeProof(ctx context.Context) ([][]byte, error)
+NextSyncCommitteeProof(ctx context.Context) ([][]byte, error)
 }
+
+```
+
+```
+
+```
+
+```
+
 ```

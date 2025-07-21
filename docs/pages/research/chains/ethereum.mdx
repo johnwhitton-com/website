@@ -78,7 +78,7 @@ Validators run both an Ethereum 1 client (e.g. geth) and a Beacon Chain Client (
 
 ![Block Proposal](/assets/research/block-proposal.png "Block Proposal")
 
-### Slots and Epochs <sup>[6](#ts6)</sup>
+### Slots and Epochs <sup>[6](#ts6a)</sup>
 
 > The Beacon Chain provides the heartbeat to Ethereum’s consensus. Each slot is 12 seconds and an epoch is 32 slots: 6.4 minutes.
 
@@ -88,7 +88,7 @@ Validators run both an Ethereum 1 client (e.g. geth) and a Beacon Chain Client (
 
 When a validator is nominated as a proposer for a slot in an Epoch they propose a block gathered from there Ethereum 1 client.
 
-This proposed block is attested to by other validators who have been assigned as committe members for this slot<sup>[6](#ts6)</sup>.
+This proposed block is attested to by other validators who have been assigned as committe members for this slot<sup>[6b](#ts6b)</sup>.
 
 > A block proposer is a validator that has been pseudorandomly selected to build a block.
 >
@@ -291,51 +291,63 @@ Bridging support was implemented by NEAR under [Eth2-to-Near-relay: prototype im
 - [Gasper Consensus Whitepaper](https://arxiv.org/pdf/2003.03052.pdf): Combining GHOST and Casper
 - [sigp lighthouse beacon block](https://github.com/sigp/lighthouse/blob/stable/consensus/types/src/beacon_block.rs#L7): Beacon Block codebase (rust)
 
-<a name="bp1">[1]</a> [EIP-3675: Upgrade consensus to Proof-of-Stake](https://eips.ethereum.org/EIPS/eip-3675#pow-block-processing):
-Specification of the consensus mechanism upgrade on Ethereum Mainnet that introduces
-Proof-of-Stake.
+<a name="bp1">[1]</a> [EIP-3675: Upgrade consensus to
+Proof-of-Stake](https://eips.ethereum.org/EIPS/eip-3675#pow-block-processing):
+Specification of the consensus mechanism upgrade on Ethereum Mainnet that
+introduces Proof-of-Stake.
 
-<a name="bp2">[2]</a> [EIP-2982: Serenity Phase 0](https://eips.ethereum.org/EIPS/eip-2982):
-Phase 0 of the release schedule of Serenity, a series of updates to Ethereum a scalable,
-proof-of-stake consensus.
+<a name="bp2">[2]</a> [EIP-2982: Serenity Phase
+0](https://eips.ethereum.org/EIPS/eip-2982): Phase 0 of the release schedule of
+Serenity, a series of updates to Ethereum a scalable, proof-of-stake consensus.
 
-<a name="bp3">[3]</a> [Ethreum Consensus Specs Phase 0](https://github.com/ethereum/consensus-specs/tree/dev/specs/phase0):
-Specifications for Ethereum 2.0 Phase 0 including [beacon-chain](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md),
+<a name="bp3">[3]</a> [Ethreum Consensus Specs Phase
+0](https://github.com/ethereum/consensus-specs/tree/dev/specs/phase0):
+Specifications for Ethereum 2.0 Phase 0 including
+[beacon-chain](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md),
 [deposit-contract](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/deposit-contract.md),
 [fork-choice](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/fork-choice.md),
 [p2p-interface](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/p2p-interface.md),
 [validator](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/validator.md)
-and [weak-subjectivity](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/weak-subjectivity.md)
+and
+[weak-subjectivity](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/weak-subjectivity.md)
 
-<a name="bp4">[6]</a> [Ethereum Consensus and Execution Client Distribution](https://clientdiversity.org/#distribution):
-Percentages of nodes running client types for both Consensus (Prysm, Lighthours,
-Nimbus, Teku) and Execution (Geth, Erigon, Besu, Nethermind) clients.
+<a name="bp4">[6]</a> [Ethereum Consensus and Execution Client
+Distribution](https://clientdiversity.org/#distribution): Percentages of nodes
+running client types for both Consensus (Prysm, Lighthours, Nimbus, Teku) and
+Execution (Geth, Erigon, Besu, Nethermind) clients.
 
-<a name="bp5">[5]</a> [go-ethereum go documentation](https://pkg.go.dev/github.com/ethereum/go-ethereum@v1.10.26):
-Documentation for Go Ethereum, Official Golang implementation of the Ethereum protocol.
-Which is an execution chain implementation.
+<a name="bp5">[5]</a> [go-ethereum go
+documentation](https://pkg.go.dev/github.com/ethereum/go-ethereum@v1.10.26):
+Documentation for Go Ethereum, Official Golang implementation of the Ethereum
+protocol. Which is an execution chain implementation.
 
-<a name="bp6">[6]</a> [prysm go documentation](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2):
-Documentation for prysm, An Ethereum Consensus Implementation Written in Go. A beacon-chain
-immplementation. Also see [Prysm Documentation](https://docs.prylabs.network/docs/getting-started)
+<a name="bp6">[6]</a> [prysm go
+documentation](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2):
+Documentation for prysm, An Ethereum Consensus Implementation Written in Go. A
+beacon-chain immplementation. Also see [Prysm
+Documentation](https://docs.prylabs.network/docs/getting-started)
 
-<a name="bp7">[7]</a> [lighthouse documentation](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2):
+<a name="bp7">[7]</a> [lighthouse
+documentation](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2):
 Documentation for lighthouse, written in Rust. A beacon-chain immplementation.
 
-<a name="bp8">[8]</a> [Etherum 2.0 Validators Overview](https://beaconcha.in/validators):
-Live Monitoring of Ethreum 2.0 Validators from beachoncha.in
+<a name="bp8">[8]</a> [Etherum 2.0 Validators
+Overview](https://beaconcha.in/validators): Live Monitoring of Ethreum 2.0
+Validators from beachoncha.in
 
-<a name="bp9">[9]</a> [Upgrading Ethereum](https://eth2book.info/bellatrix/): A technical
-handbook on Ethereum's move to proof of stake and beyond Edition 0.2: Bellatrix [WIP]
-by Ben Edgington.
+<a name="bp9">[9]</a> [Upgrading Ethereum](https://eth2book.info/bellatrix/): A
+technical handbook on Ethereum's move to proof of stake and beyond Edition 0.2:
+Bellatrix [WIP] by Ben Edgington.
 
-<a name="bp10">[9]</a> [Annotated Ethereum Roadmap](https://notes.ethereum.org/@domothy/roadmap):
-an entry point for the various items on the Ethereum roadmap, with a quick summary
-along with links for those who want to dive deeper.
+<a name="bp10">[9]</a> [Annotated Ethereum
+Roadmap](https://notes.ethereum.org/@domothy/roadmap): an entry point for the
+various items on the Ethereum roadmap, with a quick summary along with links for
+those who want to dive deeper.
 
-<a name="bp11">[10]</a> [Shanghai/Capella Upgrade](https://consensys.net/shanghai-capella-upgrade/):
-the first simultaneous upgrade of Ethereum’s execution layer and consensus layer,
-and is highly anticipated because it will enable staked ETH withdrawals.
+<a name="bp11">[10]</a> [Shanghai/Capella
+Upgrade](https://consensys.net/shanghai-capella-upgrade/): the first
+simultaneous upgrade of Ethereum’s execution layer and consensus layer, and is
+highly anticipated because it will enable staked ETH withdrawals.
 
 **Signing**
 
@@ -349,31 +361,44 @@ and is highly anticipated because it will enable staked ETH withdrawals.
 
 **References Technical Summary**
 
-<a name="ts1">[1]</a> [Ethereum EVM illustrated](https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf):
-A technical overview of Ethereum including state, accounts, transactions and messages
-as well as the EVM. [Appendix E](#appendix-e-data-structures) has links to type definitions
-for blocks, transactions, state etc in geth.
+<a name="ts1">[1]</a> [Ethereum EVM
+illustrated](https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf):
+A technical overview of Ethereum including state, accounts, transactions and
+messages as well as the EVM. [Appendix E](#appendix-e-data-structures) has links
+to type definitions for blocks, transactions, state etc in geth.
 
 <a name="ts2">[2]</a> [Blocks](https://ethereum.org/en/developers/docs/blocks/):
 Block data definitions including attestations from ethereum.org
 
-<a name="ts3">[3]</a> [eth1 block proposal](https://hackmd.io/@flashbots/mev-in-eth2#eth1-block-proposal):
+<a name="ts3">[3]</a> [eth1 block
+proposal](https://hackmd.io/@flashbots/mev-in-eth2#eth1-block-proposal):
 Technical walkthrough of how blocks are proposed and potential MEV opportunities
 from FlashBots.
 
-<a name="ts4">[4]</a> [Assemble Block](https://github.com/ethereum/rayonism/blob/master/specs/merge.md#assemble-block):
+<a name="ts4">[4]</a> [Assemble
+Block](https://github.com/ethereum/rayonism/blob/master/specs/merge.md#assemble-block):
 Ethereum Specification for block Assembly as part of Rayonism -- The Merge spec.
 
-<a name="ts5">[5]</a> [Prysm running a node](https://docs.prylabs.network/docs/install/install-with-script):
-Operational procedures for Validators by Prysm. Note validators run both the beacon
-chain(consensus) and a geth node(execution)
+<a name="ts5">[5]</a> [Prysm running a
+node](https://docs.prylabs.network/docs/install/install-with-script):
+Operational procedures for Validators by Prysm. Note validators run both the
+beacon chain(consensus) and a geth node(execution)
 
 <a name="ts6">[6]</a>[The Beacon Chain Ethereum 2.0 explainer you need to read
 first](https://ethos.dev/beacon-chain): Detailed walk through og Ethereum 2.0
 block production including slots, epochs, validators, commitees and finality.
 
-<a name="ts7">[7]</a> [Etherum 2.0 Validators Overview](https://beaconcha.in/validators):
-Live Monitoring of Ethreum 2.0 Validators from beachoncha.in
+<a name="ts6a">[6]</a>[The Beacon Chain Ethereum 2.0 explainer you need to read
+first](https://ethos.dev/beacon-chain): Detailed walk through og Ethereum 2.0
+block production including slots, epochs, validators, commitees and finality.
+
+<a name="ts6b">[6]</a>[The Beacon Chain Ethereum 2.0 explainer you need to read
+first](https://ethos.dev/beacon-chain): Detailed walk through og Ethereum 2.0
+block production including slots, epochs, validators, commitees and finality.
+
+<a name="ts7">[7]</a> [Etherum 2.0 Validators
+Overview](https://beaconcha.in/validators): Live Monitoring of Ethreum 2.0
+Validators from beachoncha.in
 
 <a name="ts8">[8]</a>[BLS
 Signatures](https://eth2book.info/bellatrix/part2/building_blocks/signatures/):
@@ -384,27 +409,32 @@ Lifecycle](https://kb.beaconcha.in/attestation#attestation-inclusion-lifecycle):
 High Level overview of the attestation life cycle including geeration,
 propogation, aggregation and inclusion.Attest
 
-<a name="ts10">[ts10]</a> [Beacon Chain Proposal: Sync Comittees](https://notes.ethereum.org/@vbuterin/HF1_proposal#Sync-committees):
+<a name="ts10">[ts10]</a> [Beacon Chain Proposal: Sync
+Comittees](https://notes.ethereum.org/@vbuterin/HF1_proposal#Sync-committees):
 For each period (~27 hours), 1024 validators are randomly selected to be part of
-the sync committee during that period. Validators in the sync committee would publish
-signatures attesting to the current head. These signatures would be broadcasted as
-part of a LightClientUpdate object that could help light clients find the head, and
-would be included in the beacon chain to be rewarded.
+the sync committee during that period. Validators in the sync committee would
+publish signatures attesting to the current head. These signatures would be
+broadcasted as part of a LightClientUpdate object that could help light clients
+find the head, and would be included in the beacon chain to be rewarded.
 
-<a name="ts11">[ts11]</a> [Altair Light Client -- Sync Protocol](https://notes.ethereum.org/@vbuterin/HF1_proposal#Sync-committees):
-This document suggests a minimal light client design for the beacon chain that uses
-sync committees.
+<a name="ts11">[ts11]</a> [Altair Light Client -- Sync
+Protocol](https://notes.ethereum.org/@vbuterin/HF1_proposal#Sync-committees):
+This document suggests a minimal light client design for the beacon chain that
+uses sync committees.
 
-<a name="ts12">[ts12]</a> [Ethereum Builder Specifications: Honest Validator](https://github.com/ethereum/builder-specs/blob/main/specs/validator.md):
-explains the way in which a beacon chain validator is expected to use the Builder
-spec to participate in an external builder network.
+<a name="ts12">[ts12]</a> [Ethereum Builder Specifications: Honest
+Validator](https://github.com/ethereum/builder-specs/blob/main/specs/validator.md):
+explains the way in which a beacon chain validator is expected to use the
+Builder spec to participate in an external builder network.
 
-<a name="ts13">[ts13]</a> [Flashbots: mev-boost](https://github.com/flashbots/mev-boost):
-open source middleware run by validators to access a competitive block-building market.
+<a name="ts13">[ts13]</a> [Flashbots:
+mev-boost](https://github.com/flashbots/mev-boost): open source middleware run
+by validators to access a competitive block-building market.
 
-<a name="ts14">[ts14]</a> [A note on Ethereum 2.0 phase 0 validator lifecycle](https://notes.ethereum.org/7CFxjwMgQSWOHIxLgJP2Bw#A-note-on-Ethereum-20-phase-0-validator-lifecycle):
-describes the concept of validator status epochs and the cases of validator lifecycle
-in the view of “validator status transition” in phase 0.
+<a name="ts14">[ts14]</a> [A note on Ethereum 2.0 phase 0 validator
+lifecycle](https://notes.ethereum.org/7CFxjwMgQSWOHIxLgJP2Bw#A-note-on-Ethereum-20-phase-0-validator-lifecycle):
+describes the concept of validator status epochs and the cases of validator
+lifecycle in the view of “validator status transition” in phase 0.
 
 **Additional**
 
@@ -476,7 +506,7 @@ mix: [159 134 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
 
 The shuffle functions consist of
 
-- [func ShuffleList](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ShuffleList): returns list of shuffled indexes in a pseudorandom permutation `p` of `0...list_size - 1` with “seed“ as entropy. We utilize 'swap or not' shuffling in this implementation; we are allocating the memory with the seed that stays constant between iterations instead of reallocating it each iteration as in the spec. This implementation is based on the original implementation from protolambda, <https://github.com/protolambda/eth2-shuffle>
+- [func ShuffleList](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ShuffleList): returns list of shuffled indexes in a pseudorandom permutation `p` of `0...list_size - 1` with “seed“ as entropy. We utilize 'swap or not' shuffling in this implementation; we are allocating the memory with the seed that stays constant between iterations instead of reallocating it each iteration as in the spec. This implementation is based on the original implementation from protolambda, https://github.com/protolambda/eth2-shuffle
 
   Following is an example of a shuffled list generated from [TestShuffleList_OK](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/helpers/shuffle_test.go#L25)
 
@@ -486,7 +516,7 @@ The shuffle functions consist of
   shuffledList1: [0 7 8 6 3 9 4 5 2 1]
   ```
 
-- [func ShuffleIndex](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ShuffledIndex): returns `p(index)` in a pseudorandom permutation `p` of `0...list_size - 1` with “seed“ as entropy. We utilize 'swap or not' shuffling in this implementation; we are allocating the memory with the seed that stays constant between iterations instead of reallocating it each iteration as in the spec. This implementation is based on the original implementation from protolambda, <https://github.com/protolambda/eth2-shuffle>
+- [func ShuffleIndex](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ShuffledIndex): returns `p(index)` in a pseudorandom permutation `p` of `0...list_size - 1` with “seed“ as entropy. We utilize 'swap or not' shuffling in this implementation; we are allocating the memory with the seed that stays constant between iterations instead of reallocating it each iteration as in the spec. This implementation is based on the original implementation from protolambda, https://github.com/protolambda/eth2-shuffle
 
 - [func ShuffleIndices](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ShuffledIndices): ShuffledIndices uses input beacon state and returns the shuffled indices of the input epoch, the shuffled indices then can be used to break up into committees.
 
@@ -497,31 +527,24 @@ Committes are formed using functions from [beacon_comittee.go](https://github.co
   Following is an example of a `beaconComittee` generated by adding the following lines to [TestBeaconCommitteeFromState_UpdateCacheForPreviousEpoch](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/helpers/beacon_committee_test.go#L574):
 
   ```
-
+  var beaconCommittee []types.ValidatorIndex
+  beaconCommittee, err = BeaconCommitteeFromState(context.Background(), state, 1 /_previous epoch_/, 0)
+  fmt.Printf("beaconComittee: %+v\n", beaconCommittee)
   ```
 
-var beaconCommittee []types.ValidatorIndex
-beaconCommittee, err = BeaconCommitteeFromState(context.Background(), state, 1 /_previous epoch_/, 0)
-fmt.Printf("beaconComittee: %+v\n", beaconCommittee)
+  Result
 
-````
-
-    Result
-
-    ```
-    beaconComittee: [160 338 313 307 320 324 45 469 196 303 23 14 97 312 126 488]
-    ```
+  ```
+  beaconComittee: [160 338 313 307 320 324 45 469 196 303 23 14 97 312 126 488]
+  ```
 
 - [func CommitteeAssignments](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#CommitteeAssignments): is a map of validator indices pointing to the appropriate committee assignment for the given epoch.
-
   1. Determine the proposer validator index for each slot.
   2. Compute all committees.
   3. Determine the attesting slot for each committee.
   4. Construct a map of validator indices pointing to the respective committees.
 
   Following is an example of `commitees` generated by adding the following lines to [TestComputeCommittee_WithoutCache](https://github.com/prysmaticlabs/prysm/blob/v3.1.2/beacon-chain/core/helpers/beacon_committee_test.go#L23)
-
-````
 
 committees, err := computeCommittee(indices, seed, 0, 1 /_ Total committee_/)
 
@@ -558,25 +581,21 @@ Attestations are managed using functions from [attestation.go](https://github.co
 
   ```
   aggSig, err := helpers.AggregateSignature(atts)
+  fmt.Printf("aggSig: %+v\n", aggSig)
   ```
 
-fmt.Printf("aggSig: %+v\n", aggSig)
+  Result
 
-````
-
-    Result
-
-    ```
-        aggSig: &{s:0xc0003fe000}
-    ```
+  ```
+      aggSig: &{s:0xc0003fe000}
+  ```
 
 - [func IsAggregated](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#IsAggregated): IsAggregated returns true if the attestation is an aggregated attestation, false otherwise.
 
 - [func ComputeSubnetForAttestation](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ComputeSubnetForAttestation): returns the subnet for which the provided attestation will be broadcasted to.This differs from the spec definition by instead passing in the active validators indices in the attestation's given epoch.
 
+```
   Spec pseudocode definition:
-
-````
 
 def compute_subnet_for_attestation(committees_per_slot: uint64, slot: Slot, committee_index: CommitteeIndex) -> uint64:
 
@@ -611,7 +630,7 @@ return uint64((committees_since_epoch_start + committee_index) % ATTESTATION_SUB
 ```
 
 - [func ValidateAttestationTime](https://pkg.go.dev/github.com/prysmaticlabs/prysm/v3@v3.1.2/beacon-chain/core/helpers#ValidateAttestationTime): Validates that the incoming attestation is in the desired time range.
-An attestation is valid only if received within the last ATTESTATION_PROPAGATION_SLOT_RANGE slots.
+  An attestation is valid only if received within the last ATTESTATION_PROPAGATION_SLOT_RANGE slots.
 
 Example:
 
@@ -698,7 +717,6 @@ The term 'Portal Client' describes a piece of software which participates in the
       A Distributed Hash Table (DHT) allows network participants to have retrieve data on-demand based on a content
 
 - [Syncing Block Headers](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/sync-gossip.md): A beacon chain client could sync committee to perform state updates. The data object LightClientSkipSyncUpdate allows a client to quickly sync to a recent header with the appropriate sync committee. Once the client establishes a recent header, it could sync to other headers by processing LightClientUpdates. These two data types allow a client to stay up-to-date with the beacon chain.
-
   - [Sync State](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/skip-sync-network.md): A client uses SkipSyncUpdate to skip sync from a known header to a recent header. A client with a trusted but outdated header cannot use the messages in the gossip channel bc-light-client-update to update. The client's sync-committee in the stored snapshot is too old and not connected to any update messages. The client look for the appropriate SkipSyncUpdate to skip sync its header.
   - [Advance Block Headers](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/sync-gossip.md): A beacon chain client could sync committee to perform [state updates](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/sync-protocol.md). The data object [LightClientSkipSyncUpdate](skip-sync-network) allows a client to quickly sync to a recent header with the appropriate sync committee. Once the client establishes a recent header, it could sync to other headers by processing [LightClientUpdates](https://github.com/ethereum/consensus-specs/blob/dev/specs/altair/sync-protocol.md#lightclientupdate). These two data types allow a client to stay up-to-date with the beacon chain.
 
@@ -743,7 +761,7 @@ A Distributed Hash Table (DHT) allows network participants to have retrieve data
 - [A Beacon Chain Light Client Proposal](https://ethresear.ch/t/a-beacon-chain-light-client-proposal/11064): proposing a light client implementation that goes a step further than the minimum light client described in the altair consensus-spec. The proposed client aims to allow queries into the beacon state.
 - [Distributed Hash Table (DHT) Overview](https://github.com/ethereum/portal-network-specs/blob/master/beacon-chain/beacon-state-network.md#dht-overview): allows network participants to have retrieve data on-demand based on a content key.
 - [(WIP) Light client p2p interface Specification](https://github.com/ethereum/consensus-specs/pull/2786): a PR to get the conversation going about a p2p approach.
-Here we cover two approaches which may be combined
+  Here we cover two approaches which may be combined
 
 ### Appendix C: Proving and Verification Mechanisms
 
@@ -1108,13 +1126,13 @@ UpdateRandaoMixesAtIndex(idx uint64, val []byte) error
 
 type Validator struct {
 PublicKey []byte `protobuf:"bytes,1,opt,name=public_key,json=publicKey,proto3" json:"public_key,omitempty" spec-name:"pubkey" ssz-size:"48"`
-WithdrawalCredentials []byte `` /* 138-byte string literal not displayed */
+WithdrawalCredentials []byte ``/* 138-byte string literal not displayed */
  EffectiveBalance           uint64                                                             `protobuf:"varint,3,opt,name=effective_balance,json=effectiveBalance,proto3" json:"effective_balance,omitempty"`
  Slashed                    bool                                                               `protobuf:"varint,4,opt,name=slashed,proto3" json:"slashed,omitempty"`
- ActivationEligibilityEpoch github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `` /_ 221-byte string literal not displayed _/
-ActivationEpoch github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `/* 186-byte string literal not displayed */
- ExitEpoch                  github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch` /_ 168-byte string literal not displayed _/
-WithdrawableEpoch github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `` /_ 192-byte string literal not displayed _/
+ ActivationEligibilityEpoch github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch`` /_ 221-byte string literal not displayed _/
+ActivationEpoch github*com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `/* 186-byte string literal not displayed _/
+ExitEpoch github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch` /_ 168-byte string literal not displayed _/
+WithdrawableEpoch github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Epoch `` /_ 192-byte string literal not displayed \_/
 // contains filtered or unexported fields
 }
 
@@ -1921,7 +1939,7 @@ Abbrieviated Result
 - [beacon-chain/blockchain](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/blockchain)
   - [process_block.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go): has function `onBlock` which is called when a gossip block is received. It also has function `handleEpochBoundary` which calls `ProcessSlots` in [beacon-chain/core/transition](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/core/transition) and calls function `UpdateCommitteeCache` in [beacon-chain/core/helpers](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/core/helpers)
 - [beacon-chain/core/transition](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/core/transition)
-  - [transition.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/transition/transition.go): implements the whole state transition function which consists of per slot, per-epoch transitions. function `ProcessSlots` calls `ProcessEpoch` in [beacon-chain/core/altair/transition.go](<(<https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/altair/transition.go>)>)
+  - [transition.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/transition/transition.go): implements the whole state transition function which consists of per slot, per-epoch transitions. function `ProcessSlots` calls `ProcessEpoch` in [beacon-chain/core/altair/transition.go](<(%3Chttps://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/altair/transition.go)%3E>)
 - [beacon-chain/core/altair](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/core/altair)
   - [transition.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/altair/transition.go): includes function `ProcessEpoch` which calls `ProcessSyncCommitteeUpdates` in [epoch_spec.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/altair/epoch_spec.go)
   - [epoch_spec.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/core/altair/epoch_spec.go): includes function `ProcessSyncCommitteeUpdates` which calls `NextSyncCommittee` it also persists beacon state syncCommittee by calling `beaconState.SetNextSyncCommittee(nextSyncCommittee)` in [setters_sync_committee.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/state/state-native/setters_sync_committee.go)
@@ -2059,6 +2077,8 @@ FinalizedRootProof(ctx context.Context) ([][]byte, error)
 CurrentSyncCommitteeProof(ctx context.Context) ([][]byte, error)
 NextSyncCommitteeProof(ctx context.Context) ([][]byte, error)
 }
+
+```
 
 ```
 
