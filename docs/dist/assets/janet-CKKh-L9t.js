@@ -1,0 +1,3 @@
+import{u as o,j as n}from"./index-Cjcmd6ty.js";const r={title:"Janet"};function a(e){const t={a:"a",div:"div",h3:"h3",p:"p",...o(),...e.components};return n.jsxs(n.Fragment,{children:[n.jsxs(t.h3,{id:"janet",children:[n.jsx(t.a,{href:"https://www.linkedin.com/in/janet-liang-754090135/",children:"Janet"}),n.jsx(t.a,{"aria-hidden":"true",tabIndex:"-1",href:"#janet",children:n.jsx(t.div,{"data-autolink-icon":!0})})]}),`
+`,n.jsx(t.p,{children:`John is always willing to work on whatever the team needs even though you don't necessarily want to.
+thank you for listening and being a great mentor.`})]})}function s(e={}){const{wrapper:t}={...o(),...e.components};return t?n.jsx(t,{...e,children:n.jsx(a,{...e})}):a(e)}export{s as default,r as frontmatter};
