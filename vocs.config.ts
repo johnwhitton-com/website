@@ -24,6 +24,14 @@ export default defineConfig({
       text: "References",
       link: "/references",
     },
+    {
+      text: "Writing",
+      link: "/writing/writing",
+    },
+    {
+      text: "Research",
+      link: "/research/research",
+    },
   ],
   sidebar: {
     "/references": [
@@ -102,6 +110,28 @@ export default defineConfig({
         link: "/references",
       },
     ],
+    "/writing": [
+      { text: "John's Writing", link: "/writing/intro" },
+      {
+        text: "Ethereum Bridging using Light Clients - Rainbow Costing",
+        link: "/writing/2023-02-23-rainbow-costs",
+      },
+      { text: "Draft EAVE Whitepaper", link: "/writing/2021-12-01-eave-defi" },
+      { text: "Kanga Protocol Whitepaper", link: "/writing/2021-05-01-kanga" },
+      {
+        text: "EAVE Parachain Design",
+        link: "/writing/2021-04-01-eave-parachain",
+      },
+      {
+        text: "Lessons Learned from Devcon5",
+        link: "/writing/2019-10-16-devcon5",
+      },
+      {
+        text: "Project-X Technical White Paper",
+        link: "/writing/2018-07-17-projectx",
+      },
+    ],
+    "/research": [{ text: "John's Research", link: "/research/intro" }],
   },
   socials: [
     {

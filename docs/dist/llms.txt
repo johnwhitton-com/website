@@ -1,9 +1,0 @@
-# John Whitton
-
-> John Whitton's personal website
-
-## Docs
-
-- [Example](/example): This is an example page.
-- [Get started](/getting-started): Hello world!
-- [John's Colleagues](/references): I have been fortunate over my long career to have the opportunity to work with some of the most talented individuals and teams not only in Silicon Valley, but globally.
