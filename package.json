@@ -7,7 +7,7 @@
     "dev": "vocs dev",
     "build": "vocs build",
     "preview": "vocs preview",
-    "deploy": "gh-pages -d docs/dist --no-jekyll"
+    "deploy": "gh-pages -d docs/dist --nojekyll"
   },
   "dependencies": {
     "katex": "^0.16.22",
