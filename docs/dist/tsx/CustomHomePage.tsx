@@ -20,7 +20,7 @@ export default function CustomHomepage() {
               <a href="/work">Resume/CV</a>
             </li>
             <li>
-              <a href="/colleagues">References</a>
+              <a href="/references/intro">References</a>
             </li>
             <li>
               <a href="/posts">Writing</a>

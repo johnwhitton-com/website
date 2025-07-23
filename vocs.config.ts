@@ -92,6 +92,23 @@ export default defineConfig({
     "/research": [
       { text: "John's Research", link: "/research/intro" },
       {
+        text: "Solving and Arbitrage",
+        items: [
+          {
+            text: "Solving and Arbitrage Intro",
+            link: "/research/solving/intro",
+          },
+          {
+            text: "Reference Architecture",
+            link: "/research/solving/architecture",
+          },
+          {
+            text: "Uniswap V4 Hooks",
+            link: "/research/solving/hooks",
+          },
+        ],
+      },
+      {
         text: "Primitives",
         items: [
           {
