@@ -1,0 +1,3 @@
+import{u as o,j as n}from"./index-DG-E-f9O.js";const r=void 0;function a(t){const e={a:"a",div:"div",h3:"h3",p:"p",...o(),...t.components};return n.jsxs(n.Fragment,{children:[n.jsxs(e.h3,{id:"janet",children:[n.jsx(e.a,{href:"https://www.linkedin.com/in/janet-liang-754090135/",children:"Janet"}),n.jsx(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#janet",children:n.jsx(e.div,{"data-autolink-icon":!0})})]}),`
+`,n.jsx(e.p,{children:`John is always willing to work on whatever the team needs even though you don't necessarily want to.
+thank you for listening and being a great mentor.`})]})}function s(t={}){const{wrapper:e}={...o(),...t.components};return e?n.jsx(e,{...t,children:n.jsx(a,{...t})}):a(t)}export{s as default,r as frontmatter};
