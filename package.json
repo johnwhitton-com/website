@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vocs dev",
-    "build": "vocs build",
+    "vocsbuild": "vocs build",
     "preview": "vocs preview",
-    "deploy": "gh-pages -d docs/dist --nojekyll --cname johnwhitton.com"
+    "sitedeploy": "gh-pages -d docs/dist --nojekyll --cname johnwhitton.com"
   },
   "dependencies": {
     "katex": "^0.16.22",
