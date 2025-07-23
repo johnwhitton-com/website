@@ -229,77 +229,6 @@ Bachelor of Science, The University of Queensland (1984-1987)
 <object data="/images/john.pdf" width="1000" height="1000" type="application/pdf" />
 
 
-#### [Andy](https://www.linkedin.com/in/andy-wu-4329664/)
-
-John is one of the most professional engineers I’ve ever worked with. He takes the ownership of many OPS works,
-and documents them down with meticulous details. Also, he is a fast learner, and eager to pick up new skills. He also has very good project management skills, and I believe he could be a very good leader either in biz or eng departments.
-
-
-#### [Ganesha](https://www.linkedin.com/in/gupadhyaya/)
-
-John is dedicated, hard-working, great work ethics, and brings lot of positive energy. no doubt that he is a great manager with good people skills. john led the whole hiring process and single handedly managed it well, without much chaos. no joke how much time and energy it takes. great job. while i believe it was not the best use of john's time, he embraced whatever this staking launch demanded from him. great work towards managing the release (deployment, documentation, etc) and taking some load of andy and daniel. after the staking release, john could refocus and quickly get back to speed on the ecosystem/tooling/partner tasks/goals for q4 and expedite some of the deliverables.
-
-
-## John's Colleagues
-
-<span class="image main">
-  <img src="/images/pic03.jpg" alt="" />
-</span>
-
-I have been fortunate over my long career to have the opportunity to work with some of the most talented individuals and teams not only in Silicon Valley, but globally.
-
-In my role as a founder, cto, ecoystem architect and engineer. I have learned from great leaders,
-researchers, business strategists and engineers. I have built great teams and mentored many talented junior engineers. I have watched my teams apply their solid technical foundation to become invaluable contributors to the team and the organization. Watching individuals grow both personally and professionally is the most rewarding work I have done.
-
-Here is a video highlighting the strengths of the Harmony Team that I was fortunate enough to work with.
-
-{" "}
-
-<div className="video-responsive">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/easABjC4gIY" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-</div>
-
-<a href="/images/johnImpact.png" target="_blank" rel="noopener noreferrer" style={{ color: "blue", textDecoration: "underline" }}>
-  Here are some quotes from some of the greatest people you'll ever get to work
-  with
-</a>
-
-
-#### [Janet](https://www.linkedin.com/in/janet-liang-754090135/)
-
-John is always willing to work on whatever the team needs even though you don't necessarily want to.
-thank you for listening and being a great mentor.
-
-
-#### [Li](https://www.linkedin.com/in/lijiang2087/)
-
-I want to thank John for having a detailed process and documentation of the OSTN network upgrades and resets and communicating to me and community.
-
-
-#### [Matt](https://www.linkedin.com/in/mattlockyer/)
-
-John is amazing at explaining and delegating. I’m always impressed with his knowledge base. I think more efforts could be made to capture his knowledge in “explainers”, that would go a long way to supporting the community. John can also run anything, like up and running in a matter of minutes. This means he can troubleshoot tons of deployment issues from the core protocol all the way up to the application layer
-
-
-#### [Nick](https://www.linkedin.com/in/nickwh8te/)
-
-John is always willing to jump on whatever needs to get done. he jumped SDK to hiring and then back into network ops. I think that John does a good job of recruiting and onboarding new interns and giving them appropriate difficulty tasks as they ramp up. I'm grateful that he stepped in to cover miami devcon for me at the last minute. team player
-
-
-#### [Olivier](https://www.linkedin.com/in/olivierveyrac/)
-
-John and I worked together at Autodesk during the implementation of the subscription program, John was a lead SAP developer working on the program. I frequently interacted with him as we rolled out the program. John has the rare gift of being able to understand complex business problems and map them to a technical solution. His drive and passion for the project, combined with his excellent communication skills and deep technical knowledge, were key factors in the successful rollout of the program. We've since become close friends. I'd recommend anyone looking for a technical lead with business acumen to consider John.
-
-
-#### [Yishuang](https://www.linkedin.com/in/chenyishuang/)
-
-John is a really good team player, among his good qualities, I admire three most.
-
-1. Helpful and warm-hearted whenever you ask for help, John will give you the best help.
-2. Avid learner, John likes to learn new things and will actively take new tasks. I see John actively in ops recently.
-3. Responsible, longer view, John focused a lot on knowledge transfer. He wants to make sure the knowledge can be shared with the whole team and future new employees, so he contributed a lot on internal wiki gitbooks, which I think it’s a good point.
-
-
 ## Project-X Technical White Paper
 
 Blockchain ledger platform with a focus on interoperability, speed and privacy
@@ -613,6 +542,77 @@ For more recent work I have been doing please see
 * [Rongjian Lan](https://www.linkedin.com/in/rongjianlan/): For his work on core protocol, specifically Harmony and the knowledge which he generously shared.
 
 *Please note: Research is ongoing and as such some items are placeholders or work in progress*
+
+
+#### [Andy](https://www.linkedin.com/in/andy-wu-4329664/)
+
+John is one of the most professional engineers I’ve ever worked with. He takes the ownership of many OPS works,
+and documents them down with meticulous details. Also, he is a fast learner, and eager to pick up new skills. He also has very good project management skills, and I believe he could be a very good leader either in biz or eng departments.
+
+
+#### [Ganesha](https://www.linkedin.com/in/gupadhyaya/)
+
+John is dedicated, hard-working, great work ethics, and brings lot of positive energy. no doubt that he is a great manager with good people skills. john led the whole hiring process and single handedly managed it well, without much chaos. no joke how much time and energy it takes. great job. while i believe it was not the best use of john's time, he embraced whatever this staking launch demanded from him. great work towards managing the release (deployment, documentation, etc) and taking some load of andy and daniel. after the staking release, john could refocus and quickly get back to speed on the ecosystem/tooling/partner tasks/goals for q4 and expedite some of the deliverables.
+
+
+## John's Colleagues
+
+<span class="image main">
+  <img src="/images/pic03.jpg" alt="" />
+</span>
+
+I have been fortunate over my long career to have the opportunity to work with some of the most talented individuals and teams not only in Silicon Valley, but globally.
+
+In my role as a founder, cto, ecoystem architect and engineer. I have learned from great leaders,
+researchers, business strategists and engineers. I have built great teams and mentored many talented junior engineers. I have watched my teams apply their solid technical foundation to become invaluable contributors to the team and the organization. Watching individuals grow both personally and professionally is the most rewarding work I have done.
+
+Here is a video highlighting the strengths of the Harmony Team that I was fortunate enough to work with.
+
+{" "}
+
+<div className="video-responsive">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/easABjC4gIY" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+</div>
+
+<a href="/images/johnImpact.png" target="_blank" rel="noopener noreferrer" style={{ color: "blue", textDecoration: "underline" }}>
+  Here are some quotes from some of the greatest people you'll ever get to work
+  with
+</a>
+
+
+#### [Janet](https://www.linkedin.com/in/janet-liang-754090135/)
+
+John is always willing to work on whatever the team needs even though you don't necessarily want to.
+thank you for listening and being a great mentor.
+
+
+#### [Li](https://www.linkedin.com/in/lijiang2087/)
+
+I want to thank John for having a detailed process and documentation of the OSTN network upgrades and resets and communicating to me and community.
+
+
+#### [Matt](https://www.linkedin.com/in/mattlockyer/)
+
+John is amazing at explaining and delegating. I’m always impressed with his knowledge base. I think more efforts could be made to capture his knowledge in “explainers”, that would go a long way to supporting the community. John can also run anything, like up and running in a matter of minutes. This means he can troubleshoot tons of deployment issues from the core protocol all the way up to the application layer
+
+
+#### [Nick](https://www.linkedin.com/in/nickwh8te/)
+
+John is always willing to jump on whatever needs to get done. he jumped SDK to hiring and then back into network ops. I think that John does a good job of recruiting and onboarding new interns and giving them appropriate difficulty tasks as they ramp up. I'm grateful that he stepped in to cover miami devcon for me at the last minute. team player
+
+
+#### [Olivier](https://www.linkedin.com/in/olivierveyrac/)
+
+John and I worked together at Autodesk during the implementation of the subscription program, John was a lead SAP developer working on the program. I frequently interacted with him as we rolled out the program. John has the rare gift of being able to understand complex business problems and map them to a technical solution. His drive and passion for the project, combined with his excellent communication skills and deep technical knowledge, were key factors in the successful rollout of the program. We've since become close friends. I'd recommend anyone looking for a technical lead with business acumen to consider John.
+
+
+#### [Yishuang](https://www.linkedin.com/in/chenyishuang/)
+
+John is a really good team player, among his good qualities, I admire three most.
+
+1. Helpful and warm-hearted whenever you ask for help, John will give you the best help.
+2. Avid learner, John likes to learn new things and will actively take new tasks. I see John actively in ops recently.
+3. Responsible, longer view, John focused a lot on knowledge transfer. He wants to make sure the knowledge can be shared with the whole team and future new employees, so he contributed a lot on internal wiki gitbooks, which I think it’s a good point.
 
 
 ## Cosmos IBC
@@ -7018,51 +7018,6 @@ We have summarized the functionality in three areas
   * [succinctlabs](https://github.com/succinctlabs/eth-proof-of-consensus) (circom)
 
 
-## Celestia
-
-* date: 2023-06-19
-* last updated: 2023-06-19
-
-### Overview
-
-Celestia[^ov-1] is a modular consensus and data network, built to enable anyone to easily deploy their own blockchain with minimal overhead.
-
-### Cryptographic Primitives
-
-* [whitepaper](https://arxiv.org/pdf/1809.09044.pdf)
-  * 2.2 Merkle Trees and Sparse Merkle Trees
-  * 2.3 Erasure Codes and Reed-Solomon Codes
-  * 5 Data Availability Proofs
-    * 5.1 Strawman 1D Reed-Solomon Availability Scheme
-    * 5.2 2D Reed-Solomon Encoded Merkle Tree Construction
-    * 5.3 Random Sampling and Network Block Recovery
-    * 5.4 Selective Share Disclosure
-    * 5.5 Fraud Proofs of Incorrectly Generated Extended Data
-* [Celestia App Architecture](https://github.com/celestiaorg/celestia-app/tree/main/docs/architecture)
-* [Implementation celestia-app pkg](https://github.com/celestiaorg/celestia-app/tree/main/pkg)
-
-#### Namespaced Merkle Tree Wrapper
-
-* [code](https://github.com/celestiaorg/celestia-app/tree/main/pkg/wrapper)
-
-### Appendices
-
-### References
-
-* [Learn Modular](https://celestia.org/learn/)
-* [Fraud and Data Availability Proofs](https://arxiv.org/pdf/1809.09044.pdf): Maximising Light Client Security and Scaling Blockchains with Dishonest Majorities
-* [Celestia App Specifications](https://celestiaorg.github.io/celestia-app/index.html)
-* [Celestia App Architecture](https://github.com/celestiaorg/celestia-app/tree/main/docs/architecture)
-* [Rollkit Docs](https://rollkit.dev/docs/intro/)
-* [Rollkit Architecture Design Records](https://github.com/rollkit/rollkit/tree/main/docs/lazy-adr)
-* [Rollkit Dependency Graph](https://github.com/rollkit/rollkit/blob/main/docs/specification/rollkit-dependency-graph.mdx)
-* [Quantum Gravity Bridge](https://github.com/celestiaorg/quantum-gravity-bridge/tree/master)
-
-### Footnotes
-
-[^ov-1]: [Celestia](https://celestia.org/): the first modular blockchan network.
-
-
 ## Avalanche
 
 * date: 2023-02-04
@@ -10720,6 +10675,51 @@ summary](https://wiki.polygon.technology/docs/pos/peppermint/)
 
 <a name="f10">\[10]</a> See Polygon validator
 [documentations](https://wiki.polygon.technology/docs/maintain/validate/validator-responsibilities/)
+
+
+## Celestia
+
+* date: 2023-06-19
+* last updated: 2023-06-19
+
+### Overview
+
+Celestia[^ov-1] is a modular consensus and data network, built to enable anyone to easily deploy their own blockchain with minimal overhead.
+
+### Cryptographic Primitives
+
+* [whitepaper](https://arxiv.org/pdf/1809.09044.pdf)
+  * 2.2 Merkle Trees and Sparse Merkle Trees
+  * 2.3 Erasure Codes and Reed-Solomon Codes
+  * 5 Data Availability Proofs
+    * 5.1 Strawman 1D Reed-Solomon Availability Scheme
+    * 5.2 2D Reed-Solomon Encoded Merkle Tree Construction
+    * 5.3 Random Sampling and Network Block Recovery
+    * 5.4 Selective Share Disclosure
+    * 5.5 Fraud Proofs of Incorrectly Generated Extended Data
+* [Celestia App Architecture](https://github.com/celestiaorg/celestia-app/tree/main/docs/architecture)
+* [Implementation celestia-app pkg](https://github.com/celestiaorg/celestia-app/tree/main/pkg)
+
+#### Namespaced Merkle Tree Wrapper
+
+* [code](https://github.com/celestiaorg/celestia-app/tree/main/pkg/wrapper)
+
+### Appendices
+
+### References
+
+* [Learn Modular](https://celestia.org/learn/)
+* [Fraud and Data Availability Proofs](https://arxiv.org/pdf/1809.09044.pdf): Maximising Light Client Security and Scaling Blockchains with Dishonest Majorities
+* [Celestia App Specifications](https://celestiaorg.github.io/celestia-app/index.html)
+* [Celestia App Architecture](https://github.com/celestiaorg/celestia-app/tree/main/docs/architecture)
+* [Rollkit Docs](https://rollkit.dev/docs/intro/)
+* [Rollkit Architecture Design Records](https://github.com/rollkit/rollkit/tree/main/docs/lazy-adr)
+* [Rollkit Dependency Graph](https://github.com/rollkit/rollkit/blob/main/docs/specification/rollkit-dependency-graph.mdx)
+* [Quantum Gravity Bridge](https://github.com/celestiaorg/quantum-gravity-bridge/tree/master)
+
+### Footnotes
+
+[^ov-1]: [Celestia](https://celestia.org/): the first modular blockchan network.
 
 
 ## Fast Fourier Transforms
