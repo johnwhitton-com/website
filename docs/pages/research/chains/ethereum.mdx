@@ -16,7 +16,7 @@ As at December 11th, 2022 Ethereum has 487,920 validators<sup>[8](#bp8)</sup> wi
 
 Here is more information on the upgrade<sup>[9](#bp9)</sup> and the roadmap<sup>[10](#bp10)</sup>
 
-![Ethereum Roadmap](/assets/research/ethereum-roadmap.jpg "Ethereum Roadmap")
+![Ethereum Roadmap](/images/research/ethereum-roadmap.jpg "Ethereum Roadmap")
 
 ## Consensus Mechanism
 
@@ -40,13 +40,13 @@ Following is an excerpt from [Ethereum Orgs Proof of Stake document](Proof-of-st
 
 Validators run both an Ethereum 1 client (e.g. geth) and a Beacon Chain Client (e.g. prysm). The geth client recieves transactions and places them into blocks. For additional details see the Ethereum Builder Specs<sup>[12](#ts12)</sup>. The following diagrams give an overview of how blocks are proposed and how MEV Boost<sup>[13](#ts13)</sup> could be integrated. For simplification we can replace mev_boost and relay with geth in the block proposal diagram as the majority of validators simply run a geth node.
 
-![Block Proposal](/assets/research/block-proposal.png "Block Proposal")
+![Block Proposal](/images/research/block-proposal.png "Block Proposal")
 
 ### Slots and Epochs <sup>[6](#ts6a)</sup>
 
 > The Beacon Chain provides the heartbeat to Ethereum’s consensus. Each slot is 12 seconds and an epoch is 32 slots: 6.4 minutes.
 
-![Slots and Epochs](/assets/research/Beacon-Chain-Slots-and-Epochs.png.webp "Slots and Epochs")
+![Slots and Epochs](/images/research/Beacon-Chain-Slots-and-Epochs.png.webp "Slots and Epochs")
 
 ### Block Proposals
 
@@ -58,7 +58,7 @@ This proposed block is attested to by other validators who have been assigned as
 >
 > Most of the time, validators are attesters that vote on blocks. These votes are recorded in the Beacon Chain and determine the head of the Beacon Chain.
 
-![Validators and Attestations](/assets/research/Beacon-Chain-Validators.png "Validators and Attestations")
+![Validators and Attestations](/images/research/Beacon-Chain-Validators.png "Validators and Attestations")
 
 ### Committees
 
@@ -66,7 +66,7 @@ This proposed block is attested to by other validators who have been assigned as
 >
 > The concept of a randomness beacon that emits random numbers for the public, lends its name to the Ethereum Beacon Chain. The Beacon Chain enforces consensus on a pseudorandom process called RANDAO.
 
-![Committees](/assets/research/Beacon-Chain-RANDAO.png "Committees")
+![Committees](/images/research/Beacon-Chain-RANDAO.png "Committees")
 
 ### Attestations
 
@@ -78,17 +78,17 @@ The attestation lifecyle<sup>[9](#ts9)</sup> involves
 4. Propagation of the aggregated attestations back to the block Proposer
 5. Inclusion of the block in the Beaconchain
 
-![Attestation Life Cycle](/assets/research/AttestationLifeCycle.png "Attestation Life Cycle")
+![Attestation Life Cycle](/images/research/AttestationLifeCycle.png "Attestation Life Cycle")
 
 ### Checkpoints and Finality<sup>[6](#ts6)</sup>
 
 > When an epoch ends, if its checkpoint has garnered a ⅔ supermajority, the checkpoint gets justified.
 
-![Checkpoints](/assets/research/Beacon-Chain-Checkpoints.jpg "Checkpoints")
+![Checkpoints](/images/research/Beacon-Chain-Checkpoints.jpg "Checkpoints")
 
 > If a checkpoint B is justified and the checkpoint in the immediate next epoch becomes justified, then B becomes finalized. Typically, a checkpoint is finalized in two epochs, 12.8 minutes.
 
-![Finality](/assets/research/Beacon-Chain-Justification-and-Finalization.png "Finality")
+![Finality](/images/research/Beacon-Chain-Justification-and-Finalization.png "Finality")
 
 ### Sync Committee <sup>[10](#ts10)</sup>
 
@@ -118,7 +118,7 @@ Following is an overview of statuses for validators in Ethereum 2.0 phase 0 <sup
 >
 > _Note that in some cases, a validator can be in multiple statuses at the same time, e.g., an active validator may be “activated and slashed”._
 
-![Validator Status Transition](/assets/research/ValidatorStateTransition.png "Validator Status Transition")
+![Validator Status Transition](/images/research/ValidatorStateTransition.png "Validator Status Transition")
 
 ## Light Client Support
 
@@ -238,7 +238,7 @@ def apply_light_client_update(store: LightClientStore, update: LightClientUpdate
 Bridging support was implemented by NEAR under [Eth2-to-Near-relay: prototype implementation #762
 ](https://github.com/aurora-is-near/rainbow-bridge/pull/762)
 
-![Ethereum 2 block proof](/assets/posts/2023-02-05-ethereum-bridging-costs/ETH_2_0_MMR.jpg "Ethereum 2 Block Proof")
+![Ethereum 2 block proof](/posts/2023-02-05-ethereum-bridging-costs/ETH_2_0_MMR.jpg "Ethereum 2 Block Proof")
 
 > When we send light client update for finality block inside light client update, we also send Eth1 execution block hash with the Merkle proof of include to Beacon Block Body. Execution block hash you can find at BeaconBlockBody.execution_payload.block_hash.
 >

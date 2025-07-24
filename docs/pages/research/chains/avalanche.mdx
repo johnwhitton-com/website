@@ -27,7 +27,7 @@ There are two main consensus algorithms: Avalanche and Snowman. As stated above 
 
 Avalanche is a network of blockchains[^con-1], this diagram gives an overview of the avalanche primiary network.
 
-![Avalanche Primary Network](/assets/research/avalanche-primary-network.png "Avalanche Primary Network")
+![Avalanche Primary Network](/images/research/avalanche-primary-network.png "Avalanche Primary Network")
 
 ### Avalanche Consensus
 
@@ -37,7 +37,7 @@ Following is an excerpt from the Avalanche Consensus Whitepaper [^con-2], it is 
 >
 > The paper describes the Snow protocol family, analyzes its guarantees, and describes how it can be used to construct the core of an internet-scale electronic payment system called Avalanche, which is evaluated in a large scale deployment. Experiments demonstrate that the system can achieve high throughput (3400 tps), provide low confirmation latency (1.35 sec), and scale well compared to existing systems that deliver similar functionality. For our implementation and setup, the bottleneck of the system is in transaction verification.
 
-![Avalanche Consensus](/assets/research/avalanche-consensus.png "Avalanche Consensus")
+![Avalanche Consensus](/images/research/avalanche-consensus.png "Avalanche Consensus")
 
 ### Snowman Consensus
 
@@ -45,7 +45,7 @@ Snowman consensus is one of the consensus mechanisms for single blockchains supp
 
 > Each blockchain on Avalanche has several components: the virtual machine, database, consensus engine, sender, and handler. These components help the chain run smoothly. Blockchains also interact with the P2P layer and the chain router to send and receive messages.
 
-![Avalanche flow of a single blockchain](/assets/research/avalanche-flow.png "Avalanche Flow of a single blockchain")
+![Avalanche flow of a single blockchain](/images/research/avalanche-flow.png "Avalanche Flow of a single blockchain")
 
 In the case of the C-Chain, avalanche uses coreth[^con-5] a modified version of geth, as it's vm to provide EVM support. It also uses Snowman++ [^con-7] as a congestion controle mechanism, effectively pre-selecting a set of proposers and giving them a submission window to submit blocks. If they fail to submit within their WindowDuration then any other validator can issue the block.
 

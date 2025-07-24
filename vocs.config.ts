@@ -1,4 +1,6 @@
 import { defineConfig } from "vocs";
+import remarkMath from "remark-math";
+import rehypeMathjax from "rehype-mathjax";
 
 export default defineConfig({
   title: "John Whitton",
@@ -7,6 +9,10 @@ export default defineConfig({
   logoUrl: "/images/jincubator.png",
   ogImageUrl:
     "https://vocs.dev/api/og?logo=%logo&title=%title&description=%description",
+  markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeMathjax],
+  },
   topNav: [
     {
       text: "Home",
@@ -101,6 +107,10 @@ export default defineConfig({
           {
             text: "Reference Architecture",
             link: "/research/solving/architecture",
+          },
+          {
+            text: "IntentSwap Flow",
+            link: "/research/solving/flow",
           },
           {
             text: "Uniswap V4 Hooks",

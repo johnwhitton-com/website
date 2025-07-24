@@ -18,7 +18,7 @@ Following is an excerpt from [What is Tendermint](https://github.com/tendermint/
 
 > Tendermint is an easy-to-understand, mostly asynchronous, BFT consensus protocol. The protocol follows a simple state machine that looks like this:
 
-![consensus-logic](/assets/research/tendermint_consensus_logic.png)
+![consensus-logic](/images/research/tendermint_consensus_logic.png)
 
 > Participants in the protocol are called **validators**; they take turns proposing blocks of transactions and voting on them. Blocks are committed in a chain, with one block at each **height**. A block may fail to be committed, in which case the protocol moves to the next **round**, and a new validator gets to propose a block for that height. Two stages of voting are required to successfully commit a block; we call them **pre-vote** and **pre-commit**. A block is committed when more than 2/3 of validators pre-commit for the same block in the same round.
 
