@@ -14,30 +14,10 @@
 - [Draft EAVE Whitepaper](/writing/2021-12-01-eave-defi): EAVE: a multi-chain web3 engine to support the growing adoption of emerging assets on blockchain
 - [Ethereum Bridging using Light Clients - Rainbow Costing](/writing/2023-02-23-rainbow-costs): A review of how Bridging costs can be reduced using light clients. Taking the near Rainbow Bridge as an example.
 - [Ethereum Bridging using Light Clients - Rainbow Costing](/writing/2023-02-23-rainbow-costs): date: 2022-02-23
-- [Cosmos IBC](/research/bridge/cosmos-ibc): date: 2023-02-24
-- [Harmony Horizon](/research/bridge/harmony-horizon): date: 2023-02-24
-- [Crosschain Bridge Analysis - An Introduction](/research/bridge/intro): date: 2023-02-04
-- [Isomorph](/research/bridge/isomorph): date: 2023-02-24
-- [Near Rainbow Bridge](/research/bridge/near-rainbow): date: 2023-02-24
-- [Polymer Labs](/research/bridge/polymerlabs): date: 2023-02-24
-- [Snowbridge](/research/bridge/snowbridge): date: 2023-02-24
-- [Succinct Labs](/research/bridge/succinct): date: 2023-02-24
 - [Horizon Bridge](/research/code/Horizon): date: 2023-02-04
 - [Ethereum Near Bridging](/research/code/ethereum-near): date: 2023-02-04
 - [Ethereum Code](/research/code/ethereum): date: 2023-02-04
 - [Code bases and reviews](/research/code/intro): date: 2023-02-04
-- [Celestia](/research/dataAvailabilty/celestia): date: 2023-06-19
-- [Fast Fourier Transforms](/research/primitives/fast-fourier-transforms): date: 2023-02-04
-- [Fraud Proofs](/research/primitives/fraud-proofs): date: 2023-02-04
-- [Cryptographic and Mathematic Primitives](/research/primitives/intro): date: 2023-02-04
-- [Light Clients](/research/primitives/light-clients): date: 2023-02-04
-- [Cryptographic Primitives](/research/primitives/primitives): date: 2023-02-04
-- [Signature Schemes in Consensus Protocols](/research/primitives/signatures): date: 2023-02-05
-- [Weak Subjectivity](/research/primitives/weak-subjectivity): date: 2023-02-04
-- [Axiom](/research/zk/axiom): date: 2023-06-28
-- [Zero Knowledge Research](/research/zk/intro): date: 2023-02-04
-- [ZK Proof of Stake](/research/zk/zkpos): date: 2023-02-04
-- [zk-SNARKs](/research/zk/zksnarks): date: 2023-02-04
 - [Avalanche](/research/chains/avalanche): date: 2023-02-04
 - [Binance Smart Chain](/research/chains/binance): date: 2023-02-04
 - [Cosmos](/research/chains/cosmos): -date: 2023-02-04
@@ -49,6 +29,27 @@ last-updated: 2023-02-04
 - [NEAR](/research/chains/near): date: 2023-02-04
 - [Polkadot](/research/chains/polkadot): date: 2023-02-04
 - [Polygon](/research/chains/polygon): date: 2023-02-04
+- [Cosmos IBC](/research/bridge/cosmos-ibc): date: 2023-02-24
+- [Harmony Horizon](/research/bridge/harmony-horizon): date: 2023-02-24
+- [Crosschain Bridge Analysis - An Introduction](/research/bridge/intro): date: 2023-02-04
+- [Isomorph](/research/bridge/isomorph): date: 2023-02-24
+- [Near Rainbow Bridge](/research/bridge/near-rainbow): date: 2023-02-24
+- [Polymer Labs](/research/bridge/polymerlabs): date: 2023-02-24
+- [Snowbridge](/research/bridge/snowbridge): date: 2023-02-24
+- [Succinct Labs](/research/bridge/succinct): date: 2023-02-24
 - [Overview](/research/solving/architecture): This is an opinionated architecture for an intent based solving protocol which facilitates single and mult-chain solving of intents. Intents can be solved on a single chain without provisioning up front capital as we arbiters can confirm mandates have been met by solvers at execution time, thus solvers may used the swappers locked funds for execution.
+- [IntentSwap](/research/solving/flow): $E = mc^2$
 - [Uniswap V4 Hook Development - WIP](/research/solving/hooks): date: 2025-06-22
-- [Solving and Arbitrage Research](/research/solving/intro): date: 2025-06-22
+- [Solving and Arbitrage Research](/research/solving/intro): Work in 2025 on Solving, Arbitrage and Indexing using [Tycho](https://docs.propellerheads.xyz/tycho/overview), Intents using [ERC-7683](https://www.erc7683.org/spec), [EIP-712](https://eips.ethereum.org/EIPS/eip-712), [Compactx](https://github.com/uniswap/compactx) and [Uniswap V4 Hooks](https://docs.uniswap.org/contracts/v4/overview). As of July 2025 I use [jincubator](https://github.com/jincubator) for research and development of prototypes.
+- [Axiom](/research/zk/axiom): date: 2023-06-28
+- [Zero Knowledge Research](/research/zk/intro): date: 2023-02-04
+- [ZK Proof of Stake](/research/zk/zkpos): date: 2023-02-04
+- [zk-SNARKs](/research/zk/zksnarks): date: 2023-02-04
+- [Fast Fourier Transforms](/research/primitives/fast-fourier-transforms): date: 2023-02-04
+- [Fraud Proofs](/research/primitives/fraud-proofs): date: 2023-02-04
+- [Cryptographic and Mathematic Primitives](/research/primitives/intro): date: 2023-02-04
+- [Light Clients](/research/primitives/light-clients): date: 2023-02-04
+- [Cryptographic Primitives](/research/primitives/primitives): date: 2023-02-04
+- [Signature Schemes in Consensus Protocols](/research/primitives/signatures): date: 2023-02-05
+- [Weak Subjectivity](/research/primitives/weak-subjectivity): date: 2023-02-04
+- [Celestia](/research/dataAvailabilty/celestia): date: 2023-06-19
