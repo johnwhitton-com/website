@@ -7,7 +7,7 @@
 
 This document reviews the [horizon](https://github.com/johnwhitton/horizon/tree/refactorV2) current implementation, development tasks that need to be done to support POW and offers some thoughts on next steps to support Ethereum 2.0 and other chains.
 
-Further thoughts on ETH 2.0 support, removing the ETHHASH logic and SPV client and potentially replacing with MMR trees per epoch and checkpoints similar to Harmony Light Client on Ethereum, can be found [here](/images/research/chains/ethereum.mdx).
+Further thoughts on ETH 2.0 support, removing the ETHHASH logic and SPV client and potentially replacing with MMR trees per epoch and checkpoints similar to Harmony Light Client on Ethereum, can be found [here](/research/chains/ethereum.mdx).
 
 ## Next Steps
 
@@ -15,7 +15,7 @@ Following are some of the improvements needed broken down by functional areas.
 
 ### Ethereum Light Client
 
-1. ETH 2.0 support see [here](/images/research/chains/ethereum.mdx)
+1. ETH 2.0 support see [here](/research/chains/ethereum.mdx)
 2. Queuing mechanism should be implemented to queue bridge transactions. The queue can be polled as part of the block relay functionality to process bridge transactions once the blocks have been relayed.
 3. Consider whether we can use p2p messaging to receive published blocks rather than looping and polling via an RPC.
 
