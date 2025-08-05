@@ -31,12 +31,12 @@ export default defineConfig({
       link: "/references/intro",
     },
     {
-      text: "Writing",
-      link: "/writing/intro",
+      text: "Research",
+      link: "https://jincubator.com",
     },
     {
-      text: "Research",
-      link: "/research/intro",
+      text: "github",
+      link: "https://github.com/johnwhitton",
     },
   ],
   sidebar: {
