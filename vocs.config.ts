@@ -7,6 +7,7 @@ export default defineConfig({
   description: "John Whitton's personal website",
   iconUrl: "/images/jincubator.png",
   logoUrl: "/images/jincubator.png",
+  basePath: "/",
   ogImageUrl:
     "https://vocs.dev/api/og?logo=%logo&title=%title&description=%description",
   markdown: {
