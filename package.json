@@ -7,7 +7,8 @@
     "dev": "vocs dev",
     "vocsbuild": "vocs build",
     "preview": "vocs preview",
-    "sitedeploy": "gh-pages -d docs/dist --nojekyll --cname johnwhitton.com",
+    "sitedeployoriginal": "gh-pages -d docs/dist --nojekyll --cname johnwhitton.com",
+    "sitedeploy": "rm -rf deploy && mkdir deploy && cp -r docs/dist/* deploy/ && cp -r docs/dist/.vocs deploy/ && npx gh-pages -d deploy --nojekyll --cname johnwhitton.com --dotfiles",
     "lint": "eslint '**/*.{ts,tsx,mdx}'"
   },
   "dependencies": {
