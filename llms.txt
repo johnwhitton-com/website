@@ -6,6 +6,6 @@
 
 - [Example](/example): This is an example page.
 - [Get started](/getting-started): Hello world!
-- [John's Colleagues](/references/intro): I have been fortunate over my long career to have the opportunity to work with some of the most talented individuals and teams not only in Silicon Valley, but globally.
 - [Research](/research/intro): John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
 - [Research](/writing/intro): John Whitton's writing can be found at [jincubator.com](https://www.jincubator.com/products/intro).
+- [John's Colleagues](/references/intro): I have been fortunate over my long career to have the opportunity to work with some of the most talented individuals and teams not only in Silicon Valley, but globally.
