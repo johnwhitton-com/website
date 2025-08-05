@@ -231,16 +231,6 @@ Bachelor of Science, The University of Queensland (1984-1987)
 <object data="/images/john.pdf" width="1000" height="1000" type="application/pdf" />
 
 
-## Research
-
-John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
-
-
-## Research
-
-John Whitton's writing can be found at [jincubator.com](https://www.jincubator.com/products/intro).
-
-
 #### [Andy](https://www.linkedin.com/in/andy-wu-4329664/)
 
 John is one of the most professional engineers I’ve ever worked with. He takes the ownership of many OPS works,
@@ -310,4 +300,14 @@ John is a really good team player, among his good qualities, I admire three most
 1. Helpful and warm-hearted whenever you ask for help, John will give you the best help.
 2. Avid learner, John likes to learn new things and will actively take new tasks. I see John actively in ops recently.
 3. Responsible, longer view, John focused a lot on knowledge transfer. He wants to make sure the knowledge can be shared with the whole team and future new employees, so he contributed a lot on internal wiki gitbooks, which I think it’s a good point.
+
+
+## Research
+
+John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
+
+
+## Research
+
+John Whitton's writing can be found at [jincubator.com](https://www.jincubator.com/products/intro).
 
