@@ -1,4 +1,4 @@
-import{u as r,j as e}from"./index-Cn03LSuQ.js";const s=void 0;function t(i){const n={a:"a",div:"div",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...r(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.strong,{children:["One-page resume can be downloaded ",e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"here"})," and viewed at the bottom of this page"]}),`
+import{u as t,j as e}from"./index-D2uNxGEF.js";const s=void 0;function r(i){const n={a:"a",div:"div",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...t(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.strong,{children:["One-page resume can be downloaded ",e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"here"})," and viewed at the bottom of this page"]}),`
 `,e.jsxs(n.h2,{id:"professional-summary",children:["Professional Summary",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#professional-summary",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsx(n.li,{children:"Research/engineer, technical leader, and entrepreneur working at the intersection of blockchain infrastructure (Solving, Market Making, Arbitrage) and Decentralized protocols (Intents, Liquidity Management, Settlement)."}),`
@@ -16,7 +16,6 @@ import{u as r,j as e}from"./index-Cn03LSuQ.js";const s=void 0;function t(i){cons
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/Intents/protocol",children:"Liquidity Management"})," : ERC-6909 Resource Management built on the compact"]}),`
 `]}),`
 `]}),`
-`,e.jsxs(n.li,{children:["Designing and Building an Intent Based, Liquidity Management and Settlement Platform ",e.jsx(n.a,{href:"https://github.com/jincubator",children:"jincubator"})]}),`
 `,e.jsxs(n.li,{children:["Researching, designing and building a protocol for stablecoins on a dedicated L3 roll-up at ",e.jsx(n.a,{href:"https://eco.com",children:"eco"})," (",e.jsx(n.a,{href:"https://docs.eco.com/",children:"docs"}),", ",e.jsx(n.a,{href:"https://github.com/eco/eco-routes",children:"eco-routes codebase"}),")"]}),`
 `,e.jsxs(n.li,{children:["Wrote multiple DeFi whitepapers (see ",e.jsx(n.a,{href:"https://johnwhitton.com/writing/intro",children:"here"}),")"]}),`
 `,e.jsx(n.li,{children:"Researched consensus, bridging, cryptographic primitives and zero knowledge proofs."}),`
@@ -175,4 +174,4 @@ import{u as r,j as e}from"./index-Cn03LSuQ.js";const s=void 0;function t(i){cons
 `]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://talk.harmony.one/t/kanga-launch-proposal/8283",children:"Proposal"}),": Kanga Launch Proposal"]}),`
 `]}),`
-`,e.jsx("object",{data:"/images/john.pdf",width:"1000",height:"1000",type:"application/pdf"})]})}function o(i={}){const{wrapper:n}={...r(),...i.components};return n?e.jsx(n,{...i,children:e.jsx(t,{...i})}):t(i)}export{o as default,s as frontmatter};
+`,e.jsx("object",{data:"/images/john.pdf",width:"1000",height:"1000",type:"application/pdf"})]})}function o(i={}){const{wrapper:n}={...t(),...i.components};return n?e.jsx(n,{...i,children:e.jsx(r,{...i})}):r(i)}export{o as default,s as frontmatter};
