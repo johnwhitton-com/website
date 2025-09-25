@@ -1,4 +1,4 @@
-import{u as r,j as e}from"./index-ChEJKp9O.js";const s=void 0;function t(i){const n={a:"a",div:"div",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...r(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.strong,{children:["One-page resume can be downloaded ",e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"here"})," and viewed at the bottom of this page"]}),`
+import{u as r,j as e}from"./index-Cn03LSuQ.js";const s=void 0;function t(i){const n={a:"a",div:"div",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...r(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.strong,{children:["One-page resume can be downloaded ",e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"here"})," and viewed at the bottom of this page"]}),`
 `,e.jsxs(n.h2,{id:"professional-summary",children:["Professional Summary",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#professional-summary",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsx(n.li,{children:"Research/engineer, technical leader, and entrepreneur working at the intersection of blockchain infrastructure (Solving, Market Making, Arbitrage) and Decentralized protocols (Intents, Liquidity Management, Settlement)."}),`
@@ -8,6 +8,14 @@ import{u as r,j as e}from"./index-ChEJKp9O.js";const s=void 0;function t(i){cons
 `,e.jsxs(n.h2,{id:"achievements",children:["Achievements",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#achievements",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsxs(n.h4,{id:"research-and-engineering",children:["Research and Engineering",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#research-and-engineering",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsxs(n.ul,{children:[`
+`,e.jsxs(n.li,{children:["High Performance Solving Infrastructure including",`
+`,e.jsxs(n.ul,{children:[`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/arbitrager",children:"Arbitrager"}),": Cyclical Arbitrager built on Tycho with its own liquidity mapping layer, able to evaluate over 800 routes per second"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/tycho1inchNOL",children:"Solving Prototyping"}),": UniswapX, 1inch, and CowSwap"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/intent-management-hook",children:"DeFi"}),": UniswapV4 Hooks, NoLiquidity Solving, IntentSwapHook"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/Intents/protocol",children:"Liquidity Management"})," : ERC-6909 Resource Management built on the compact"]}),`
+`]}),`
+`]}),`
 `,e.jsxs(n.li,{children:["Designing and Building an Intent Based, Liquidity Management and Settlement Platform ",e.jsx(n.a,{href:"https://github.com/jincubator",children:"jincubator"})]}),`
 `,e.jsxs(n.li,{children:["Researching, designing and building a protocol for stablecoins on a dedicated L3 roll-up at ",e.jsx(n.a,{href:"https://eco.com",children:"eco"})," (",e.jsx(n.a,{href:"https://docs.eco.com/",children:"docs"}),", ",e.jsx(n.a,{href:"https://github.com/eco/eco-routes",children:"eco-routes codebase"}),")"]}),`
 `,e.jsxs(n.li,{children:["Wrote multiple DeFi whitepapers (see ",e.jsx(n.a,{href:"https://johnwhitton.com/writing/intro",children:"here"}),")"]}),`
