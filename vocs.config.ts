@@ -83,7 +83,7 @@ export default defineConfig({
     },
     {
       icon: "x",
-      link: "https://twitter.com/johnwhitton",
+      link: "https://x.com/john_a_whitton",
     },
     { icon: "telegram", link: "https://t.me/john_whitton" },
   ],
