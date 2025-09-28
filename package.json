@@ -7,7 +7,7 @@
     "dev": "vocs dev",
     "vocsbuild": "vocs build",
     "preview": "vocs preview",
-    "sitedeploy": "gh-pages -d docs/dist --nojekyll --cname johnwhitton.com",
+    "sitedeploy": "cp docs/dist/index.html docs/dist/404.html && gh-pages -d docs/dist --nojekyll --cname johnwhitton.com",
     "lint": "eslint '**/*.{ts,tsx,mdx}'"
   },
   "dependencies": {
