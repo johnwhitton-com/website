@@ -8,13 +8,15 @@ import { ZoomImage } from "../public/components/ZoomImage";
 
 Hello, I'm John, and I'm a Research/engineer, technical leader, and entrepreneur working at the intersection of blockchain infrastructure (Solving, Market Making, Arbitrage) and Decentralized protocols (Intents, Liquidity Management, Settlement). I have a track record of driving projects from conception to completion, identifying research gaps, and providing solutions. Finally, I love leading engineering teams and have the ability to drive collaboration across the organization and the entire ecosystem.
 
-I use [jincubator](https://github.com/jincubator) for research and development of prototypes. [Here](https://www.jincubator.com/research/intro) you'll find an overview of my work in 2025 on Solving, Arbitrage and Indexing, an opinionated architecture is [here](https://www.jincubator.com/research/solving/architecture). It uses [Tycho](https://docs.propellerheads.xyz/tycho/overview), Intents using [ERC-7683](https://www.erc7683.org/spec), [EIP-712](https://eips.ethereum.org/EIPS/eip-712), [Compactx](https://github.com/uniswap/compactx) and [Uniswap V4 Hooks](https://docs.uniswap.org/contracts/v4/overview).
+I build high-performance solving and market-making infrastructure and DeFi protocols (Intents, Liquidity Management, Settlement), including
 
-As of July 2025 I'm currently wanting to collaborate with thought leaders in this space. Specifically I'm interested in
+* Solver: Advanced Liquidity Mapping and Route Evaluation supporting multiple strategies for solving and market making.
+  * Built on Tycho with its own liquidity mapping layer, able to evaluate over 1000 routes per second
+* Solving Integration: UniswapX, 1inch, and CowSwap
+* DeFi: UniswapV4 Hooks, NoLiquidity Solving, IntentSwapHook
+* Liquidity Management: ERC-6909 Resource Management built on the compact
 
-* Grants and Bounties: Including Deliverable based grants around solving, routing, liquidity management
-* Consulting Work: I'm interested in work primarily Smart Contract work and RUST Development in the Solving and Intent based space
-* Full Time Roles: I'd enjoy working with a team in this space. TBD whether that will be launching the protocol I've been working with as part of a founding team or with a more established organization building out innovative frameworks in the space. I'm happy working as an individual contributor or leading engineering teams, as have done so for a large part of my career. Historically I've worked with Early Stage Startups 10-30 team members but am comfortable with both smaller and larger teams.
+I use [jincubator](https://github.com/jincubator) for research and development of prototypes.
 
 Below is a quick professional summary, more detail can be found on [the resume page](https://johnwhitton.com/resume/intro)
 
@@ -64,7 +66,7 @@ Hello world!
 ##### Research and Engineering
 
 * High Performance Solving Infrastructure including
-  * [Arbitrager](https://www.jincubator.com/research/solving/arbitrager): Cyclical Arbitrager built on Tycho with its own liquidity mapping layer, able to evaluate over 800 routes per second
+  * [Solver](https://www.jincubator.com/research/solving/solving): Route evaluation (over 1000 routes per second) using live streaming data (built on Tycho) with its own liquidity mapping layer, profitability calculator, and execution engine.
   * [Solving Prototyping](https://www.jincubator.com/research/solving/tycho1inchNOL): UniswapX, 1inch, and CowSwap
   * [DeFi](https://www.jincubator.com/research/solving/intent-management-hook): UniswapV4 Hooks, NoLiquidity Solving, IntentSwapHook
   * [Liquidity Management](https://www.jincubator.com/research/Intents/protocol) : ERC-6909 Resource Management built on the compact
@@ -235,6 +237,11 @@ Bachelor of Science, The University of Queensland (1984-1987)
 <object data="/images/john.pdf" width="1000" height="1000" type="application/pdf" />
 
 
+## Research
+
+John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
+
+
 #### [Andy](https://www.linkedin.com/in/andy-wu-4329664/)
 
 John is one of the most professional engineers I’ve ever worked with. He takes the ownership of many OPS works,
@@ -304,11 +311,6 @@ John is a really good team player, among his good qualities, I admire three most
 1. Helpful and warm-hearted whenever you ask for help, John will give you the best help.
 2. Avid learner, John likes to learn new things and will actively take new tasks. I see John actively in ops recently.
 3. Responsible, longer view, John focused a lot on knowledge transfer. He wants to make sure the knowledge can be shared with the whole team and future new employees, so he contributed a lot on internal wiki gitbooks, which I think it’s a good point.
-
-
-## Research
-
-John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
 
 
 ## Research

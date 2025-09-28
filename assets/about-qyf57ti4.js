@@ -1,12 +1,17 @@
-import{u as r,j as e}from"./index-D2uNxGEF.js";import{Z as i}from"./ZoomImage-uXUAXVT5.js";const d=void 0;function t(a){const n={a:"a",defs:"defs",div:"div",g:"g",h2:"h2",li:"li","mjx-container":"mjx-container",p:"p",path:"path",style:"style",svg:"svg",ul:"ul",use:"use",...r(),...a.components},s=n["mjx-container"];return e.jsxs(e.Fragment,{children:[e.jsx(i,{src:"/images/JohnWhittonWorkHistory.png",alt:"John Whitton Work History",title:"John Whitton Work History"}),`
+import{u as r,j as e}from"./index-CSDomXHI.js";import{Z as T}from"./ZoomImage-Rdb1Ka9e.js";const d=void 0;function t(a){const n={a:"a",defs:"defs",div:"div",g:"g",h2:"h2",li:"li","mjx-container":"mjx-container",p:"p",path:"path",style:"style",svg:"svg",ul:"ul",use:"use",...r(),...a.components},s=n["mjx-container"];return e.jsxs(e.Fragment,{children:[e.jsx(T,{src:"/images/JohnWhittonWorkHistory.png",alt:"John Whitton Work History",title:"John Whitton Work History"}),`
 `,e.jsx(n.p,{children:"Hello, I'm John, and I'm a Research/engineer, technical leader, and entrepreneur working at the intersection of blockchain infrastructure (Solving, Market Making, Arbitrage) and Decentralized protocols (Intents, Liquidity Management, Settlement). I have a track record of driving projects from conception to completion, identifying research gaps, and providing solutions. Finally, I love leading engineering teams and have the ability to drive collaboration across the organization and the entire ecosystem."}),`
-`,e.jsxs(n.p,{children:["I use ",e.jsx(n.a,{href:"https://github.com/jincubator",children:"jincubator"})," for research and development of prototypes. ",e.jsx(n.a,{href:"https://www.jincubator.com/research/intro",children:"Here"})," you'll find an overview of my work in 2025 on Solving, Arbitrage and Indexing, an opinionated architecture is ",e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/architecture",children:"here"}),". It uses ",e.jsx(n.a,{href:"https://docs.propellerheads.xyz/tycho/overview",children:"Tycho"}),", Intents using ",e.jsx(n.a,{href:"https://www.erc7683.org/spec",children:"ERC-7683"}),", ",e.jsx(n.a,{href:"https://eips.ethereum.org/EIPS/eip-712",children:"EIP-712"}),", ",e.jsx(n.a,{href:"https://github.com/uniswap/compactx",children:"Compactx"})," and ",e.jsx(n.a,{href:"https://docs.uniswap.org/contracts/v4/overview",children:"Uniswap V4 Hooks"}),"."]}),`
-`,e.jsx(n.p,{children:"As of July 2025 I'm currently wanting to collaborate with thought leaders in this space. Specifically I'm interested in"}),`
+`,e.jsx(n.p,{children:"I build high-performance solving and market-making infrastructure and DeFi protocols (Intents, Liquidity Management, Settlement), including"}),`
 `,e.jsxs(n.ul,{children:[`
-`,e.jsx(n.li,{children:"Grants and Bounties: Including Deliverable based grants around solving, routing, liquidity management"}),`
-`,e.jsx(n.li,{children:"Consulting Work: I'm interested in work primarily Smart Contract work and RUST Development in the Solving and Intent based space"}),`
-`,e.jsx(n.li,{children:"Full Time Roles: I'd enjoy working with a team in this space. TBD whether that will be launching the protocol I've been working with as part of a founding team or with a more established organization building out innovative frameworks in the space. I'm happy working as an individual contributor or leading engineering teams, as have done so for a large part of my career. Historically I've worked with Early Stage Startups 10-30 team members but am comfortable with both smaller and larger teams."}),`
+`,e.jsxs(n.li,{children:["Solver: Advanced Liquidity Mapping and Route Evaluation supporting multiple strategies for solving and market making.",`
+`,e.jsxs(n.ul,{children:[`
+`,e.jsx(n.li,{children:"Built on Tycho with its own liquidity mapping layer, able to evaluate over 1000 routes per second"}),`
 `]}),`
+`]}),`
+`,e.jsx(n.li,{children:"Solving Integration: UniswapX, 1inch, and CowSwap"}),`
+`,e.jsx(n.li,{children:"DeFi: UniswapV4 Hooks, NoLiquidity Solving, IntentSwapHook"}),`
+`,e.jsx(n.li,{children:"Liquidity Management: ERC-6909 Resource Management built on the compact"}),`
+`]}),`
+`,e.jsxs(n.p,{children:["I use ",e.jsx(n.a,{href:"https://github.com/jincubator",children:"jincubator"})," for research and development of prototypes."]}),`
 `,e.jsxs(n.p,{children:["Below is a quick professional summary, more detail can be found on ",e.jsx(n.a,{href:"https://johnwhitton.com/resume/intro",children:"the resume page"})]}),`
 `,e.jsxs(n.p,{children:["I worked as a Senior Protocol Engineer, previously Engineering Manager at ",e.jsx(n.a,{href:"https://eco.com",children:"Eco"})," building a payment focused intent protocol on a dedicated L3 rollup. Read the docs ",e.jsx(n.a,{href:"https://docs.eco.com/",children:"here"})," and the code ",e.jsx(n.a,{href:"https://github.com/eco/eco-routes",children:"here"}),"."]}),`
 `,e.jsx(n.p,{children:"I have researched zero knowledge proofs, cryptographic primitives and consensus protocols."}),`
@@ -137,4 +142,4 @@ foreignObject[data-mjx-xml] {
 mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
   stroke-width: 3;
 }
-`})]})}function o(a={}){const{wrapper:n}={...r(),...a.components};return n?e.jsx(n,{...a,children:e.jsx(t,{...a})}):t(a)}export{o as default,d as frontmatter};
+`})]})}function l(a={}){const{wrapper:n}={...r(),...a.components};return n?e.jsx(n,{...a,children:e.jsx(t,{...a})}):t(a)}export{l as default,d as frontmatter};

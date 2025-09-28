@@ -1,4 +1,4 @@
-import{u as t,j as e}from"./index-D2uNxGEF.js";const s=void 0;function r(i){const n={a:"a",div:"div",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...t(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.strong,{children:["One-page resume can be downloaded ",e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"here"})," and viewed at the bottom of this page"]}),`
+import{u as r,j as e}from"./index-CSDomXHI.js";const s=void 0;function t(i){const n={a:"a",div:"div",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...r(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.strong,{children:["One-page resume can be downloaded ",e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"here"})," and viewed at the bottom of this page"]}),`
 `,e.jsxs(n.h2,{id:"professional-summary",children:["Professional Summary",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#professional-summary",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsx(n.li,{children:"Research/engineer, technical leader, and entrepreneur working at the intersection of blockchain infrastructure (Solving, Market Making, Arbitrage) and Decentralized protocols (Intents, Liquidity Management, Settlement)."}),`
@@ -10,7 +10,7 @@ import{u as t,j as e}from"./index-D2uNxGEF.js";const s=void 0;function r(i){cons
 `,e.jsxs(n.ul,{children:[`
 `,e.jsxs(n.li,{children:["High Performance Solving Infrastructure including",`
 `,e.jsxs(n.ul,{children:[`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/arbitrager",children:"Arbitrager"}),": Cyclical Arbitrager built on Tycho with its own liquidity mapping layer, able to evaluate over 800 routes per second"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/solving",children:"Solver"}),": Route evaluation (over 1000 routes per second) using live streaming data (built on Tycho) with its own liquidity mapping layer, profitability calculator, and execution engine."]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/tycho1inchNOL",children:"Solving Prototyping"}),": UniswapX, 1inch, and CowSwap"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/intent-management-hook",children:"DeFi"}),": UniswapV4 Hooks, NoLiquidity Solving, IntentSwapHook"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/Intents/protocol",children:"Liquidity Management"})," : ERC-6909 Resource Management built on the compact"]}),`
@@ -174,4 +174,4 @@ import{u as t,j as e}from"./index-D2uNxGEF.js";const s=void 0;function r(i){cons
 `]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://talk.harmony.one/t/kanga-launch-proposal/8283",children:"Proposal"}),": Kanga Launch Proposal"]}),`
 `]}),`
-`,e.jsx("object",{data:"/images/john.pdf",width:"1000",height:"1000",type:"application/pdf"})]})}function o(i={}){const{wrapper:n}={...t(),...i.components};return n?e.jsx(n,{...i,children:e.jsx(r,{...i})}):r(i)}export{o as default,s as frontmatter};
+`,e.jsx("object",{data:"/images/john.pdf",width:"1000",height:"1000",type:"application/pdf"})]})}function o(i={}){const{wrapper:n}={...r(),...i.components};return n?e.jsx(n,{...i,children:e.jsx(t,{...i})}):t(i)}export{o as default,s as frontmatter};
