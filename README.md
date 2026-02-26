@@ -13,5 +13,7 @@ bun dev
 To deploy the new website run
 
 ```bash
-bun run deploy
+bun vocsbuild
+bun preview
+bun sitedeploy
 ```
