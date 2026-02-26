@@ -1,4 +1,4 @@
-import{u as r,j as e}from"./index-CCeGT0zQ.js";const s=void 0;function t(i){const n={a:"a",div:"div",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...r(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.strong,{children:["One-page resume can be downloaded ",e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"here"})," and viewed at the bottom of this page"]}),`
+import{u as r,j as e}from"./index-6P3Dr0dy.js";const s=void 0;function t(i){const n={a:"a",div:"div",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...r(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.strong,{children:["One-page resume can be downloaded ",e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"here"})," and viewed at the bottom of this page"]}),`
 `,e.jsxs(n.h2,{id:"professional-summary",children:["Professional Summary",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#professional-summary",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsx(n.li,{children:"Research/engineer, technical leader, and entrepreneur working at the intersection of blockchain infrastructure (Solving, Market Making, Arbitrage) and Decentralized protocols (Intents, Liquidity Management, Settlement)."}),`
@@ -11,8 +11,8 @@ import{u as r,j as e}from"./index-CCeGT0zQ.js";const s=void 0;function t(i){cons
 `,e.jsxs(n.li,{children:["High Performance Solving Infrastructure including",`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/solving",children:"Solver"}),": Route evaluation (over 1000 routes per second) using live streaming data (built on Tycho) with its own liquidity mapping layer, profitability calculator, and execution engine."]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/tycho1inchNOL",children:"Solving Prototyping"}),": UniswapX, 1inch, and CowSwap"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/intent-management-hook",children:"DeFi"}),": UniswapV4 Hooks, NoLiquidity Solving, IntentSwapHook"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/tycho1inchNOL",children:"Solving Prototyping"}),": CowSwap, UniswapX and 1inch"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/intent-management-hook",children:"DeFi"}),": Lending Markets, Leverage Tokens, UniswapV4, NoLiquidity Solving, IntentSwaps, Velora Integration"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/Intents/protocol",children:"Liquidity Management"})," : ERC-6909 Resource Management built on the compact"]}),`
 `]}),`
 `]}),`
@@ -54,8 +54,8 @@ import{u as r,j as e}from"./index-CCeGT0zQ.js";const s=void 0;function t(i){cons
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/jincubator",children:"jincubator.com"})," (2025): High Performance Solving Infrastructure including",`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/solving",children:"Solver"}),": Route evaluation (over 1000 routes per second) using live streaming data (built on Tycho) with its own liquidity mapping layer, profitability calculator, and execution engine."]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/tycho1inchNOL",children:"Solving Prototyping"}),": UniswapX, 1inch, and CowSwap"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/intent-management-hook",children:"DeFi"}),": UniswapV4 Hooks, NoLiquidity Solving, IntentSwapHook"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/tycho1inchNOL",children:"Solving Prototyping"}),": CowSwap, UniswapX and 1inch"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/solving/intent-management-hook",children:"DeFi"}),": Lending Markets, Leverage Tokens, UniswapV4, NoLiquidity Solving, IntentSwaps, Velora Integration"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.jincubator.com/research/Intents/protocol",children:"Liquidity Management"})," : ERC-6909 Resource Management built on the compact"]}),`
 `]}),`
 `]}),`
