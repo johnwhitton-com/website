@@ -1,5 +1,58 @@
-import{u as r,j as e}from"./index-6P3Dr0dy.js";const s=void 0;function t(i){const n={a:"a",div:"div",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...r(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.strong,{children:["One-page resume can be downloaded ",e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"here"})," and viewed at the bottom of this page"]}),`
+import{u as t,j as e}from"./index-DylzjQdW.js";const a=void 0;function r(i){const n={a:"a",br:"br",div:"div",h2:"h2",h3:"h3",h4:"h4",hr:"hr",li:"li",p:"p",strong:"strong",ul:"ul",...t(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.strong,{children:"Quick resumes:"}),`
+`,e.jsxs(n.ul,{children:[`
+`,e.jsx(n.li,{children:e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"Trading Systems Resume (PDF)"})}),`
+`,e.jsx(n.li,{children:e.jsx(n.a,{href:"https://johnwhitton.com/images/john_em.pdf",children:"Engineering Manager Resume (PDF)"})}),`
+`]}),`
+`,e.jsxs(n.h2,{id:"resume-quick-overview",children:["Resume (Quick Overview)",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#resume-quick-overview",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsx(n.strong,{children:"Looking for:"}),`
+`,e.jsxs(n.ul,{children:[`
+`,e.jsx(n.li,{children:"Rust / Trading Infrastructure (Execution Systems, Routing, Arbitrage)"}),`
+`,e.jsx(n.li,{children:"Engineering Manager (Distributed Systems, Fintech, Platform)"}),`
+`]}),`
 `,e.jsxs(n.h2,{id:"professional-summary",children:["Professional Summary",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#professional-summary",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsx(n.p,{children:"Rust engineer and engineering leader specializing in low-latency trading systems, execution infrastructure, and distributed financial platforms."}),`
+`,e.jsx(n.p,{children:"Experience building real-time execution systems including arbitrage engines evaluating 1000+ routes/sec, liquidity ingestion pipelines, and cross-chain settlement infrastructure."}),`
+`,e.jsx(n.p,{children:"Track record delivering production systems across DeFi, blockchain protocols, and enterprise-scale financial platforms."}),`
+`,e.jsxs(n.h2,{id:"selected-systems",children:["Selected Systems",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#selected-systems",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsxs(n.ul,{children:[`
+`,e.jsxs(n.li,{children:[`
+`,e.jsxs(n.p,{children:[e.jsx(n.strong,{children:"DeFi Arbitrager (Rust)"}),e.jsx(n.br,{}),`
+`,"Built low-latency execution system evaluating 1000+ routes/sec using live liquidity ingestion (Tycho / Substreams), performing pricing, profitability evaluation, and execution path construction across multiple venues."]}),`
+`]}),`
+`,e.jsxs(n.li,{children:[`
+`,e.jsxs(n.p,{children:[e.jsx(n.strong,{children:"Liquidity Mapping + Execution Layer"}),e.jsx(n.br,{}),`
+`,"Designed unified abstraction layer for liquidity discovery, normalization, and routing across fragmented DeFi protocols, enabling consistent execution logic across venues."]}),`
+`]}),`
+`,e.jsxs(n.li,{children:[`
+`,e.jsxs(n.p,{children:[e.jsx(n.strong,{children:"Cross-Chain Execution + Settlement"}),e.jsx(n.br,{}),`
+`,"Built systems for cross-chain routing and settlement, including batch execution and intent-based coordination across multiple chains and environments."]}),`
+`]}),`
+`,e.jsxs(n.li,{children:[`
+`,e.jsxs(n.p,{children:[e.jsx(n.strong,{children:"Intent-Based Execution Systems"}),e.jsx(n.br,{}),`
+`,"Developed architecture for intent-based routing and settlement, including ERC-6909 liquidity resource management and cross-chain execution primitives."]}),`
+`]}),`
+`]}),`
+`,e.jsxs(n.h2,{id:"key-achievements",children:["Key Achievements",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#key-achievements",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsxs(n.ul,{children:[`
+`,e.jsx(n.li,{children:"Built end-to-end trading pipeline: liquidity ingestion → mapping → pricing → execution"}),`
+`,e.jsx(n.li,{children:"Designed real-time arbitrage and routing infrastructure across multiple execution paths"}),`
+`,e.jsx(n.li,{children:"Developed leverage token systems with collateral accounting and capital efficiency modeling"}),`
+`,e.jsx(n.li,{children:"Delivered multiple production systems across blockchain, DeFi, and execution infrastructure"}),`
+`,e.jsx(n.li,{children:"Led engineering teams of up to 20 developers"}),`
+`]}),`
+`,e.jsxs(n.h2,{id:"experience-summary",children:["Experience (Summary)",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#experience-summary",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsxs(n.p,{children:[e.jsx(n.strong,{children:"Founder / Research Engineer — Jincubator (2018–Present)"}),e.jsx(n.br,{}),`
+`,"Built trading infrastructure, arbitrage systems, leverage token logic, and cross-chain execution pipelines."]}),`
+`,e.jsxs(n.p,{children:[e.jsx(n.strong,{children:"Engineering Manager / Senior Protocol Engineer — Eco (2023–2025)"}),e.jsx(n.br,{}),`
+`,"Led team building L3 rollup, stablecoin platform, and cross-chain settlement systems."]}),`
+`,e.jsxs(n.p,{children:[e.jsx(n.strong,{children:"Ecosystem Architect — Harmony (2019–2020)"}),e.jsx(n.br,{}),`
+`,"Scaled team 6→20, launched mainnet, and led developer platform tooling."]}),`
+`,e.jsxs(n.p,{children:[e.jsx(n.strong,{children:"CTO — Loyyal (2016–2018)"}),e.jsx(n.br,{}),`
+`,"Built blockchain-based financial infrastructure and enterprise systems."]}),`
+`,e.jsx(n.hr,{}),`
+`,e.jsxs(n.h2,{id:"detailed-experience--projects",children:["Detailed Experience & Projects",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#detailed-experience--projects",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsxs(n.strong,{children:["One-page resume can be downloaded ",e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"here"})," and viewed at the bottom of this page"]}),`
+`,e.jsxs(n.h2,{id:"professional-summary-1",children:["Professional Summary",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#professional-summary-1",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsx(n.li,{children:"Research/engineer, technical leader, and entrepreneur working at the intersection of blockchain infrastructure (Solving, Market Making, Arbitrage) and Decentralized protocols (Intents, Liquidity Management, Settlement)."}),`
 `,e.jsx(n.li,{children:"Track record of driving projects from conception to completion, identifying research gaps, and providing solutions."}),`
@@ -132,42 +185,43 @@ import{u as r,j as e}from"./index-6P3Dr0dy.js";const s=void 0;function t(i){cons
 `]}),`
 `,e.jsxs(n.h2,{id:"codebases",children:["Codebases",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#codebases",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsxs(n.ul,{children:[`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/jincubator",children:"jincubator"}),": Solving, Arbitrage and Indexing (",e.jsx(n.a,{href:"https://docs.propellerheads.xyz/tycho/overview",children:"Tycho"}),"), Intents (",e.jsx(n.a,{href:"https://www.erc7683.org/spec",children:"ERC-7683"}),",",e.jsx(n.a,{href:"https://eips.ethereum.org/EIPS/eip-712",children:"EIP-712"}),"), DEX(",e.jsx(n.a,{href:"https://docs.uniswap.org/contracts/v4/overview",children:"Uniswap V4 Hooks"}),"),"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/jincubator",children:"jincubator"}),": Solving, Arbitrage and Indexing (",e.jsx(n.a,{href:"https://docs.propellerheads.xyz/tycho/overview",children:"Tycho"}),"), Intents (",e.jsx(n.a,{href:"https://www.erc7683.org/spec",children:"ERC-7683"}),", ",e.jsx(n.a,{href:"https://eips.ethereum.org/EIPS/eip-712",children:"EIP-712"}),"), DEX (",e.jsx(n.a,{href:"https://docs.uniswap.org/contracts/v4/overview",children:"Uniswap V4 Hooks"}),")"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/johnwhitton/uhi5-exercises",children:"uhi5-exercises"}),": Uniswap V4 Hook examples built as part of ",e.jsx(n.a,{href:"https://atrium.academy/uniswap",children:"UHI5 Atrium Academy"})]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/eco/eco-routes/tree/ED-4357",children:"eco-routes"}),": Intent Driven Stable Coin Platform (this branch is where I worked on ",e.jsx(n.a,{href:"https://github.com/eco/eco-routes/blob/ED-4357/contracts/Prover.sol",children:"proving"}),") and designing ",e.jsx(n.a,{href:"https://github.com/eco/eco-routes/blob/ED-4357/scripts/testnet/batchSettleGeneral.ts",children:"cross-chain batch settlement"})]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/jw-1ns",children:"dot-country"}),": implementation inspired by ",e.jsx(n.a,{href:"https://ens.domains/",children:"ENS"})," and enhanced to integrate web2 DNS server and SMTP routing."]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/polymorpher/one-wallet/tree/master/code/test",children:"1wallet"}),": non-custodial crypto wallet"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/gamaspacestation/contracts",children:"NFT Contracts"}),": Smart Contracts for ",e.jsx(n.a,{href:"https://opensea.io/collection/gamaspacestation",children:"Gama Space Station"})]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/johnwhitton/horizon/tree/refactorV2/docs",children:"Cross chain bridge"}),": Horizon trustless Bridge (not the one that got hacked)"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/EaveNetwork",children:"Core Protocol"}),": EAVE Network (a polkadot parachain) Rust, Substrate, ORML, TypeScript,Flutter"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/EaveNetwork",children:"Core Protocol"}),": EAVE Network (a polkadot parachain) Rust, Substrate, ORML, TypeScript, Flutter"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/kangafinance",children:"Decentralized Finance"}),": Kanga Finance: Solidity, Javascript, React"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/johnwhitton/bc_template",children:"Solidity Development"}),": Smart Contract Development Framework using hardhat and typescript."]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/emasset",children:"API Framework"}),": emasset: golang, dart, protobuf"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/johnwhitton/blockchain-eval/blob/master/substrate.mdx",children:"Layer One Protocol Research"}),": jincubator: layer one portocol comparison"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://github.com/johnwhitton/blockchain-eval/blob/master/substrate.mdx",children:"Layer One Protocol Research"}),": jincubator: layer one protocol comparison"]}),`
 `]}),`
 `,e.jsxs(n.h2,{id:"websites-and-applications",children:["Websites and Applications",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#websites-and-applications",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://1.country/",children:"1.country"}),": Web3 Identity integrated with web 2 DNS services"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://1wallet.crazy.one/create",children:"1wallet.crazy.one"}),": Non custodial crypto wallet"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://1wallet.crazy.one/create",children:"1wallet.crazy.one"}),": Non-custodial crypto wallet"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://demo.kanga.finance",children:"Decentralized Finance"}),": KANGA App on Harmony Testnet"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://kanga.finance",children:"Website"}),": KANGA website"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://eave.network",children:"Website"}),": EAVE website"]}),`
 `]}),`
 `,e.jsxs(n.h2,{id:"presentations-and-videos",children:["Presentations and Videos",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#presentations-and-videos",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsxs(n.ul,{children:[`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://demo.jincubator.com",children:"Demo Video"}),": Jincuator: Intent Based Liquidity Management and Settlement Platform"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://demo.jincubator.com",children:"Demo Video"}),": Jincubator: Intent Based Liquidity Management and Settlement Platform"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://runthrough.jincubator.com",children:"Technical Walk Through Video"}),": Jincubator: Intent Based Liquidity Management and Settlement Platform"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://deck.jincubator.com",children:"Overview Deck"}),": Jincubator: Intent Based Liquidity Management and Settlement Platform"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://deck.kanga.finance",children:"Defi Presentation"}),": KANGA Web3 Engine: ",e.jsx(n.a,{href:"https://www.youtube.com/3wxAbe0GzA0",children:"Defi Video"}),": Kanga Demo for Harmony Hackathon"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://deck.kanga.finance",children:"DeFi Presentation"}),": KANGA Web3 Engine"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://www.youtube.com/3wxAbe0GzA0",children:"DeFi Video"}),": Kanga Demo for Harmony Hackathon"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://johnwhitton.com/images/EAVEOverview.pdf",children:"Core Protocol Presentation"}),": EAVE DeFi Polkadot Parachain"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://johnwhitton.com/images/WASDEXOverview.pd",children:"Defi Presentation"}),": WASDEX: Digital Exchange"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://johnwhitton.com/images/wasdex.pdf",children:"Defi Investor Fact Sheet"}),": WASDEX: Investor Fact Sheet"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://johnwhitton.com/images/WASDEXOverview.pd",children:"DeFi Presentation"}),": WASDEX: Digital Exchange"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://johnwhitton.com/images/wasdex.pdf",children:"DeFi Investor Fact Sheet"}),": WASDEX: Investor Fact Sheet"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://medium.com/harmony-one/devcon-4ee34426530c",children:"Ecosystem article"}),": Devcon5 lessons learned"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://youtube.kanga.finance",children:"Defi Demo Video"}),": KANGA Demo"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://youtu.be/vk0e6s_2H0w",children:"Defi Demo Vido"}),": EAVE Mobile Demo"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://youtube.kanga.finance",children:"DeFi Demo Video"}),": KANGA Demo"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://youtu.be/vk0e6s_2H0w",children:"DeFi Demo Video"}),": EAVE Mobile Demo"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://youtu.be/HFo6c32qoyI",children:"Core Protocol Video"}),": EAVE Overview"]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://youtu.be/easABjC4gIY",children:"Leadership Video"}),": Harmony Engineers on fire"]}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://youtu.be/iB1wWl5vWTk",children:"Defi Investor Video"}),": WASDEX: World Asset and Securities Digital Exchange"]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://youtu.be/iB1wWl5vWTk",children:"DeFi Investor Video"}),": WASDEX: World Asset and Securities Digital Exchange"]}),`
 `]}),`
 `,e.jsxs(n.h2,{id:"education",children:["Education",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#education",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
 `,e.jsx(n.p,{children:"Bachelor of Science, The University of Queensland (1984-1987)"}),`
@@ -181,4 +235,4 @@ import{u as r,j as e}from"./index-6P3Dr0dy.js";const s=void 0;function t(i){cons
 `]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"https://talk.harmony.one/t/kanga-launch-proposal/8283",children:"Proposal"}),": Kanga Launch Proposal"]}),`
 `]}),`
-`,e.jsx("object",{data:"/images/john.pdf",width:"1000",height:"1000",type:"application/pdf"})]})}function o(i={}){const{wrapper:n}={...r(),...i.components};return n?e.jsx(n,{...i,children:e.jsx(t,{...i})}):t(i)}export{o as default,s as frontmatter};
+`,e.jsx("object",{data:"/images/john.pdf",width:"1000",height:"1000",type:"application/pdf"})]})}function o(i={}){const{wrapper:n}={...t(),...i.components};return n?e.jsx(n,{...i,children:e.jsx(r,{...i})}):r(i)}export{o as default,a as frontmatter};
