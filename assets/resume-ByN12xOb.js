@@ -1,6 +1,6 @@
-import{u as s,j as e}from"./index-CNYyqUbx.js";const a=void 0;function r(i){const n={a:"a",br:"br",div:"div",h2:"h2",h3:"h3",h4:"h4",hr:"hr",li:"li",p:"p",strong:"strong",ul:"ul",...s(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.strong,{children:"Quick resumes:"}),`
+import{u as s,j as e}from"./index-Blui5s61.js";const a=void 0;function r(i){const n={a:"a",br:"br",div:"div",h2:"h2",h3:"h3",h4:"h4",hr:"hr",li:"li",p:"p",strong:"strong",ul:"ul",...s(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.strong,{children:"Quick resumes:"}),`
 `,e.jsxs(n.ul,{children:[`
-`,e.jsx(n.li,{children:e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"Trading Systems Resume (PDF)"})}),`
+`,e.jsx(n.li,{children:e.jsx(n.a,{href:"https://johnwhitton.com/images/john.pdf",children:"Engineering Resume (PDF)"})}),`
 `,e.jsx(n.li,{children:e.jsx(n.a,{href:"https://johnwhitton.com/images/john_em.pdf",children:"Engineering Manager Resume (PDF)"})}),`
 `]}),`
 `,e.jsxs(n.h2,{id:"resume-quick-overview",children:["Resume (Quick Overview)",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#resume-quick-overview",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
