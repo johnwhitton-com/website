@@ -6,6 +6,13 @@
 
 - [Example](/example): This is an example page.
 - [Get started](/getting-started): Hello world!
+- [Executive Summary](/resume): Engineering leader, architect, and founder specializing in distributed systems, financial infrastructure, trading systems, blockchain networks, and platform engineering.
+- [Resume](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
+- [Career Snapshot](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
+- [Selected Systems](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
+- [Professional Experience](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
+- [Code & Open Source](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
+- [Education](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
 - [John's Colleagues](/references/intro): I have been fortunate over my long career to have the opportunity to work with some of the most talented individuals and teams not only in Silicon Valley, but globally.
 - [Research](/research/intro): John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
 - [Research](/writing/intro): John Whitton's writing can be found at [jincubator.com](https://www.jincubator.com/products/intro).
