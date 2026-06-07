@@ -7,6 +7,9 @@ import typescriptParser from "@typescript-eslint/parser";
 import react from "eslint-plugin-react";
 
 export default [
+  {
+    ignores: ["docs/dist/**"],
+  },
   js.configs.recommended,
   {
     files: ["**/*.ts", "**/*.tsx"],
@@ -29,7 +32,9 @@ export default [
       parser: eslintMdxParser,
     },
     plugins: { mdx: eslintPluginMdx },
-    // No extends here!
+    rules: {
+      "no-unused-vars": "off",
+    },
   },
   prettier,
 ] as const;

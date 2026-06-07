@@ -4,22 +4,80 @@ layout: landing
 
 import { HomePage } from "vocs/components";
 
-<HomePage.Root>
+<style>{`
+  .portfolioHomeIntro {
+    padding-top: 40px;
+    gap: 24px;
+  }
+
+  .portfolioHomeButtons {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: min(100%, 720px);
+  }
+
+  .portfolioHomeButtons a {
+    white-space: nowrap;
+  }
+
+  .portfolioHomeFollowup {
+    padding-top: 0;
+    gap: 24px;
+  }
+`}</style>
+
+<HomePage.Root className="portfolioHomeIntro">
   <HomePage.Logo />
   <HomePage.Tagline>John Whitton</HomePage.Tagline>
+  <HomePage.Description>Engineer. Architect. Leader.</HomePage.Description>
+</HomePage.Root>
+
+<a
+  href="https://portfolio.johnwhitton.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="View John Whitton portfolio slideshow"
+  style={{
+    width: "min(clamp(620px, 58vw, 1000px), calc(100vw - 32px))",
+    margin: "24px auto 24px",
+    marginLeft: "50%",
+    display: "block",
+    transform: "translateX(-50%)",
+  }}
+>
+  <picture>
+    <source srcSet="/images/john-portfolio-hero.webp" type="image/webp" />
+    <img
+      src="/images/john-portfolio-hero.png"
+      alt="John Whitton portfolio: Engineer. Architect. Leader."
+      style={{
+        width: "100%",
+        display: "block",
+        borderRadius: "16px",
+        boxShadow: "0 24px 80px rgba(0, 0, 0, 0.35)",
+      }}
+    />
+  </picture>
+</a>
+
+<HomePage.Root className="portfolioHomeFollowup">
   <HomePage.Description>
-    I am a research engineer, technical leader and entrepreneur currently
-    working in crypto.
+    I design, build, and scale systems across trading systems, financial
+    infrastructure, DeFi protocol engineering, distributed systems, and AI
+    engineering.
   </HomePage.Description>
-  <HomePage.Buttons>
-    <HomePage.Button href="/about" variant="accent">
-      John's Work
+  <HomePage.Buttons className="portfolioHomeButtons">
+    <HomePage.Button href="https://portfolio.johnwhitton.com" variant="accent">
+      View Portfolio
+    </HomePage.Button>
+    <HomePage.Button href="/about">
+      About John
+    </HomePage.Button>
+    <HomePage.Button href="/resume">
+      Resume
     </HomePage.Button>
     <HomePage.Button href="https://www.jincubator.com/research/intro">
       Research
-    </HomePage.Button>
-    <HomePage.Button href="https://github.com/johnwhitton">
-      GitHub
     </HomePage.Button>
   </HomePage.Buttons>
 </HomePage.Root>
