@@ -36,14 +36,14 @@ export default defineConfig({
       link: "https://jincubator.com",
     },
     {
-      text: "github",
+      text: "GitHub",
       link: "https://github.com/johnwhitton",
     },
   ],
   sidebar: {
     "/references": [
       {
-        text: "John's Colleagues",
+        text: "Testimonials & References",
         link: "/references/intro",
       },
       {
@@ -63,6 +63,10 @@ export default defineConfig({
         link: "/references/li",
       },
       {
+        text: "Matt",
+        link: "/references/matt",
+      },
+      {
         text: "Nick",
         link: "/references/nick",
       },
@@ -76,15 +80,17 @@ export default defineConfig({
       },
     ],
   },
-  socials: [
-    {
-      icon: "github",
-      link: "https://github.com/johnwhitton",
-    },
-    {
-      icon: "x",
-      link: "https://x.com/john_a_whitton",
-    },
-    { icon: "telegram", link: "https://t.me/john_whitton" },
-  ],
+  // Vocs v1.0.13 supports discord, github, telegram, warpcast, and x.
+  // LinkedIn is provided as a footer text link until Vocs supports a LinkedIn social icon.
+  // socials: [
+  //   {
+  //     icon: "github",
+  //     link: "https://github.com/johnwhitton",
+  //   },
+  //   {
+  //     icon: "x",
+  //     link: "https://x.com/john_a_whitton",
+  //   },
+  //   { icon: "telegram", link: "https://t.me/john_whitton" },
+  // ],
 });
