@@ -4,43 +4,77 @@
 
 import { ZoomImage } from "../public/components/ZoomImage";
 
-<ZoomImage src="/images/JohnWhittonWorkHistory.png" alt="John Whitton Work History" title="John Whitton Work History" />
+<ZoomImage
+  src="/images/About_Leadership.png"
+  sources={[{ srcSet: "/images/About_Leadership.webp", type: "image/webp" }]}
+  alt="John Whitton leadership overview"
+  title="Engineer Architect Leader"
+  style={{
+  borderRadius: "12px",
+  boxShadow: "0 20px 64px rgba(0, 0, 0, 0.24)",
+}}
+/>
 
-Hello, I'm John, and I'm a research engineer, technical leader, and entrepreneur working at the intersection of blockchain infrastructure (Solving, Market Making, Arbitrage) and Decentralized protocols (Intents, Liquidity Management, Settlement). I have a track record of driving projects from conception to completion, identifying research gaps, and providing solutions. Finally, I love leading engineering teams and have the ability to drive collaboration across the organization and the entire ecosystem.
+## About John
 
-I build high-performance solving and market-making infrastructure and DeFi protocols (Intents, Liquidity Management, Settlement), including
+Hello, I'm John Whitton.
 
-* Solver: Advanced Liquidity Mapping and Route Evaluation supporting multiple strategies for solving and market making.
-  * Built on Tycho with its own liquidity mapping layer, able to evaluate over 1000 routes per second
-* Solving Integration: UniswapX, 1inch, and CowSwap
-* DeFi: UniswapV4 Hooks, NoLiquidity Solving, IntentSwapHook
-* Liquidity Management: ERC-6909 Resource Management built on the compact
+I am an engineer, architect, and leader focused on building complex systems across Trading Systems, Financial Infrastructure, DeFi Protocol Engineering, Distributed Systems, and AI Engineering.
 
-I use [jincubator](https://github.com/jincubator) for research and development of prototypes.
+Over the past twenty-plus years I have worked across startups, enterprise organizations, blockchain networks, financial platforms, and emerging technologies. My career has consistently focused on understanding complex systems, designing practical solutions, and helping teams deliver them successfully.
 
-Below is a quick professional summary, more detail can be found on [the resume page](https://johnwhitton.com/resume/intro)
+### Engineer
 
-I worked as a Senior Protocol Engineer, previously Engineering Manager at [Eco](https://eco.com) building a payment focused intent protocol on a dedicated L3 rollup. Read the docs [here](https://docs.eco.com/) and the code [here](https://github.com/eco/eco-routes).
+I enjoy building systems.
 
-I have researched zero knowledge proofs, cryptographic primitives and consensus protocols.
+My recent work includes trading infrastructure, liquidity mapping, route evaluation, stablecoin infrastructure, protocol engineering, distributed systems, and developer platforms. I remain a hands-on engineer and continue to spend significant time designing, building, testing, and operating production systems.
 
-I consulted as a research engineer providing strategy, research, design and building out DeFi infrastructure including trustless bridging, web3 identity and wallets. Deployments have been on EVM compatible chains including [Ethereum](https://ethereum.org/en/) and [Harmony](https://www.harmony.one/).
+I am particularly interested in systems that combine performance, scalability, and real-world business outcomes.
 
-I prototyped the DEX [Kanga Finance](https://github.com/kangafinance) (inspired by [Sushi](https://github.com/sushiswap)) and a DeFi parachain [eave.network](https://github.com/eavenetwork) (inspired by [Acala](https://github.com/acalanetwork)). Deployments on [Harmony](https://www.harmony.one/) and [Polkadot](https://polkadot.network/). As founder for these projects, I was responsible for writing whitepapers, reviewing legal infrastructure, and fundraising. Although projects had investor interest and were awarded [hackathon prizes](https://docs.google.com/presentation/d/1ZGrbKSaAdtzvMzVh0EVFBfUvA4SqiAeYVXGhJN7Orbs/edit#slide=id.g48989ac23a_0_0) the projects did not move forward due to a combination of team commitment, market fit and crypto market conditions.
+### Architect
 
-Previously I was as an Ecosystem Architect at Harmony. Where I helped launch the Harmony Mainnet, grew the ecosystem and was also intimately involved with hiring decisions and business strategy. Prior to this I was CTO for Loyyal (BaaS company) where we built private permissioned blockchains on Ethereum and Hypersphere Fabric and I managed a team of seven engineers.
+Architecture has been a constant theme throughout my career.
 
-I have worked extensively with decentralized financial protocols, bringing a unique perspective by combining my extensive corporate experience with IBM, SAP, Deloitte and KPMG with the disruptive financial models being developed on blockchain.
+My earlier work focused on enterprise integration, service-oriented architectures, and large-scale business platforms. Over time that evolved into blockchain infrastructure, protocol design, financial infrastructure, and trading systems.
 
-My earlier career focused on enterprise applications, service oriented architectures and cross application business processes. Where I founded a consultancy firm which grew to $800k in revenues and ran from 2000-2009. One of my former clients, EFI ($1.6 billion market cap) brought me on as a Manager in Enterprise Systems Architecture where I remained for 6 years.
+Across each generation of technology, the underlying challenge has remained the same: understanding how complex systems interact and designing solutions that can evolve over time.
 
-I have been passionate about software and technology since high school. I graduated from the University of Queensland with a Bachelor of Science majoring in Computer Science before travelling globally leading the design and development of many Service Oriented Architectures and Blockchain implementations.
+### Leader
 
-### Further Reading
+I enjoy helping teams succeed.
 
-* [The State of InterOp 2025](https://blog.li.fi/the-state-of-interop-2025-4a75d82a9bb9)
-* [Intent Collective: a list of working projects in the Intents ecosystem](https://github.com/EnsoFinance/IntentCollective)
-* [Illuminating Ethereum's Order Flow Landscape](https://writings.flashbots.net/illuminate-the-order-flow)
+Throughout my career I have worked as a founder, CTO, engineering manager, architect, and technical leader. I have built and scaled teams, hired engineers, mentored individuals, and led cross-functional initiatives across startups and enterprise organizations.
+
+The most rewarding part of leadership is helping talented people grow while delivering meaningful outcomes together.
+
+### Career Evolution
+
+My career has followed a natural progression:
+
+```text
+Enterprise Systems
+-> Architecture Leadership
+-> Blockchain Infrastructure
+-> Financial Infrastructure
+-> Trading Systems
+-> AI Engineering
+```
+
+Each stage built upon the previous one.
+
+Enterprise systems provided a foundation in scale and integration. Blockchain introduced distributed networks and protocol design. Financial infrastructure expanded into payments and settlement systems. Trading systems brought performance, execution, routing, and market infrastructure. AI engineering is now creating entirely new ways to design, build, and operate software systems.
+
+### Current Focus
+
+Today I am most interested in work at the intersection of:
+
+* Trading Systems
+* Financial Infrastructure
+* DeFi Protocol Engineering
+* Distributed Systems
+* AI Engineering
+
+I continue to explore these domains through engineering, architecture, research, mentoring, advisory work, and product development.
 
 
 ## Example
@@ -53,72 +87,27 @@ This is an example page.
 Hello world!
 
 
-## Executive Summary
-
-Engineering leader, architect, and founder specializing in distributed systems, financial infrastructure, trading systems, blockchain networks, and platform engineering.
-
-Over the past 20+ years I have built and delivered production systems spanning enterprise integration, payments, stablecoin infrastructure, distributed networks, execution systems, and blockchain protocols. My experience ranges from early-stage startups through enterprise organizations supporting 50+ staff and annual planning portfolios exceeding $3M.
-
-Recent work includes:
-
-* Rust-based trading infrastructure evaluating 1000+ routes/sec
-* Route graphs spanning 17,000+ assets, 8,000+ liquidity pools, and 2.3M+ routes
-* Stablecoin payment infrastructure and cross-chain settlement systems
-* Distributed blockchain networks supporting 300+ nodes and 600+ validators
-* Rust-based Polkadot parachain design and implementation
-
-***
-
 ## Resume
 
-### Resume Variants
+**Resume Downloads:** <a className="vocs_Anchor" href="/images/john_em.pdf">Leadership</a> · <a className="vocs_Anchor" href="/images/john.pdf">Trading & DeFi</a> · <a className="vocs_Anchor" href="/images/john_payments.pdf">Financial Infrastructure</a> · <a className="vocs_Anchor" href="/images/john_rust.pdf">Platform & Distributed Systems</a>
 
-#### Engineering Leadership
+### Executive Summary
 
-Focus areas:
+**Engineer. Architect. Leader.**
 
-* Engineering Management
-* Architecture
-* Delivery
-* Organizational Scaling
+Engineering leader, architect, and hands-on systems builder specializing in trading systems, financial infrastructure, DeFi protocol engineering, distributed systems, and AI engineering.
 
-<a className="vocs_Anchor" href="/images/john_em.pdf">Download PDF</a>
+Over the past 20+ years I have designed, built, led, and delivered production systems across enterprise integration, payments, stablecoin infrastructure, blockchain networks, execution systems, and financial platforms.
 
-#### Engineering – Trading Systems
+Recent scope and outcomes:
 
-Focus areas:
+* Built Rust-based trading infrastructure evaluating 1,100+ routes/sec
+* Built route graphs spanning 17,000+ assets, 8,000+ liquidity pools, and 2.3M+ routes
+* Led stablecoin payment infrastructure and cross-chain settlement work
+* Supported distributed blockchain networks spanning 300+ nodes and 600+ validators
+* Scaled engineering teams from early-stage startup through enterprise delivery environments
 
-* Trading Systems
-* Execution Infrastructure
-* Market Infrastructure
-* Liquidity Mapping
-* Strategy Analytics
-
-<a className="vocs_Anchor" href="/images/john.pdf">Download PDF</a>
-
-#### Engineering – Financial Infrastructure
-
-Focus areas:
-
-* Distributed Systems
-* Financial Infrastructure
-* Payments
-* Stablecoins
-* Execution Systems
-
-<a className="vocs_Anchor" href="/images/john_payments.pdf">Download PDF</a>
-
-#### Engineering – Platform Engineering & Distributed Systems
-
-Focus areas:
-
-* Distributed Systems
-* Platform Engineering
-* Software Architecture
-* Rust
-* Infrastructure
-
-<a className="vocs_Anchor" href="/images/john_rust.pdf">Download PDF</a>
+For a complete overview of John's experience, leadership, systems, and architecture work, view the [Portfolio Presentation](https://portfolio.johnwhitton.com).
 
 ***
 
@@ -130,98 +119,38 @@ Focus areas:
 * Led cross-functional teams of up to 10 engineers, product, and research staff
 * Managed annual planning portfolio exceeding $3M across 100+ initiatives
 * Founded and scaled Global Enterprise Solutions to approximately $800k annual revenue
-* Recruited and onboarded engineers across the United States, Africa, India, and fully remote environments
 
-### Trading & Execution Infrastructure
+### Trading Systems
 
-* Built execution infrastructure evaluating 1000+ routes/sec
-* Built route graphs spanning 17,000+ assets and 2.3M+ routes
-* Designed liquidity mapping, route evaluation, simulation, pricing, and execution systems
+* Built Rust-based execution infrastructure evaluating 1,100+ routes/sec
+* Built route graphs spanning 17,000+ assets, 8,000+ liquidity pools, and 2.3M+ routes
+* Designed liquidity mapping, route evaluation, simulation, pricing, execution, and settlement systems
 * Developed historical replay and strategy analytics platforms
-* Researched and prototyped intent-based execution systems
+
+### Financial Infrastructure
+
+* Led stablecoin payment infrastructure and programmable money work at Eco
+* Built cross-chain routing and settlement infrastructure
+* Delivered enterprise financial and loyalty infrastructure for clients including IBM, Deloitte, Emirates Airlines, and CIBC
 
 ### Distributed Systems
 
 * Built a Rust-based Polkadot parachain and distributed application platform
-* Supported Harmony Mainnet launch, staking infrastructure, and validator ecosystem
-* Coordinated 50+ production network upgrades
+* Supported Harmony Mainnet launch, staking infrastructure, APIs, SDKs, and 50+ production upgrades
 * Supported infrastructure spanning 300+ nodes and 600+ validators
-* Built large-scale enterprise integration and API platforms
+* Built large-scale enterprise integration, messaging, and API platforms
 
-***
+### DeFi Protocol Engineering
 
-## Selected Systems
+* Designed and implemented solver, liquidity, and route evaluation systems
+* Built and researched intent-based execution systems
+* Designed governance, tokenomics, validator, and protocol architecture for EAVE
 
-### Solver
+### AI Engineering
 
-High-performance execution infrastructure built in Rust.
-
-Key capabilities:
-
-* Liquidity ingestion
-* Liquidity mapping
-* Route evaluation
-* Simulation
-* Pricing
-* Execution
-* Settlement
-
-Highlights:
-
-* 17,000+ assets
-* 8,000+ liquidity pools
-* 2.3M+ routes
-* Peak throughput exceeding 1,100 route evaluations/sec
-
-Further reading:
-
-* [Solving, Arbitrage & Market Making](https://www.jincubator.com/research/solving/solving/)
-
-***
-
-### Salus
-
-Next-generation trading research and analytics platform.
-
-Key capabilities:
-
-* Historical replay
-* Strategy analytics
-* Route generation
-* Evaluation infrastructure
-* Cross-venue trading research
-
-Current scale:
-
-* 3,400+ assets
-* 4,500+ protocol components
-* 9,100+ graph edges
-* 2.3M+ generated routes
-
-***
-
-### EAVE
-
-Polkadot-based DeFi parachain and distributed application platform.
-
-Highlights:
-
-* Rust-based parachain implementation
-* Validator infrastructure
-* Governance architecture
-* Tokenomics design
-* Developer tooling
-* Whitepaper and fundraising
-
-Outcome:
-
-* Approximately $300,000 investor commitments
-* Multiple architecture and protocol design documents
-
-Further reading:
-
-* [EAVE Whitepaper](https://johnwhitton.com/images/DraftEAVEWhitepaper.pdf)
-* [Parachain Design](https://johnwhitton.com/images/EAVEParachainDesign.pdf)
+* Applied AI-assisted development workflows to engineering delivery, documentation, and architecture work
+* Explored agent workflows for research tooling, system design, and developer productivity
+* Used AI tooling to accelerate refactoring, architecture evaluation, and knowledge systems
 
 ***
 
@@ -229,66 +158,53 @@ Further reading:
 
 ### Principal Engineer / Founder
 
-#### Independent Research & Development (2018–Present)
+#### Independent Research & Development (2018-Present)
 
-Research, protocol development, fundraising, and consulting across distributed systems, execution infrastructure, blockchain networks, and financial platforms.
+Research, protocol development, fundraising, and consulting across trading systems, financial infrastructure, DeFi protocol engineering, distributed systems, and AI engineering.
 
 Primary initiatives:
 
 * Solver
 * Salus
 * EAVE
-
-***
+* Jincubator research and prototyping
 
 ### Engineering Manager / Senior Protocol Engineer
 
-#### Eco (2023–2025)
+#### Eco (2023-2025)
 
-* Led cross-functional engineering team of 8–10 staff
+* Led cross-functional engineering team of 8-10 staff
 * Built stablecoin infrastructure and programmable money systems
 * Delivered cross-chain routing and settlement infrastructure
 * Managed hiring, onboarding, performance reviews, and delivery execution
 
-***
-
 ### Ecosystem Architect
 
-#### Harmony (2019–2020)
+#### Harmony (2019-2020)
 
 * Scaled engineering organization from 6 to 20 engineers
 * Delivered mainnet launch, staking infrastructure, APIs, and SDKs
 * Coordinated 50+ production upgrades
 * Supported 300+ nodes and 600+ validators
-
-***
+* Supported developer ecosystem growth and validator onboarding
 
 ### Chief Technology Officer
 
-#### Loyyal (2016–2018)
+#### Loyyal (2016-2018)
 
 * Led engineering teams across the United States and Africa
 * Built enterprise blockchain and loyalty infrastructure
 * Delivered solutions for IBM, Deloitte, Emirates Airlines, and CIBC
-
-***
+* Managed architecture, engineering delivery, and customer implementation work
 
 ### Enterprise Architect / Founder / Engineering Manager
 
-#### EFI, Autodesk, Global Enterprise Solutions (1986–2016)
+#### EFI, Autodesk, Global Enterprise Solutions (1986-2016)
 
 * Managed $3M annual planning portfolio
 * Coordinated delivery across 100+ initiatives and 50+ staff
-* Built large-scale SOA and integration platforms
-* Founded and scaled Global Enterprise Solutions
-
-***
-
-## Code & Open Source
-
-* [https://github.com/jincubator](https://github.com/jincubator)
-* [https://github.com/EaveNetwork](https://github.com/EaveNetwork)
-* [https://github.com/johnwhitton](https://github.com/johnwhitton)
+* Built large-scale SOA and enterprise integration platforms
+* Founded and scaled Global Enterprise Solutions to approximately $800k annual revenue
 
 ***
 
@@ -296,6 +212,11 @@ Primary initiatives:
 
 Bachelor of Computer Science\
 University of Queensland
+
+
+## Research
+
+John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
 
 
 #### [Andy](https://www.linkedin.com/in/andy-wu-4329664/)
@@ -311,27 +232,81 @@ John is dedicated, hard-working, great work ethics, and brings lot of positive e
 
 import { ZoomImage } from "../../public/components/ZoomImage";
 
-## John's Colleagues
+## Testimonials & References
 
-<ZoomImage src="/images/HarmonyTeam.jpg" alt="Harmony Team" title="HarmonyTeam" />
+<ZoomImage src="/images/HarmonyTeam.jpg" alt="Harmony team" title="Harmony Team" />
 
-I have been fortunate over my long career to have the opportunity to work with some of the most talented individuals and teams not only in Silicon Valley, but globally.
+I have been fortunate to work with exceptional engineers, architects, researchers, founders, and leaders throughout my career.
 
-In my role as a founder, cto, ecoystem architect and engineer. I have learned from great leaders,
-researchers, business strategists and engineers. I have built great teams and mentored many talented junior engineers. I have watched my teams apply their solid technical foundation to become invaluable contributors to the team and the organization. Watching individuals grow both personally and professionally is the most rewarding work I have done.
+The comments below come from colleagues, managers, team members, and collaborators across startups, enterprise organizations, and blockchain ecosystems.
 
-Here is a video highlighting the strengths of the Harmony Team that I was fortunate enough to work with.
+Although the projects have varied, the feedback tends to repeat a consistent set of themes: leadership, mentorship, systems thinking, execution, and helping teams succeed.
+
+### Leadership Themes
+
+> "A natural leader."
+
+> "John is one of the most professional engineers I’ve ever worked with."
+
+> "He could be a very good leader either in biz or eng departments."
+
+> "John has the rare gift of being able to understand complex business problems and map them to a technical solution."
+
+> "John is amazing at explaining and delegating."
+
+> "Thank you for listening and being a great mentor."
+
+> "John has always been so selfless and caring."
+
+> "John has the biggest heart."
+
+> "You always took care of team mates."
+
+> "You made me feel instantly welcome and gave me a sense of ownership."
+
+> "John does a good job of recruiting and onboarding new interns."
+
+> "John focused a lot on knowledge transfer."
+
+> "He can troubleshoot tons of deployment issues from the core protocol all the way up to the application layer."
+
+> "His excellent communication skills and deep technical knowledge were key factors in the successful rollout of the program."
+
+### Harmony Team Feedback
+
+<ZoomImage src="/images/johnImpact.png" alt="Feedback from Harmony team members" title="Harmony Team Feedback" />
+
+### Harmony Video
+
+Here is a video highlighting the strengths of the Harmony team that I was fortunate enough to work with.
 
 {" "}
 
-<div className="video-responsive">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/easABjC4gIY" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+<div
+  className="video-responsive"
+  style={{
+  height: 0,
+  overflow: "hidden",
+  paddingBottom: "56.25%",
+  position: "relative",
+}}
+>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/easABjC4gIY"
+    frameBorder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+    style={{
+    height: "100%",
+    left: 0,
+    position: "absolute",
+    top: 0,
+    width: "100%",
+  }}
+  />
 </div>
-
-<a href="/images/johnImpact.png" target="_blank" rel="noopener noreferrer" style={{ color: "blue", textDecoration: "underline" }}>
-  Here are some quotes from some of the greatest people you'll ever get to work
-  with
-</a>
 
 
 #### [Janet](https://www.linkedin.com/in/janet-liang-754090135/)
@@ -367,11 +342,6 @@ John is a really good team player, among his good qualities, I admire three most
 1. Helpful and warm-hearted whenever you ask for help, John will give you the best help.
 2. Avid learner, John likes to learn new things and will actively take new tasks. I see John actively in ops recently.
 3. Responsible, longer view, John focused a lot on knowledge transfer. He wants to make sure the knowledge can be shared with the whole team and future new employees, so he contributed a lot on internal wiki gitbooks, which I think it’s a good point.
-
-
-## Research
-
-John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
 
 
 ## Research

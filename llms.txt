@@ -4,15 +4,13 @@
 
 ## Docs
 
+- [About John](/about): Hello, I'm John Whitton.
 - [Example](/example): This is an example page.
 - [Get started](/getting-started): Hello world!
-- [Executive Summary](/resume): Engineering leader, architect, and founder specializing in distributed systems, financial infrastructure, trading systems, blockchain networks, and platform engineering.
-- [Resume](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
-- [Career Snapshot](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
-- [Selected Systems](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
-- [Professional Experience](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
-- [Code & Open Source](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
-- [Education](/resume): Rust-based trading infrastructure evaluating 1000+ routes/sec
-- [John's Colleagues](/references/intro): I have been fortunate over my long career to have the opportunity to work with some of the most talented individuals and teams not only in Silicon Valley, but globally.
+- [Resume](/resume): **Resume Downloads:** <a className="vocs_Anchor" href="/images/john_em.pdf">Leadership</a> · <a className="vocs_Anchor" href="/images/john.pdf">Trading & DeFi</a> · <a className="vocs_Anchor" href="/images/john_payments.pdf">Financial Infrastructure</a> · <a className="vocs_Anchor" href="/images/john_rust.pdf">Platform & Distributed Systems</a>
+- [Career Snapshot](/resume): Built Rust-based trading infrastructure evaluating 1,100+ routes/sec
+- [Professional Experience](/resume): Built Rust-based trading infrastructure evaluating 1,100+ routes/sec
+- [Education](/resume): Built Rust-based trading infrastructure evaluating 1,100+ routes/sec
 - [Research](/research/intro): John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
+- [Testimonials & References](/references/intro): I have been fortunate to work with exceptional engineers, architects, researchers, founders, and leaders throughout my career.
 - [Research](/writing/intro): John Whitton's writing can be found at [jincubator.com](https://www.jincubator.com/products/intro).
