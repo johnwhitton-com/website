@@ -89,25 +89,39 @@ Hello world!
 
 ## Resume
 
-**Resume Downloads:** <a className="vocs_Anchor" href="/images/john_em.pdf">Leadership</a> · <a className="vocs_Anchor" href="/images/john.pdf">Trading & DeFi</a> · <a className="vocs_Anchor" href="/images/john_payments.pdf">Financial Infrastructure</a> · <a className="vocs_Anchor" href="/images/john_rust.pdf">Platform & Distributed Systems</a>
+Choose the resume that best matches the role. Each version presents the same career through a different technical or leadership lens while highlighting the most relevant experience for that audience.
 
-### Executive Summary
+**Resume Downloads:** <a className="vocs_Anchor" href="/images/john_em.pdf">Leadership</a> · <a className="vocs_Anchor" href="/images/john.pdf">Trading Infrastructure</a> · <a className="vocs_Anchor" href="/images/john_defi.pdf">DeFi Protocol Engineering</a> · <a className="vocs_Anchor" href="/images/john_payments.pdf">Financial Infrastructure</a> · <a className="vocs_Anchor" href="/images/john_rust.pdf">Platform & Distributed Systems</a>
+
+### Which resume should I read?
+
+| Resume                             | Best suited for                                                                                 |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Leadership**                     | Engineering Manager, Director, Head of Engineering, Staff+ leadership roles                     |
+| **Trading Infrastructure**         | Trading systems, execution infrastructure, MEV, market infrastructure, quantitative engineering |
+| **DeFi Protocol Engineering**      | DeFi protocols, Solidity, smart contracts, intents, settlement systems                          |
+| **Financial Infrastructure**       | Stablecoins, payments, cross-chain settlement, banking infrastructure, fintech                  |
+| **Platform & Distributed Systems** | Rust, backend infrastructure, distributed systems, platform engineering                         |
+
+***
+
+## Executive Summary
 
 **Engineer. Architect. Leader.**
 
-Engineering leader, architect, and hands-on systems builder specializing in trading systems, financial infrastructure, DeFi protocol engineering, distributed systems, and AI engineering.
+Engineering leader, architect, founder, and hands-on systems builder specializing in trading infrastructure, financial infrastructure, DeFi protocol engineering, distributed systems, and AI-assisted engineering.
 
-Over the past 20+ years I have designed, built, led, and delivered production systems across enterprise integration, payments, stablecoin infrastructure, blockchain networks, execution systems, and financial platforms.
+Over the past 20+ years I have designed, built, led, and delivered production systems spanning enterprise integration, payments, stablecoin infrastructure, blockchain networks, execution platforms, and financial systems. Recent work has focused on modern Rust trading infrastructure, protocol engineering, distributed systems, and technical architecture.
 
 Recent scope and outcomes:
 
 * Built Rust-based trading infrastructure evaluating 1,100+ routes/sec
 * Built route graphs spanning 17,000+ assets, 8,000+ liquidity pools, and 2.3M+ routes
-* Led stablecoin payment infrastructure and cross-chain settlement work
-* Supported distributed blockchain networks spanning 300+ nodes and 600+ validators
-* Scaled engineering teams from early-stage startup through enterprise delivery environments
+* Led stablecoin payment infrastructure and cross-chain settlement initiatives
+* Supported distributed blockchain infrastructure spanning 300+ nodes and 600+ validators
+* Scaled engineering organizations from early-stage startups through enterprise delivery environments
 
-For a complete overview of John's experience, leadership, systems, and architecture work, view the [Portfolio Presentation](https://portfolio.johnwhitton.com).
+For a complete overview of engineering projects, architecture, technical leadership, and system design, view the [Portfolio Presentation](https://portfolio.johnwhitton.com).
 
 ***
 
@@ -120,7 +134,7 @@ For a complete overview of John's experience, leadership, systems, and architect
 * Managed annual planning portfolio exceeding $3M across 100+ initiatives
 * Founded and scaled Global Enterprise Solutions to approximately $800k annual revenue
 
-### Trading Systems
+### Trading Infrastructure
 
 * Built Rust-based execution infrastructure evaluating 1,100+ routes/sec
 * Built route graphs spanning 17,000+ assets, 8,000+ liquidity pools, and 2.3M+ routes
@@ -129,9 +143,9 @@ For a complete overview of John's experience, leadership, systems, and architect
 
 ### Financial Infrastructure
 
-* Led stablecoin payment infrastructure and programmable money work at Eco
+* Led stablecoin payment infrastructure and programmable money initiatives at Eco
 * Built cross-chain routing and settlement infrastructure
-* Delivered enterprise financial and loyalty infrastructure for clients including IBM, Deloitte, Emirates Airlines, and CIBC
+* Delivered enterprise financial and loyalty infrastructure for IBM, Deloitte, Emirates Airlines, and CIBC
 
 ### Distributed Systems
 
@@ -140,17 +154,17 @@ For a complete overview of John's experience, leadership, systems, and architect
 * Supported infrastructure spanning 300+ nodes and 600+ validators
 * Built large-scale enterprise integration, messaging, and API platforms
 
-### DeFi Protocol Engineering
+### Protocol Engineering
 
 * Designed and implemented solver, liquidity, and route evaluation systems
-* Built and researched intent-based execution systems
+* Built intent-based execution systems and protocol infrastructure
 * Designed governance, tokenomics, validator, and protocol architecture for EAVE
 
 ### AI Engineering
 
-* Applied AI-assisted development workflows to engineering delivery, documentation, and architecture work
-* Explored agent workflows for research tooling, system design, and developer productivity
-* Used AI tooling to accelerate refactoring, architecture evaluation, and knowledge systems
+* Applied AI-assisted development workflows to engineering delivery, documentation, and architecture
+* Used AI to accelerate engineering, refactoring, technical research, and system design
+* Developed engineering knowledge systems, documentation, and architecture case studies
 
 ***
 
@@ -158,29 +172,29 @@ For a complete overview of John's experience, leadership, systems, and architect
 
 ### Principal Engineer / Founder
 
-#### Independent Research & Development (2018-Present)
+#### Independent Research & Development (2018–Present)
 
-Research, protocol development, fundraising, and consulting across trading systems, financial infrastructure, DeFi protocol engineering, distributed systems, and AI engineering.
+Research, protocol development, fundraising, and consulting across trading infrastructure, financial infrastructure, DeFi protocol engineering, distributed systems, and AI-assisted engineering.
 
 Primary initiatives:
 
-* Solver
 * Salus
+* Seamless
 * EAVE
 * Jincubator research and prototyping
 
 ### Engineering Manager / Senior Protocol Engineer
 
-#### Eco (2023-2025)
+#### Eco (2023–2025)
 
-* Led cross-functional engineering team of 8-10 staff
+* Led cross-functional engineering team of 8–10 engineers
 * Built stablecoin infrastructure and programmable money systems
 * Delivered cross-chain routing and settlement infrastructure
 * Managed hiring, onboarding, performance reviews, and delivery execution
 
 ### Ecosystem Architect
 
-#### Harmony (2019-2020)
+#### Harmony (2019–2020)
 
 * Scaled engineering organization from 6 to 20 engineers
 * Delivered mainnet launch, staking infrastructure, APIs, and SDKs
@@ -190,16 +204,16 @@ Primary initiatives:
 
 ### Chief Technology Officer
 
-#### Loyyal (2016-2018)
+#### Loyyal (2016–2018)
 
 * Led engineering teams across the United States and Africa
 * Built enterprise blockchain and loyalty infrastructure
 * Delivered solutions for IBM, Deloitte, Emirates Airlines, and CIBC
-* Managed architecture, engineering delivery, and customer implementation work
+* Managed architecture, engineering delivery, and customer implementation
 
 ### Enterprise Architect / Founder / Engineering Manager
 
-#### EFI, Autodesk, Global Enterprise Solutions (1986-2016)
+#### EFI, Autodesk, Global Enterprise Solutions (1986–2016)
 
 * Managed $3M annual planning portfolio
 * Coordinated delivery across 100+ initiatives and 50+ staff
@@ -210,13 +224,9 @@ Primary initiatives:
 
 ## Education
 
-Bachelor of Computer Science\
+Bachelor of Computer Science
+
 University of Queensland
-
-
-## Research
-
-John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
 
 
 #### [Andy](https://www.linkedin.com/in/andy-wu-4329664/)
@@ -347,4 +357,9 @@ John is a really good team player, among his good qualities, I admire three most
 ## Research
 
 John Whitton's writing can be found at [jincubator.com](https://www.jincubator.com/products/intro).
+
+
+## Research
+
+John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
 
