@@ -11,8 +11,8 @@
     "lint": "eslint '**/*.{ts,tsx,mdx}'"
   },
   "dependencies": {
-    "baseline-browser-mapping": "^2.10.32",
-    "caniuse-lite": "^1.0.30001793",
+    "baseline-browser-mapping": "^2.10.42",
+    "caniuse-lite": "^1.0.30001802",
     "pdfjs-dist": "^5.3.93",
     "react": "latest",
     "react-dom": "latest",
