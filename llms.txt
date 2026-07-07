@@ -7,11 +7,11 @@
 - [About John](/about): Hello, I'm John Whitton.
 - [Example](/example): This is an example page.
 - [Get started](/getting-started): Hello world!
-- [Resume](/resume): Choose the resume that best matches the role. Each version presents the same career through a different technical or leadership lens while highlighting the most relevant experience for that audience.
+- [Resume and Career Highlights](/resume): Choose the resume that best matches the role. Each version presents the same career through a different technical or leadership lens while highlighting the most relevant experience for that audience.
 - [Executive Summary](/resume): **Engineer. Architect. Leader.**
 - [Career Snapshot](/resume): Built Rust-based trading infrastructure evaluating 1,100+ routes/sec
 - [Professional Experience](/resume): Built Rust-based trading infrastructure evaluating 1,100+ routes/sec
 - [Education](/resume): Built Rust-based trading infrastructure evaluating 1,100+ routes/sec
 - [Testimonials & References](/references/intro): I have been fortunate to work with exceptional engineers, architects, researchers, founders, and leaders throughout my career.
-- [Research](/writing/intro): John Whitton's writing can be found at [jincubator.com](https://www.jincubator.com/products/intro).
 - [Research](/research/intro): John Whitton's research can be found at [jincubator.com](https://www.jincubator.com/research/intro).
+- [Research](/writing/intro): John Whitton's writing can be found at [jincubator.com](https://www.jincubator.com/products/intro).
