@@ -4,9 +4,9 @@
 
 ## Docs
 
-- [About John](/about): Hello, I'm John Whitton.
 - [Example](/example): This is an example page.
 - [Get started](/getting-started): Hello world!
+- [John's Portfolio](/portfolio): Hello, I'm John Whitton.
 - [Resume and Career Highlights](/resume): Choose the resume that best matches the role. Each version presents the same career through a different technical or leadership lens while preserving a consistent engineering history.
 - [Executive Summary](/resume): **Engineer. Architect. Leader.**
 - [Career Snapshot](/resume): Designed and built Salus across a retained Ethereum topology containing 3,415 tokens, 4,552 pool components, and 2,401,108 catalog routes
