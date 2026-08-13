@@ -20,8 +20,8 @@ export default defineConfig({
       link: "/",
     },
     {
-      text: "About John",
-      link: "/about",
+      text: "Portfolio",
+      link: "/portfolio",
     },
     {
       text: "Resume",
