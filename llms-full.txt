@@ -20,7 +20,7 @@ I am an engineer, architect, and leader focused on building complex systems acro
 
 Over the past twenty-plus years I have worked across startups, enterprise organizations, blockchain networks, financial platforms, and emerging technologies. My career has consistently focused on understanding complex systems, designing practical solutions, and helping teams deliver them successfully.
 
-**Click on the image below to review my portfolio including my focus areas and architectures I've built.**
+**[Click the image below to review my portfolio including focus areas and architectures I've built.](https://docs.google.com/presentation/d/e/2PACX-1vTIyNIauVyEPU0MLmeJFHjyxgp0mjxaiI4JMbD_SYfKWM-De-H9ZnpRsl9xfIMMR1g_RI0zp5-KEED8/pub?start=false\&loop=false\&delayms=3000\&slide=id.g3f99763131f_1_2)**
 
 <a href="https://docs.google.com/presentation/d/e/2PACX-1vTIyNIauVyEPU0MLmeJFHjyxgp0mjxaiI4JMbD_SYfKWM-De-H9ZnpRsl9xfIMMR1g_RI0zp5-KEED8/pub?start=false&loop=false&delayms=3000&slide=id.g3f99763131f_1_2" target="_blank" rel="noopener noreferrer" aria-label="View John Whitton's portfolio presentation" style={{ display: "block" }}>
   <picture>
